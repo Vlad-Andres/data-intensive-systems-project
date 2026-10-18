@@ -1,0 +1,5 @@
+1.top.2,2.right.3
+5.married.7.city."Amsterdam"
+5.married.X.city.Y
+10.knows.X,10.name."Hub"
+1.isBoss."yes"

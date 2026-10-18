@@ -1,0 +1,9 @@
+[project]
+name = "graph-data-reduction"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "ipython>=9.17.1",
+    "pyspark>=4.2.0",
+    "pyvis>=0.3.2",
+]

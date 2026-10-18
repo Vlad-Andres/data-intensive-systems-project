@@ -1,0 +1,5 @@
+<1,top,2>,<2,right,3>,<3,bottom,4>,<4,left,1>,<1,isBoss,"yes">
+<5,married,7>,<7,city,"Amsterdam">,<5,city,"Utrecht">,<7,worksAt,8>,<8,name,"UU">
+<10,knows,11>,<10,knows,12>,<10,knows,13>,<10,name,"Hub">
+<5,married,7>,<7,city,"Rotterdam">,<7,livesNear,9>
+<1,top,2>,<2,right,3>,<3,next,4>
