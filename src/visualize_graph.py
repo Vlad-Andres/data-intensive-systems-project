@@ -3,7 +3,7 @@ import argparse
 from pyvis.network import Network
 
 from graph_parser import read_graph_database
-
+from pathlib import Path
 
 def add_graph_to_network(network, graph_index, triples):
     def node_id(node):
@@ -34,7 +34,8 @@ def main():
     network = Network(height="750px", width="100%", directed=True, cdn_resources="in_line")
     for graph_index in selected_graph_indices:
         add_graph_to_network(network, graph_index, graphs[graph_index])
-    network.write_html(arguments.output, open_browser=False)
+    html = network.generate_html()
+    Path(arguments.output).write_text(html, encoding="utf-8")
     print(f"{len(selected_graph_indices)} graph(s) written to {arguments.output}")
 
 
