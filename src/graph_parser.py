@@ -13,5 +13,5 @@ def parse_graph_line(graph_line):
 
 
 def read_graph_database(database_path):
-    with open(database_path) as database_file:
+    with open(database_path, "r", encoding="utf-8") as database_file:
         return [parse_graph_line(line) for line in database_file if line.strip()]
