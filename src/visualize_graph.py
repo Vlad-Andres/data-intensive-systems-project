@@ -16,7 +16,9 @@ def add_graph_to_network(network, graph_index, triples):
             network.add_node(node_id(target), label=target, title=node_title, group=graph_index)
             network.add_edge(node_id(source_node), node_id(target), label=label)
         else:
-            attribute_node_id = node_id(f"{source_node}:{label}")
+            attribute_node_id = node_id(
+                f"{source_node}:{label}:{target}"
+            )
             network.add_node(attribute_node_id, label=f'"{target}"', title=node_title, group=graph_index, shape="box")
             network.add_edge(node_id(source_node), attribute_node_id, label=label, dashes=True)
 
