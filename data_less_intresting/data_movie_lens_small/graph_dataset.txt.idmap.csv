@@ -1,0 +1,69 @@
+id,type,original_key
+1,user,1
+2,movie,2492
+3,rating,"('1', '2492')"
+4,genre,Comedy
+5,genre,Romance
+6,movie,2012
+7,rating,"('1', '2012')"
+8,genre,Adventure
+9,genre,Sci-Fi
+10,genre,Western
+11,movie,2478
+12,rating,"('1', '2478')"
+13,movie,553
+14,rating,"('1', '553')"
+15,genre,Action
+16,genre,Drama
+17,movie,1445
+18,rating,"('1', '1445')"
+19,genre,War
+20,user,2
+21,movie,80489
+22,rating,"('2', '80489')"
+23,genre,Crime
+24,genre,Thriller
+25,movie,114060
+26,rating,"('2', '114060')"
+27,movie,122882
+28,rating,"('2', '122882')"
+29,movie,1704
+30,rating,"('2', '1704')"
+31,movie,89774
+32,rating,"('2', '89774')"
+33,user,3
+34,movie,2424
+35,rating,"('3', '2424')"
+36,movie,5048
+37,rating,"('3', '5048')"
+38,genre,Children
+39,movie,527
+40,rating,"('3', '527')"
+41,movie,2090
+42,rating,"('3', '2090')"
+43,genre,Animation
+44,movie,3949
+45,rating,"('3', '3949')"
+46,user,4
+47,movie,4246
+48,rating,"('4', '4246')"
+49,movie,4896
+50,rating,"('4', '4896')"
+51,genre,Fantasy
+52,movie,4741
+53,rating,"('4', '4741')"
+54,movie,4381
+55,rating,"('4', '4381')"
+56,movie,4273
+57,rating,"('4', '4273')"
+58,user,5
+59,movie,474
+60,rating,"('5', '474')"
+61,movie,300
+62,rating,"('5', '300')"
+63,movie,247
+64,rating,"('5', '247')"
+65,movie,534
+66,rating,"('5', '534')"
+67,movie,475
+68,rating,"('5', '475')"

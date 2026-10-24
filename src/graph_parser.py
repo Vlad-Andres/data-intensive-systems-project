@@ -13,5 +13,18 @@ def parse_graph_line(graph_line):
 
 
 def read_graph_database(database_path):
-    with open(database_path) as database_file:
+    with open(database_path, "r", encoding="utf-8") as database_file:
         return [parse_graph_line(line) for line in database_file if line.strip()]
+
+
+def format_graph_line(triples):
+    return ",".join(
+        f"<{source_node},{label},{target}>" if is_edge else f'<{source_node},{label},"{target}">'
+        for source_node, label, target, is_edge in triples
+    )
+
+
+def write_graph_database(database_path, graphs):
+    with open(database_path, "w", encoding="utf-8") as database_file:
+        for triples in graphs:
+            database_file.write(format_graph_line(triples) + "\n")

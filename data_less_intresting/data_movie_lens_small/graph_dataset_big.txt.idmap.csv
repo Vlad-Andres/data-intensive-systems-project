@@ -1,0 +1,909 @@
+id,type,original_key
+1,movie,1
+2,genre,Adventure
+3,genre,Animation
+4,genre,Children
+5,genre,Comedy
+6,genre,Fantasy
+7,movie,2
+8,movie,3
+9,genre,Romance
+10,movie,4
+11,genre,Drama
+12,movie,5
+13,movie,6
+14,genre,Action
+15,genre,Crime
+16,genre,Thriller
+17,movie,7
+18,movie,8
+19,movie,9
+20,movie,10
+21,movie,11
+22,movie,12
+23,genre,Horror
+24,movie,13
+25,movie,14
+26,movie,15
+27,movie,16
+28,movie,17
+29,movie,18
+30,movie,19
+31,movie,20
+32,movie,21
+33,movie,22
+34,genre,Mystery
+35,movie,23
+36,movie,24
+37,genre,Sci-Fi
+38,movie,25
+39,movie,26
+40,movie,27
+41,movie,28
+42,movie,29
+43,movie,30
+44,movie,31
+45,movie,32
+46,movie,34
+47,movie,36
+48,movie,38
+49,movie,39
+50,movie,40
+51,movie,41
+52,genre,War
+53,movie,42
+54,movie,43
+55,movie,44
+56,movie,45
+57,movie,46
+58,movie,47
+59,movie,48
+60,genre,Musical
+61,movie,49
+62,movie,50
+63,movie,52
+64,movie,53
+65,movie,54
+66,movie,55
+67,movie,57
+68,movie,58
+69,movie,60
+70,movie,61
+71,movie,62
+72,movie,63
+73,movie,64
+74,movie,65
+75,movie,66
+76,movie,68
+77,movie,69
+78,movie,70
+79,movie,71
+80,movie,72
+81,movie,73
+82,movie,74
+83,movie,75
+84,movie,76
+85,movie,77
+86,genre,Documentary
+87,movie,78
+88,movie,79
+89,movie,80
+90,movie,81
+91,movie,82
+92,movie,83
+93,movie,85
+94,movie,86
+95,movie,87
+96,movie,88
+97,movie,89
+98,movie,92
+99,movie,93
+100,movie,94
+101,movie,95
+102,movie,96
+103,movie,97
+104,movie,99
+105,movie,100
+106,movie,101
+107,movie,102
+108,movie,103
+109,movie,104
+110,movie,105
+111,movie,106
+112,movie,107
+113,movie,108
+114,movie,110
+115,movie,111
+116,movie,112
+117,user,1
+118,user,2
+119,user,3
+120,user,4
+121,user,5
+122,user,6
+123,user,7
+124,user,8
+125,rating,"('8', '2')"
+126,user,9
+127,user,10
+128,user,11
+129,user,12
+130,rating,"('12', '39')"
+131,user,13
+132,user,14
+133,rating,"('14', '7')"
+134,user,15
+135,user,16
+136,user,17
+137,rating,"('17', '111')"
+138,user,18
+139,user,19
+140,user,20
+141,user,21
+142,user,22
+143,user,23
+144,rating,"('23', '6')"
+145,user,24
+146,user,25
+147,user,26
+148,rating,"('26', '34')"
+149,rating,"('26', '47')"
+150,user,27
+151,user,28
+152,user,29
+153,user,30
+154,rating,"('30', '110')"
+155,user,31
+156,user,32
+157,user,33
+158,user,34
+159,user,35
+160,rating,"('35', '60')"
+161,user,36
+162,user,37
+163,user,38
+164,user,39
+165,user,40
+166,user,41
+167,user,42
+168,user,43
+169,user,44
+170,rating,"('44', '66')"
+171,user,45
+172,user,46
+173,user,47
+174,user,48
+175,user,49
+176,user,50
+177,user,51
+178,user,52
+179,user,53
+180,user,54
+181,rating,"('54', '21')"
+182,user,55
+183,user,56
+184,rating,"('56', '69')"
+185,user,57
+186,user,58
+187,user,59
+188,user,60
+189,rating,"('60', '50')"
+190,user,61
+191,user,62
+192,user,63
+193,user,64
+194,user,65
+195,user,66
+196,user,67
+197,user,68
+198,rating,"('68', '18')"
+199,user,69
+200,user,70
+201,rating,"('70', '36')"
+202,user,71
+203,rating,"('71', '24')"
+204,user,72
+205,user,73
+206,user,74
+207,user,75
+208,user,76
+209,rating,"('76', '48')"
+210,user,77
+211,user,78
+212,user,79
+213,rating,"('79', '6')"
+214,user,80
+215,user,81
+216,rating,"('81', '32')"
+217,rating,"('81', '47')"
+218,user,82
+219,user,83
+220,user,84
+221,user,85
+222,user,86
+223,user,87
+224,user,88
+225,user,89
+226,user,90
+227,user,91
+228,user,92
+229,user,93
+230,rating,"('93', '110')"
+231,user,94
+232,rating,"('94', '2')"
+233,rating,"('94', '44')"
+234,rating,"('94', '17')"
+235,rating,"('94', '95')"
+236,user,95
+237,user,96
+238,user,97
+239,user,98
+240,user,99
+241,user,100
+242,user,101
+243,user,102
+244,rating,"('102', '3')"
+245,rating,"('102', '23')"
+246,rating,"('102', '6')"
+247,user,103
+248,user,104
+249,user,105
+250,user,106
+251,user,107
+252,rating,"('107', '111')"
+253,user,108
+254,user,109
+255,rating,"('109', '104')"
+256,user,110
+257,rating,"('110', '111')"
+258,user,111
+259,user,112
+260,user,113
+261,user,114
+262,user,115
+263,user,116
+264,user,117
+265,user,118
+266,rating,"('118', '25')"
+267,user,119
+268,user,120
+269,rating,"('120', '12')"
+270,user,121
+271,rating,"('121', '5')"
+272,rating,"('121', '22')"
+273,user,122
+274,user,123
+275,user,124
+276,user,125
+277,user,126
+278,rating,"('126', '34')"
+279,user,127
+280,user,128
+281,user,129
+282,user,130
+283,rating,"('130', '110')"
+284,user,131
+285,user,132
+286,user,133
+287,user,134
+288,user,135
+289,user,136
+290,user,137
+291,user,138
+292,user,139
+293,user,140
+294,user,141
+295,user,142
+296,rating,"('142', '95')"
+297,user,143
+298,user,144
+299,rating,"('144', '48')"
+300,user,145
+301,rating,"('145', '111')"
+302,rating,"('145', '50')"
+303,user,146
+304,user,147
+305,user,148
+306,user,149
+307,rating,"('149', '32')"
+308,user,150
+309,rating,"('150', '79')"
+310,rating,"('150', '52')"
+311,user,151
+312,rating,"('151', '92')"
+313,user,152
+314,user,153
+315,user,154
+316,user,155
+317,user,156
+318,user,157
+319,user,158
+320,user,159
+321,user,160
+322,user,161
+323,user,162
+324,rating,"('162', '4')"
+325,user,163
+326,user,164
+327,user,165
+328,user,166
+329,rating,"('166', '6')"
+330,rating,"('166', '17')"
+331,user,167
+332,user,168
+333,user,169
+334,user,170
+335,rating,"('170', '5')"
+336,user,171
+337,user,172
+338,user,173
+339,rating,"('173', '17')"
+340,user,174
+341,user,175
+342,user,176
+343,rating,"('176', '47')"
+344,rating,"('176', '10')"
+345,user,177
+346,user,178
+347,user,179
+348,rating,"('179', '52')"
+349,rating,"('179', '65')"
+350,user,180
+351,user,181
+352,rating,"('181', '86')"
+353,rating,"('181', '61')"
+354,user,182
+355,user,183
+356,user,184
+357,user,185
+358,user,186
+359,rating,"('186', '10')"
+360,user,187
+361,user,188
+362,user,189
+363,user,190
+364,user,191
+365,rating,"('191', '47')"
+366,rating,"('191', '50')"
+367,user,192
+368,user,193
+369,user,194
+370,rating,"('194', '48')"
+371,user,195
+372,user,196
+373,rating,"('196', '104')"
+374,user,197
+375,user,198
+376,user,199
+377,user,200
+378,user,201
+379,user,202
+380,user,203
+381,user,204
+382,user,205
+383,user,206
+384,user,207
+385,rating,"('207', '100')"
+386,user,208
+387,user,209
+388,user,210
+389,user,211
+390,user,212
+391,user,213
+392,user,214
+393,rating,"('214', '83')"
+394,rating,"('214', '66')"
+395,user,215
+396,user,216
+397,user,217
+398,user,218
+399,user,219
+400,user,220
+401,user,221
+402,user,222
+403,user,223
+404,user,224
+405,rating,"('224', '39')"
+406,user,225
+407,user,226
+408,user,227
+409,user,228
+410,rating,"('228', '50')"
+411,user,229
+412,rating,"('229', '36')"
+413,user,230
+414,user,231
+415,user,232
+416,user,233
+417,user,234
+418,user,235
+419,user,236
+420,user,237
+421,rating,"('237', '32')"
+422,user,238
+423,user,239
+424,user,240
+425,user,241
+426,rating,"('241', '47')"
+427,user,242
+428,rating,"('242', '39')"
+429,rating,"('242', '111')"
+430,user,243
+431,rating,"('243', '112')"
+432,user,244
+433,user,245
+434,user,246
+435,user,247
+436,user,248
+437,user,249
+438,user,250
+439,user,251
+440,rating,"('251', '47')"
+441,user,252
+442,user,253
+443,user,254
+444,rating,"('254', '50')"
+445,user,255
+446,user,256
+447,user,257
+448,rating,"('257', '112')"
+449,user,258
+450,user,259
+451,user,260
+452,user,261
+453,user,262
+454,user,263
+455,user,264
+456,user,265
+457,user,266
+458,rating,"('266', '24')"
+459,user,267
+460,rating,"('267', '29')"
+461,user,268
+462,user,269
+463,rating,"('269', '81')"
+464,rating,"('269', '63')"
+465,user,270
+466,rating,"('270', '9')"
+467,rating,"('270', '79')"
+468,user,271
+469,user,272
+470,user,273
+471,user,274
+472,user,275
+473,user,276
+474,user,277
+475,user,278
+476,rating,"('278', '50')"
+477,user,279
+478,user,280
+479,user,281
+480,user,282
+481,user,283
+482,rating,"('283', '104')"
+483,user,284
+484,user,285
+485,user,286
+486,user,287
+487,rating,"('287', '29')"
+488,user,288
+489,user,289
+490,user,290
+491,rating,"('290', '24')"
+492,user,291
+493,user,292
+494,user,293
+495,user,294
+496,user,295
+497,rating,"('295', '50')"
+498,user,296
+499,user,297
+500,user,298
+501,user,299
+502,user,300
+503,user,301
+504,user,302
+505,user,303
+506,rating,"('303', '32')"
+507,user,304
+508,rating,"('304', '105')"
+509,rating,"('304', '81')"
+510,user,305
+511,user,306
+512,user,307
+513,user,308
+514,user,309
+515,user,310
+516,user,311
+517,rating,"('311', '40')"
+518,user,312
+519,user,313
+520,user,314
+521,user,315
+522,user,316
+523,user,317
+524,rating,"('317', '97')"
+525,user,318
+526,user,319
+527,user,320
+528,user,321
+529,rating,"('321', '3')"
+530,rating,"('321', '24')"
+531,user,322
+532,user,323
+533,user,324
+534,user,325
+535,user,326
+536,user,327
+537,rating,"('327', '104')"
+538,user,328
+539,user,329
+540,user,330
+541,user,331
+542,user,332
+543,user,333
+544,user,334
+545,user,335
+546,rating,"('335', '50')"
+547,user,336
+548,user,337
+549,rating,"('337', '27')"
+550,user,338
+551,user,339
+552,user,340
+553,rating,"('340', '10')"
+554,user,341
+555,user,342
+556,user,343
+557,user,344
+558,user,345
+559,user,346
+560,rating,"('346', '47')"
+561,user,347
+562,rating,"('347', '1')"
+563,rating,"('347', '2')"
+564,rating,"('347', '11')"
+565,user,348
+566,user,349
+567,user,350
+568,user,351
+569,user,352
+570,user,353
+571,rating,"('353', '69')"
+572,user,354
+573,rating,"('354', '70')"
+574,user,355
+575,user,356
+576,user,357
+577,user,358
+578,user,359
+579,user,360
+580,user,361
+581,user,362
+582,user,363
+583,user,364
+584,rating,"('364', '9')"
+585,user,365
+586,user,366
+587,user,367
+588,user,368
+589,user,369
+590,rating,"('369', '47')"
+591,user,370
+592,user,371
+593,user,372
+594,user,373
+595,rating,"('373', '60')"
+596,user,374
+597,user,375
+598,rating,"('375', '32')"
+599,user,376
+600,user,377
+601,rating,"('377', '34')"
+602,user,378
+603,user,379
+604,rating,"('379', '19')"
+605,rating,"('379', '21')"
+606,rating,"('379', '34')"
+607,user,380
+608,user,381
+609,user,382
+610,user,383
+611,user,384
+612,user,385
+613,user,386
+614,rating,"('386', '20')"
+615,user,387
+616,user,388
+617,user,389
+618,rating,"('389', '65')"
+619,rating,"('389', '9')"
+620,user,390
+621,user,391
+622,user,392
+623,user,393
+624,user,394
+625,rating,"('394', '50')"
+626,rating,"('394', '34')"
+627,user,395
+628,user,396
+629,rating,"('396', '50')"
+630,rating,"('396', '1')"
+631,user,397
+632,user,398
+633,user,399
+634,user,400
+635,rating,"('400', '6')"
+636,user,401
+637,user,402
+638,rating,"('402', '47')"
+639,user,403
+640,user,404
+641,user,405
+642,user,406
+643,user,407
+644,user,408
+645,user,409
+646,user,410
+647,rating,"('410', '3')"
+648,user,411
+649,rating,"('411', '7')"
+650,user,412
+651,user,413
+652,user,414
+653,user,415
+654,user,416
+655,user,417
+656,user,418
+657,user,419
+658,user,420
+659,user,421
+660,user,422
+661,user,423
+662,rating,"('423', '110')"
+663,user,424
+664,rating,"('424', '111')"
+665,user,425
+666,user,426
+667,user,427
+668,rating,"('427', '110')"
+669,user,428
+670,user,429
+671,rating,"('429', '48')"
+672,rating,"('429', '60')"
+673,user,430
+674,user,431
+675,user,432
+676,user,433
+677,user,434
+678,user,435
+679,user,436
+680,user,437
+681,user,438
+682,user,439
+683,user,440
+684,user,441
+685,user,442
+686,user,443
+687,user,444
+688,user,445
+689,rating,"('445', '111')"
+690,user,446
+691,rating,"('446', '45')"
+692,user,447
+693,user,448
+694,user,449
+695,user,450
+696,user,451
+697,user,452
+698,user,453
+699,user,454
+700,rating,"('454', '111')"
+701,user,455
+702,rating,"('455', '62')"
+703,user,456
+704,user,457
+705,user,458
+706,rating,"('458', '2')"
+707,rating,"('458', '39')"
+708,user,459
+709,user,460
+710,user,461
+711,user,462
+712,user,463
+713,user,464
+714,user,465
+715,user,466
+716,user,467
+717,rating,"('467', '58')"
+718,user,468
+719,rating,"('468', '47')"
+720,rating,"('468', '111')"
+721,rating,"('468', '39')"
+722,user,469
+723,user,470
+724,rating,"('470', '6')"
+725,rating,"('470', '14')"
+726,rating,"('470', '26')"
+727,user,471
+728,user,472
+729,user,473
+730,user,474
+731,user,475
+732,user,476
+733,rating,"('476', '13')"
+734,rating,"('476', '45')"
+735,user,477
+736,user,478
+737,user,479
+738,user,480
+739,user,481
+740,user,482
+741,user,483
+742,user,484
+743,user,485
+744,rating,"('485', '110')"
+745,rating,"('485', '10')"
+746,user,486
+747,user,487
+748,user,488
+749,user,489
+750,user,490
+751,user,491
+752,user,492
+753,user,493
+754,user,494
+755,user,495
+756,user,496
+757,user,497
+758,rating,"('497', '111')"
+759,user,498
+760,rating,"('498', '62')"
+761,rating,"('498', '104')"
+762,user,499
+763,user,500
+764,user,501
+765,rating,"('501', '103')"
+766,user,502
+767,user,503
+768,user,504
+769,user,505
+770,rating,"('505', '47')"
+771,user,506
+772,rating,"('506', '27')"
+773,user,507
+774,rating,"('507', '39')"
+775,rating,"('507', '34')"
+776,user,508
+777,user,509
+778,user,510
+779,user,511
+780,user,512
+781,rating,"('512', '2')"
+782,user,513
+783,rating,"('513', '110')"
+784,user,514
+785,user,515
+786,rating,"('515', '50')"
+787,user,516
+788,user,517
+789,user,518
+790,user,519
+791,user,520
+792,user,521
+793,rating,"('521', '103')"
+794,rating,"('521', '43')"
+795,rating,"('521', '29')"
+796,user,522
+797,user,523
+798,user,524
+799,rating,"('524', '21')"
+800,rating,"('524', '12')"
+801,user,525
+802,user,526
+803,user,527
+804,user,528
+805,user,529
+806,rating,"('529', '65')"
+807,user,530
+808,rating,"('530', '11')"
+809,user,531
+810,user,532
+811,user,533
+812,user,534
+813,user,535
+814,user,536
+815,user,537
+816,user,538
+817,user,539
+818,user,540
+819,rating,"('540', '47')"
+820,user,541
+821,user,542
+822,user,543
+823,user,544
+824,rating,"('544', '40')"
+825,rating,"('544', '68')"
+826,user,545
+827,user,546
+828,user,547
+829,user,548
+830,user,549
+831,user,550
+832,user,551
+833,user,552
+834,user,553
+835,user,554
+836,user,555
+837,user,556
+838,user,557
+839,user,558
+840,user,559
+841,rating,"('559', '76')"
+842,rating,"('559', '66')"
+843,user,560
+844,user,561
+845,user,562
+846,user,563
+847,user,564
+848,user,565
+849,rating,"('565', '32')"
+850,user,566
+851,rating,"('566', '7')"
+852,user,567
+853,user,568
+854,rating,"('568', '50')"
+855,user,569
+856,rating,"('569', '10')"
+857,rating,"('569', '50')"
+858,user,570
+859,user,571
+860,user,572
+861,user,573
+862,user,574
+863,rating,"('574', '47')"
+864,rating,"('574', '110')"
+865,user,575
+866,user,576
+867,user,577
+868,user,578
+869,user,579
+870,rating,"('579', '17')"
+871,user,580
+872,user,581
+873,user,582
+874,user,583
+875,user,584
+876,rating,"('584', '60')"
+877,user,585
+878,user,586
+879,user,587
+880,user,588
+881,rating,"('588', '22')"
+882,rating,"('588', '3')"
+883,user,589
+884,user,590
+885,user,591
+886,user,592
+887,user,593
+888,user,594
+889,user,595
+890,user,596
+891,user,597
+892,user,598
+893,user,599
+894,user,600
+895,user,601
+896,rating,"('601', '47')"
+897,user,602
+898,rating,"('602', '29')"
+899,user,603
+900,user,604
+901,rating,"('604', '104')"
+902,user,605
+903,user,606
+904,user,607
+905,user,608
+906,user,609
+907,user,610
+908,rating,"('610', '70')"
