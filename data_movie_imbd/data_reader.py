@@ -44,16 +44,16 @@ def open_tsv(source, name):
 
 
 def read_rows(source, name, wanted=None, stop_after=None):
-    """Yield rows from <name>.tsv(.gz) as dicts, optionally filtering by wanted keys or stopping after a key."""
+    """Yield rows from <name>.tsv(.gz) as dicts, optionally filtering by wanted keys or stopping after a key.
+    IMDb files are sorted by id as text (tt10000000 comes before tt1000001), so keys are compared as text."""
     if stop_after is None and wanted:
-        stop_after = max(wanted, key=lambda k: (len(k), k))
-    stop_len = len(stop_after) if stop_after else 0
+        stop_after = max(wanted)
 
     with open_tsv(source, name) as f:
         header = f.readline().rstrip("\n").split("\t")
         for line in f:
             key = line[:line.find("\t")]
-            if stop_after is not None and len(key) >= stop_len and key > stop_after:
+            if stop_after is not None and key > stop_after:
                 return
             if wanted is not None and key not in wanted:
                 continue
@@ -77,6 +77,7 @@ def select_movies(source, max_movies, max_tconst):
             r["titleType"] == "movie"
             and r["isAdult"] == "0"
             and tconst in ratings
+            and int(tconst[2:]) <= max_tconst
         ):
             rating, votes = ratings[tconst]
             genres = set(value(r, "genres").split(",")) if value(r, "genres") else set()

@@ -3,3 +3,4 @@ __pycache__/
 *.html
 uv.lock
 .python-version
+data/imdb_raw/

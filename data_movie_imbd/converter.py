@@ -129,7 +129,7 @@ def group_movies(
 
     return list(groups.values())
 
-def convert(source, out_path, max_movies, max_tconst, max_nconst, max_edges_for_each_movie, max_graphs):
+def convert(source, out_path, max_movies, max_tconst, max_nconst, max_edges_for_each_movie, max_graphs, group):
 
     selected: dict[str, Movie] = select_movies(source, max_movies, max_tconst)
     credits: dict[str, list[Credit]] = load_credits(source, selected, max_nconst)
@@ -139,8 +139,10 @@ def convert(source, out_path, max_movies, max_tconst, max_nconst, max_edges_for_
         credits, max_edges_for_each_movie
     )
 
-    groups = group_movies(selected, credits)
-    sorted(groups, key=lambda group: -len(group))
+    if group == "movie":
+        groups = [[tconst] for tconst in selected]
+    else:
+        groups = sorted(group_movies(selected, credits), key=len, reverse=True)
     node_id = NodeIds()
 
     with open(out_path, "w", encoding="utf-8", newline="") as out:
@@ -167,13 +169,16 @@ def main():
     parser.add_argument("--max-tconst", type=int, default=1_500_000,
                         help="only movies with id tt<=this number (smaller = faster)")
     parser.add_argument("--max-nconst", type=int, default=5_000_000,
-                        help="skip people with id nm<=this number (smaller = faster)")
+                        help="only people with id nm<=this number (smaller = faster)")
     parser.add_argument("--max-edges-for-each-movie", type=int, default=10,
                         help="maximum number of edges for each movie")
     parser.add_argument("--max-graphs", type=int, default=3,
                     help="maximum number of graphs to generate")
+    parser.add_argument("--group", choices=("movie", "component"), default="movie",
+                        help="one graph per movie, or per group of movies sharing people (largest first)")
     args = parser.parse_args()
-    convert(args.source, args.output, args.max_movies, args.max_tconst, args.max_nconst, args.max_edges_for_each_movie, max_graphs=args.max_graphs)
+    convert(args.source, args.output, args.max_movies, args.max_tconst, args.max_nconst,
+            args.max_edges_for_each_movie, max_graphs=args.max_graphs, group=args.group)
 
 
 if __name__ == "__main__":
