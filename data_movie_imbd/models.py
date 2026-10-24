@@ -1,6 +1,6 @@
 def quote(value):
-    """Quote an attribute value; inner quotes are doubled."""
-    return '"' + str(value).replace('"', '""') + '"'
+    """Quote an attribute value; inner double quotes become single ones, which the format allows."""
+    return '"' + str(value).replace('"', "'") + '"'
 
 
 class NodeIds:
