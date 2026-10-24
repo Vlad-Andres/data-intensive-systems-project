@@ -1,6 +1,7 @@
 ## IMDb big database
 
 `data/imdb_big.txt`: 1000 graphs, one movie each, at most 50 edges per graph.
+Interactive versions (open in a browser): [html/imdb_big](../../html/imdb_big)
 
 ### Two movies (graphs 0 and 1)
 ![two movies](two-movies.png)
@@ -11,5 +12,5 @@
 ```bash
 make imdb-raw       # download the IMDb files
 make imdb           # generate data/imdb_big.txt
-make imdb-images    # regenerate these images (needs Chrome)
+make imdb-images    # regenerate these images and html (needs Chrome)
 ```
