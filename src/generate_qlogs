@@ -1,0 +1,266 @@
+#!/usr/bin/env python3
+import argparse
+import itertools
+import random
+import re
+from pathlib import Path
+
+from graph_parser import read_graph_database
+
+DATABASE_NUMBER_PATTERN = re.compile(r"DatabaseX_([1-8])(?:\.txt)?$")
+
+
+def database_number(database_path):
+    name = Path(database_path).name
+    match = DATABASE_NUMBER_PATTERN.fullmatch(name)
+    if match:
+        return int(match.group(1))
+    if name in {"imdb_big", "imdb_big.txt"}:
+        return 9
+    raise ValueError(
+        "database filename must be DatabaseX_1.txt through DatabaseX_8.txt "
+        "or imdb_big.txt so its query-log number can be determined"
+    )
+
+
+def quote_value(value):
+    if '"' in value:
+        raise ValueError(f"attribute value contains a quote and cannot be represented: {value!r}")
+    return f'"{value}"'
+
+
+def paths_in_graph(graph, max_edge_hops=3):
+    outgoing = {}
+    attributes = {}
+    simple_paths = set()
+
+    for source, label, target, is_edge in graph:
+        source_text = str(source)
+        if is_edge:
+            target_text = str(target)
+            outgoing.setdefault(source_text, []).append((label, target_text))
+            simple_paths.add(f"{source_text}.{label}.{target_text}")
+        else:
+            attributes.setdefault(source_text, []).append((label, target))
+            simple_paths.add(f"{source_text}.{label}.{quote_value(target)}")
+
+    complex_paths = set()
+    for source, edges in outgoing.items():
+        for label, target in edges:
+            for attribute, value in attributes.get(target, []):
+                complex_paths.add(
+                    f"{source}.{label}.{target}.{attribute}.{quote_value(value)}"
+                )
+
+    def extend(node, components, visited_nodes, edge_hops):
+        if edge_hops >= max_edge_hops:
+            return
+        for label, target in outgoing.get(node, []):
+            if target in visited_nodes:
+                continue
+            extended = [*components, label, target]
+            hops = edge_hops + 1
+            if hops >= 2:
+                complex_paths.add(".".join(extended))
+            for attribute, value in attributes.get(target, []):
+                complex_paths.add(
+                    ".".join([*extended, attribute, quote_value(value)])
+                )
+            extend(target, extended, visited_nodes | {target}, hops)
+
+    for source in outgoing:
+        extend(source, [source], {source}, 0)
+
+    return sorted(simple_paths), sorted(complex_paths)
+
+
+def query_candidates(graphs):
+    simple_by_graph = []
+    complex_by_graph = []
+    for graph in graphs:
+        simple, complex_paths = paths_in_graph(graph)
+        simple_by_graph.append(simple)
+        complex_by_graph.append(complex_paths)
+    return simple_by_graph, complex_by_graph
+
+
+def unique_queries(paths_by_graph, rng, count, path_count_range=(1, 1)):
+    candidate_groups = []
+    for paths in paths_by_graph:
+        if not paths:
+            continue
+        minimum = min(path_count_range[0], len(paths))
+        maximum = min(path_count_range[1], len(paths))
+        counts = list(range(minimum, maximum + 1))
+        rng.shuffle(counts)
+        graph_candidates = []
+        for path_count in counts:
+            for chosen_paths in itertools.combinations(paths, path_count):
+                graph_candidates.append(",".join(chosen_paths))
+        rng.shuffle(graph_candidates)
+        if graph_candidates:
+            candidate_groups.append(graph_candidates)
+
+    rng.shuffle(candidate_groups)
+    candidates = []
+    seen = set()
+    while candidate_groups and len(candidates) < count:
+        remaining_groups = []
+        for graph_candidates in candidate_groups:
+            while graph_candidates and graph_candidates[-1] in seen:
+                graph_candidates.pop()
+            if graph_candidates:
+                query = graph_candidates.pop()
+                seen.add(query)
+                candidates.append(query)
+                remaining_groups.append(graph_candidates)
+                if len(candidates) == count:
+                    break
+        candidate_groups = remaining_groups
+    return candidates
+
+
+def build_qlog1(simple_by_graph, rng):
+    candidates = unique_queries(simple_by_graph, rng, count=12)
+    if len(candidates) < 12:
+        raise ValueError("database does not contain enough distinct simple query patterns")
+
+    # Four one-off queries and eight queries repeated twelve times each make 100.
+    entries = candidates[:4] + [query for query in candidates[4:] for _ in range(12)]
+    rng.shuffle(entries)
+    return entries
+
+
+def build_qlog2(simple_by_graph, rng):
+    candidates = unique_queries(simple_by_graph, rng, count=300)
+    if len(candidates) < 11:
+        raise ValueError("database does not contain enough distinct simple query patterns")
+
+    entries = []
+    next_candidate = 0
+    previous_queries = []
+    for batch_index in range(5):
+        dominant = candidates[next_candidate]
+        second = candidates[next_candidate + 1]
+        next_candidate += 2
+        recurring = rng.choice(previous_queries) if previous_queries else candidates[next_candidate]
+        if not previous_queries:
+            next_candidate += 1
+
+        previous_queries.extend((dominant, second))
+        batch = [dominant] * 26 + [second] * 10 + [recurring] * 4
+        rng.shuffle(batch)
+        entries.extend(batch)
+    return entries
+
+
+def complex_query_for_graph(paths, simple_paths, rng):
+    pool = list(paths)
+    if len(pool) < 3:
+        pool.extend(path for path in simple_paths if path not in pool)
+    if not pool:
+        return None
+    count = min(len(pool), rng.randint(3, 6))
+    return ",".join(rng.sample(pool, count))
+
+
+def build_qlog3(complex_by_graph, simple_by_graph, rng):
+    queries = []
+    seen = set()
+    graph_indexes = list(range(len(complex_by_graph)))
+    rng.shuffle(graph_indexes)
+    for index in graph_indexes:
+        query = complex_query_for_graph(
+            complex_by_graph[index], simple_by_graph[index], rng
+        )
+        if query is not None and query not in seen:
+            queries.append(query)
+            seen.add(query)
+        if len(queries) == 20:
+            return queries
+    raise ValueError("database does not contain enough graphs for 20 distinct complex queries")
+
+
+def build_qlog4(complex_by_graph, simple_by_graph, rng):
+    graph_indexes = list(range(len(complex_by_graph)))
+    rng.shuffle(graph_indexes)
+    parent_queries = []
+    subqueries = []
+    used_parents = set()
+
+    for index in graph_indexes:
+        pool = list(complex_by_graph[index])
+        pool.extend(path for path in simple_by_graph[index] if path not in pool)
+        if len(pool) < 5:
+            continue
+
+        parent_paths = rng.sample(pool, min(8, len(pool)))
+        parent = ",".join(parent_paths)
+        if parent in used_parents:
+            continue
+
+        possible_subsets = [
+            subset
+            for size in range(2, min(4, len(parent_paths) - 1) + 1)
+            for subset in itertools.combinations(parent_paths, size)
+        ]
+        rng.shuffle(possible_subsets)
+        child_queries = [",".join(subset) for subset in possible_subsets[:9]]
+        if len(child_queries) < 9:
+            continue
+
+        used_parents.add(parent)
+        parent_queries.append(parent)
+        subqueries.extend(child_queries)
+        if len(parent_queries) == 5:
+            return parent_queries + subqueries
+
+    raise ValueError(
+        "database does not contain five graphs with enough paths to create "
+        "five large queries and 45 distinct subqueries"
+    )
+
+
+def generate_query_logs(database_path, seed=1):
+    database_path = Path(database_path)
+    db_number = database_number(database_path)
+    graphs = read_graph_database(database_path)
+    if not graphs:
+        raise ValueError("database contains no graphs")
+
+    rng = random.Random(seed)
+    simple_by_graph, complex_by_graph = query_candidates(graphs)
+    logs = [
+        build_qlog1(simple_by_graph, rng),
+        build_qlog2(simple_by_graph, rng),
+        build_qlog3(complex_by_graph, simple_by_graph, rng),
+        build_qlog4(complex_by_graph, simple_by_graph, rng),
+    ]
+    output_directory = Path(__file__).resolve().parent.parent / "data"
+    output_paths = []
+    for log_type, queries in enumerate(logs, start=1):
+        output_path = output_directory / f"QLog{db_number}_DB_{log_type}.txt"
+        output_path.write_text("\n".join(queries) + "\n", encoding="utf-8")
+        output_paths.append(output_path)
+    return output_paths
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Generate four query logs from paths found in one graph database."
+    )
+    parser.add_argument("database_path", help="DatabaseX_1.txt through DatabaseX_8.txt, or imdb_big.txt")
+    parser.add_argument("--seed", type=int, default=1, help="seed for reproducible query-log generation")
+    arguments = parser.parse_args()
+
+    try:
+        output_paths = generate_query_logs(arguments.database_path, arguments.seed)
+    except (OSError, ValueError) as error:
+        parser.error(str(error))
+
+    for output_path in output_paths:
+        print(f"Wrote {output_path}")
+
+
+if __name__ == "__main__":
+    main()
