@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import argparse
 import itertools
 import random
@@ -239,7 +238,7 @@ def generate_query_logs(database_path, seed=1):
     output_directory = Path(__file__).resolve().parent.parent / "data"
     output_paths = []
     for log_type, queries in enumerate(logs, start=1):
-        output_path = output_directory / f"QLog{db_number}_DB_{log_type}.txt"
+        output_path = output_directory / f"QLog{db_number}_{log_type}.txt"
         output_path.write_text("\n".join(queries) + "\n", encoding="utf-8")
         output_paths.append(output_path)
     return output_paths
