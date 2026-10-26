@@ -12,36 +12,31 @@ TRIPLE_PATTERN_REGEX_GRAPH = re.compile(
     r'("(?:\\.|[^"\\])*"|[^,<>]+)>'
 )
 
-TRIPLE_PATTERN_REGEX_QUERY = re.compile(
-    r'([^,.]+)\.([^,.]+)\.'
-    r'("(?:\\.|[^"\\])*"|[^,.]+)'
-)
+PATH_SPLIT = re.compile(r',(?=(?:[^"]*"[^"]*")*[^"]*$)')
 
-def parse_line(line: str, line_type: str):
-    if line_type == "graph":
-        pattern = TRIPLE_PATTERN_REGEX_GRAPH
-    else:
-        pattern = TRIPLE_PATTERN_REGEX_QUERY
+TOKEN = re.compile(r'"(?:\\.|[^"\\])*"|[^."]+')
 
+def classify_object(object_: str) -> tuple[str, str]:
+    if len(object_) >= 2 and object_[0] == '"' and object_[-1] == '"':
+        return object_[1:-1], "attribute"
+    return object_, "relation"
+
+def parse_graph_line(line: str) -> list[tuple]:
     tuples = []
+    for subject, predicate, object_ in TRIPLE_PATTERN_REGEX_GRAPH.findall(line):
+        object_, tuple_type = classify_object(object_)
+        tuples.append((subject, predicate, object_, tuple_type))
+    return tuples
 
-    for order_index, match in enumerate(pattern.finditer(line)):
-        subject = match.group(1)
-        predicate = match.group(2)
-        object_ = match.group(3)
+def parse_query_line(line: str) ->list[tuple]:
+    tuples = []
+    for path_id, path in enumerate(PATH_SPLIT.split(line.strip())):
+        tokens = TOKEN.findall(path)
 
-        # Determine if it is a attribute or relation based on if it has quotes or not
-        if object_.startswith('"') and object_.endswith('"'):
-            tuple_type = "attribute"
-            object_ = object_[1:-1]  # Remove the quotes
-        else:
-            tuple_type = "relation"
-
-        if line_type == "graph":
-            tuples.append((subject, predicate, object_, tuple_type))
-        elif line_type == "query":
-            tuples.append((order_index,subject, predicate, object_, tuple_type))
-
+        for path_order, i in enumerate(range(0, len(tokens) - 2, 2), start=1):
+            subject, predicate, object_ = tokens[i:i + 3]
+            object_, tuple_type = classify_object(object_)
+            tuples.append((path_id, path_order, subject, predicate, object_, tuple_type))
     return tuples
 
 def create_graphs_dataframe(spark: SparkSession, file_path: str) -> DataFrame:
@@ -62,7 +57,7 @@ def create_graphs_dataframe(spark: SparkSession, file_path: str) -> DataFrame:
                     tuple_type
                 )
                 for  subject, predicate, obj, tuple_type
-                in parse_line(line_index[0], "graph")
+                in parse_graph_line(line_index[0])
             ]
         )
     )
@@ -90,21 +85,23 @@ def create_query_log(spark: SparkSession, file_path: str) -> DataFrame:
             lambda line_index: [
                 (
                     line_index[1],
-                    order_index,
+                    path_id,
+                    path_order,
                     subject,
                     predicate,
                     obj,
                     tuple_type
                 )
-                for order_index,subject, predicate, obj, tuple_type
-                in parse_line(line_index[0], "query")
+                for path_id,path_order,subject, predicate, obj, tuple_type
+                in parse_query_line(line_index[0])
             ]
         )
     )
 
     query_schema = StructType([
         StructField("query_id", LongType(), False),
-        StructField("query_order", LongType(), False),
+        StructField("path_id", LongType(), False),
+        StructField("path_order", LongType(), False),
         StructField("subject", StringType(), False),
         StructField("predicate", StringType(), False),
         StructField("object", StringType(), False),

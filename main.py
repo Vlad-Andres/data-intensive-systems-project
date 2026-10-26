@@ -49,10 +49,15 @@ if __name__ == "__main__":
     importance_threshold = args.importance_threshold
     measure_arguments = args.measure_arguments
 
-    spark = SparkSession.builder.appName("spark_session").getOrCreate()
+    spark = SparkSession.builder.master("local[1]") .appName("spark_session").getOrCreate()
 
     graphs_df = create_graphs_dataframe(spark, str(graph_file))
     query_df: DataFrame = create_query_log(spark, str(query_log_file))
+
+    print("Graphs DataFrame:")
+    graphs_df.show(50, truncate=False)
+    print("Query DataFrame:")
+    query_df.show(100, truncate=False)
 
     if importance_measure_function_name == "measure_graph_importance_based_on_query_coverage_and_query_size":
         args = (graphs_df, query_df)

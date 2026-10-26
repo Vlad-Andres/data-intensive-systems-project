@@ -67,7 +67,7 @@ def measure_graph_importance_based_on_query_coverage(
         graphs_matches
         .groupBy("graph_id")
         .agg(
-            F.count("query_order").alias("importance")
+            F.count("query_path_id").alias("importance")
         )
     )
 
@@ -110,7 +110,7 @@ def measure_graph_importance_based_on_query_coverage_and_query_size(
         query_df
         .groupBy("query_id")
         .agg(
-            F.count("query_order").alias("query_size")
+            F.count("path_id").alias("query_size")
         )
         .select(
             "query_id",
@@ -136,7 +136,8 @@ def measure_graph_importance_based_on_query_coverage_and_query_size(
         .select(
             "graph_id",
             "query_id",
-            "query_order",
+            "query_path_id",
+            "query_path_order",
             "query_importance",
         )
     )

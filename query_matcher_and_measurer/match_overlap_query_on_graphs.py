@@ -35,7 +35,8 @@ def match_graphs_with_every_sub_query(graph_df: DataFrame, query_df: DataFrame) 
             F.col("g.object_type").alias("graph_object_type"),
 
             F.col("q.query_id").alias("query_id"),
-            F.col("q.query_order").alias("query_order"),
+            F.col("q.path_id").alias("query_path_id"),
+            F.col("q.path_order").alias("query_path_order"),
 
             F.col("q.subject").alias("query_subject"),
             F.col("q.predicate").alias("query_predicate"),
