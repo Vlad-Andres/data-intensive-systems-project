@@ -5,7 +5,7 @@ from query_matcher_and_measurer.calculate_query_saticfaction import calculate_qu
 from  query_matcher_and_measurer.match_overlap_query_on_graphs import match_graphs_with_every_sub_query
 from query_matcher_and_measurer.calculate_importance_for_graphs import measure_graph_importance_based_on_exsisting_paths_and_query_size, measure_graph_importance_based_on_query_exsisting_paths,measure_graph_importance_based_on_full_query_coverage,measure_graph_based_on_partial_query_coverage
 from query_matcher_and_measurer.text_to_dataframe_converter import create_graphs_dataframe, create_query_log
-from query_matcher_and_measurer.best_graph_selectoin_by_importance_threshold import select_best_graphs_by_importance_threshold
+from query_matcher_and_measurer.best_graph_selection_by_importance_threshold import select_best_graphs_by_importance_threshold
 from pyspark.sql import DataFrame, SparkSession
 from pathlib import Path
 
@@ -44,8 +44,8 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description=" Select best graphs based on importance measure and threshold.")
     parser.add_argument("--graph_file", type=str, default="data/DatabaseX_1.txt", help="Path to the graph text file.")
-    parser.add_argument("--query_log_file", type=str, default="data/QLog1_DB_4.txt", help="Path to the query log text file.")
-    parser.add_argument("--output_file", type=str, default="data/selected_graphs.txt", help="Path to save the new database file with selected graphs.")
+    parser.add_argument("--query_log_file", type=str, default="data/QLog1_4.txt", help="Path to the query log text file.")
+    parser.add_argument("--output_file", type=str, default="data/DatabaseX_1_selected.txt", help="Path to save the new database file with selected graphs.")
     parser.add_argument("--importance_measure_function", type=str, default="measure_graph_based_on_partial_query_coverage", help="Importance measure function to use.")
     parser.add_argument("--importance_threshold", type=float, default=0.5, help="Importance threshold for selecting graphs.")
     parser.add_argument("--measure_arguments", type=tuple, default=(0.1,), help="Additional arguments for the importance measure function.")
