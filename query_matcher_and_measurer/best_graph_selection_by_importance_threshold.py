@@ -1,5 +1,3 @@
-from pyspark.pandas import DataFrame
-
 def select_best_graphs_by_importance_threshold(graphs: dict[int, float], importance_threshold: float):
     """
     Select the best graphs based on importance threshold.

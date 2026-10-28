@@ -28,19 +28,14 @@ def match_graphs_with_every_sub_query(graph_df: DataFrame, query_df: DataFrame) 
         )
         .select(
             F.col("g.graph_id").alias("graph_id"),
-
-            F.col("g.subject").alias("graph_subject"),
-            F.col("g.predicate").alias("graph_predicate"),
-            F.col("g.object").alias("graph_object"),
-            F.col("g.object_type").alias("graph_object_type"),
-
             F.col("q.query_id").alias("query_id"),
             F.col("q.path_id").alias("query_path_id"),
             F.col("q.path_order").alias("query_path_order"),
-
-            F.col("q.subject").alias("query_subject"),
-            F.col("q.predicate").alias("query_predicate"),
-            F.col("q.object").alias("query_object"),
-            F.col("q.object_type").alias("query_object_type"),
+            F.struct(
+                F.col("g.subject").alias("subject"),
+                F.col("g.predicate").alias("predicate"),
+                F.col("g.object").alias("object"),
+                F.col("g.object_type").alias("object_type"),
+            ).alias("match_data"),
         )
     )

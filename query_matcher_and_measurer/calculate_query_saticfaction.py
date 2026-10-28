@@ -20,42 +20,42 @@ def calculate_query_satisfaction(matches: DataFrame, query_df: DataFrame) -> Dat
         .agg(F.countDistinct("path_order").alias("total_path_transitions"))
     )
 
+    query_n_paths = (
+        query_path_counts
+        .groupBy("query_id")
+        .agg(F.count("*").alias("n_paths"))
+    )
+
     matched_path_counts = (
-        matches.groupBy("query_id","query_path_id")
+        matches.groupBy("graph_id","query_id","query_path_id")
         .agg(F.countDistinct("query_path_order").alias("total_matched_path_transitions"))
     )
 
     path_coverage_df = (
-        query_path_counts
-        .join(
-            matched_path_counts,
-            on=["query_id", "query_path_id"],
-            how="left"
-        )
-        .fillna(
-            0,
-            subset=["total_matched_path_transitions"]
-        )
+        matched_path_counts
+        .join(query_path_counts, ["query_id", "query_path_id"], "inner")
         .withColumn(
             "path_coverage",
-            F.col("total_matched_path_transitions")
-            / F.col("total_path_transitions")
+            F.col("total_matched_path_transitions") / F.col("total_path_transitions"),
         )
     )
 
     query_coverage_df = (
         path_coverage_df
-        .groupBy("query_id")
-        .agg(
-            F.avg("path_coverage").alias("query_coverage")
-        )
-)   
+        .groupBy("graph_id", "query_id")
+        .agg(F.sum("path_coverage").alias("cov_sum"))
+        .join(query_n_paths, "query_id")
+        .withColumn("query_coverage", F.col("cov_sum") / F.col("n_paths"))
+        .select("graph_id", "query_id", "query_coverage")
+    )
 
     return (
             matches
             .join(
                 path_coverage_df,
                 (
+                    matches["graph_id"] == path_coverage_df["graph_id"]
+                ) & (
                     matches["query_id"] == path_coverage_df["query_id"]
                 ) & (
                     matches["query_path_id"] == path_coverage_df["query_path_id"]
