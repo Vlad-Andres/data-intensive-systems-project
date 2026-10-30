@@ -54,7 +54,7 @@ if __name__ == "__main__":
     importance_measure_function_name = args.importance_measure_function
     importance_threshold = args.importance_threshold
 
-    spark = SparkSession.builder.master("local[*]") .appName("spark_session").getOrCreate()
+    spark = SparkSession.builder.master("local[*]").appName("spark_session").getOrCreate()
 
     graphs_df = create_graphs_dataframe(spark, str(graph_file))
     query_df: DataFrame = create_query_log(spark, str(query_log_file))
@@ -84,5 +84,30 @@ if __name__ == "__main__":
         best_selected_graph_ids,
         str(output_file)
     )
+
+# one db
+    # for each querie_Log_x:
+        # use 50% of the querie_Log to query_distribution_anylsis
+
+        # apply a thershold on query_distribution_anylsis 
+            # add for every query how much there are dublicates with certain dublicate  threshold (threshold how much are they the same)
+            # and go from highest number in list to lowest number from middle to outside (sorting list to hopefully get gaushian distribution)
+            # for each value frim that list draw a new distribution of guasian between 0-1, 
+            # and see the difference between the max and the second max are above or below a threshold.
+            # if above there is a difference, the queries are functional and thus there is otherwise they are semantic. if there isnt a second value it is functional.
+
+        # query_distribution_anylsis returns 
+            # functional : base it on query log reduction
+            # semantic: base on the graph reduction
+
+        # reduced graph
+
+        # test the reduced graph with:
+            # 50% of query log_x
+            # [log_x + 1, log_x + 2, log_x + 3]
+
+    # return method + tests coverage
+
+
 
     spark.stop()

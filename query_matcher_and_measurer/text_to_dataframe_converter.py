@@ -43,8 +43,6 @@ def create_graphs_dataframe(spark: SparkSession, file_path: str) -> DataFrame:
 
     lines = spark.sparkContext.textFile(file_path)
 
-    print(f"Number of lines in the file: {lines.count()}")  # Debugging line
-
     graphs = (
         lines.zipWithIndex()
         .flatMap(
