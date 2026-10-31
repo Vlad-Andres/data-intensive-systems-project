@@ -1,12 +1,15 @@
 import argparse
+import collections
 import itertools
 import random
 import re
 from pathlib import Path
 
 from graph_parser import read_graph_database
+from QLog_satisfaction import NODE_ID_PATTERN, parse_query
 
 DATABASE_NUMBER_PATTERN = re.compile(r"DatabaseX_([1-8])(?:\.txt)?$")
+MIN_PERSON_APPEARANCES = 2
 
 
 def database_number(database_path):
@@ -26,6 +29,19 @@ def quote_value(value):
     if '"' in value:
         raise ValueError(f"attribute value contains a quote and cannot be represented: {value!r}")
     return f'"{value}"'
+
+
+def replace_node_ids_with_variables(query):
+    variable_by_node_id = {}
+    variable_paths = []
+    for components in parse_query(query):
+        variable_components = []
+        for index, component in enumerate(components):
+            if index % 2 == 0 and NODE_ID_PATTERN.fullmatch(component):
+                component = variable_by_node_id.setdefault(component, f"X{len(variable_by_node_id) + 1}")
+            variable_components.append(component)
+        variable_paths.append(".".join(variable_components))
+    return ",".join(variable_paths)
 
 
 def paths_in_graph(graph, max_edge_hops=3):
@@ -74,13 +90,14 @@ def paths_in_graph(graph, max_edge_hops=3):
 
 
 def query_candidates(graphs):
+    appearances = person_appearances(graphs)
     simple_by_graph = []
-    complex_by_graph = []
+    conditions_by_graph = []
     for graph in graphs:
-        simple, complex_paths = paths_in_graph(graph)
+        simple, _ = paths_in_graph(graph)
         simple_by_graph.append(simple)
-        complex_by_graph.append(complex_paths)
-    return simple_by_graph, complex_by_graph
+        conditions_by_graph.append(conditions_in_graph(graph, appearances))
+    return simple_by_graph, conditions_by_graph
 
 
 def unique_queries(paths_by_graph, rng, count, path_count_range=(1, 1)):
@@ -153,26 +170,45 @@ def build_qlog2(simple_by_graph, rng):
     return entries
 
 
-def complex_query_for_graph(paths, simple_paths, rng):
-    pool = list(paths)
-    if len(pool) < 3:
-        pool.extend(path for path in simple_paths if path not in pool)
-    if not pool:
-        return None
-    count = min(len(pool), rng.randint(3, 6))
-    return ",".join(rng.sample(pool, count))
+def person_appearances(graphs):
+    appearances = collections.Counter()
+    for graph in graphs:
+        appearances.update({value for _, label, value, is_edge in graph if label == "name" and not is_edge})
+    return appearances
 
 
-def build_qlog3(complex_by_graph, simple_by_graph, rng):
+def conditions_in_graph(graph, appearances):
+    names = {source: value for source, label, value, is_edge in graph if label == "name" and not is_edge}
+    person_conditions = []
+    movie_conditions = []
+    for source, label, target, is_edge in graph:
+        if is_edge and label in ("actedIn", "directed") and appearances[names.get(source)] >= MIN_PERSON_APPEARANCES:
+            person_conditions.append((f"{source}.name.{quote_value(names[source])}", f"{source}.{label}.{target}"))
+        elif not is_edge and label in ("genre", "released"):
+            movie_conditions.append((f"{source}.{label}.{quote_value(target)}",))
+    return person_conditions, movie_conditions
+
+
+def query_from_conditions(conditions):
+    return replace_node_ids_with_variables(",".join(path for condition in conditions for path in condition))
+
+
+def build_qlog3(conditions_by_graph, rng):
     queries = []
     seen = set()
-    graph_indexes = list(range(len(complex_by_graph)))
+    graph_indexes = list(range(len(conditions_by_graph)))
     rng.shuffle(graph_indexes)
-    for index in graph_indexes:
-        query = complex_query_for_graph(
-            complex_by_graph[index], simple_by_graph[index], rng
-        )
-        if query is not None and query not in seen:
+    for index in itertools.islice(itertools.cycle(graph_indexes), 5 * len(graph_indexes)):
+        person_conditions, movie_conditions = conditions_by_graph[index]
+        if len(queries) % 2 == 1 and person_conditions and movie_conditions:
+            movie_condition_count = rng.randint(1, min(2, len(movie_conditions)))
+            chosen = rng.sample(person_conditions, 1) + rng.sample(movie_conditions, movie_condition_count)
+        elif len(movie_conditions) >= 2:
+            chosen = rng.sample(movie_conditions, 2)
+        else:
+            continue
+        query = query_from_conditions(chosen)
+        if query not in seen:
             queries.append(query)
             seen.add(query)
         if len(queries) == 20:
@@ -180,33 +216,32 @@ def build_qlog3(complex_by_graph, simple_by_graph, rng):
     raise ValueError("database does not contain enough graphs for 20 distinct complex queries")
 
 
-def build_qlog4(complex_by_graph, simple_by_graph, rng):
-    graph_indexes = list(range(len(complex_by_graph)))
+def build_qlog4(conditions_by_graph, rng):
+    graph_indexes = list(range(len(conditions_by_graph)))
     rng.shuffle(graph_indexes)
     parent_queries = []
     subqueries = []
     used_parents = set()
 
     for index in graph_indexes:
-        pool = list(complex_by_graph[index])
-        pool.extend(path for path in simple_by_graph[index] if path not in pool)
-        if len(pool) < 5:
+        person_conditions, movie_conditions = conditions_by_graph[index]
+        people = rng.sample(person_conditions, min(2, len(person_conditions)))
+        movie_facts = rng.sample(movie_conditions, min(4 - len(people), len(movie_conditions)))
+        parent_conditions = people + movie_facts
+        if len(parent_conditions) < 4:
             continue
 
-        parent_paths = rng.sample(pool, min(8, len(pool)))
-        parent = ",".join(parent_paths)
+        parent = query_from_conditions(parent_conditions)
         if parent in used_parents:
             continue
 
         possible_subsets = [
             subset
-            for size in range(2, min(4, len(parent_paths) - 1) + 1)
-            for subset in itertools.combinations(parent_paths, size)
+            for size in (2, 3)
+            for subset in itertools.combinations(parent_conditions, size)
         ]
         rng.shuffle(possible_subsets)
-        child_queries = [",".join(subset) for subset in possible_subsets[:9]]
-        if len(child_queries) < 9:
-            continue
+        child_queries = [query_from_conditions(subset) for subset in possible_subsets[:9]]
 
         used_parents.add(parent)
         parent_queries.append(parent)
@@ -215,8 +250,8 @@ def build_qlog4(complex_by_graph, simple_by_graph, rng):
             return parent_queries + subqueries
 
     raise ValueError(
-        "database does not contain five graphs with enough paths to create "
-        "five large queries and 45 distinct subqueries"
+        "database does not contain five graphs with at least four query conditions to create "
+        "five large queries and 45 subqueries"
     )
 
 
@@ -228,12 +263,12 @@ def generate_query_logs(database_path, seed=1):
         raise ValueError("database contains no graphs")
 
     rng = random.Random(seed)
-    simple_by_graph, complex_by_graph = query_candidates(graphs)
+    simple_by_graph, conditions_by_graph = query_candidates(graphs)
     logs = [
         build_qlog1(simple_by_graph, rng),
         build_qlog2(simple_by_graph, rng),
-        build_qlog3(complex_by_graph, simple_by_graph, rng),
-        build_qlog4(complex_by_graph, simple_by_graph, rng),
+        build_qlog3(conditions_by_graph, rng),
+        build_qlog4(conditions_by_graph, rng),
     ]
     output_directory = Path(__file__).resolve().parent.parent / "data"
     output_paths = []
