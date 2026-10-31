@@ -1,10 +1,9 @@
 import argparse
 import sys
 import os
-from query_matcher_and_measurer.calculate_query_saticfaction import calculate_query_satisfaction
-from  query_matcher_and_measurer.match_overlap_query_on_graphs import match_graphs_with_every_sub_query
+from query_matcher_and_measurer.match_queries_with_variables_on_graphs import match_graphs_with_queries_using_variables
 from query_matcher_and_measurer.calculate_importance_for_graphs import measure_graph_importance_based_on_full_query_coverage,measure_graph_based_on_partial_query_coverage
-from query_matcher_and_measurer.text_to_dataframe_converter import create_graphs_dataframe, create_query_log
+from query_matcher_and_measurer.text_to_dataframe_converter import create_graphs_dataframe
 from query_matcher_and_measurer.best_graph_selection_by_importance_threshold import select_best_graphs_by_importance_threshold
 from pyspark.sql import DataFrame, SparkSession
 from pathlib import Path
@@ -57,18 +56,13 @@ if __name__ == "__main__":
     spark = SparkSession.builder.master("local[*]") .appName("spark_session").getOrCreate()
 
     graphs_df = create_graphs_dataframe(spark, str(graph_file))
-    query_df: DataFrame = create_query_log(spark, str(query_log_file))
 
     measure_function = measure_dict.get(importance_measure_function_name)
 
-    matches: DataFrame = match_graphs_with_every_sub_query(graphs_df, query_df)
+    satisfied_matches: DataFrame = match_graphs_with_queries_using_variables(spark, str(graph_file), str(query_log_file))
 
-    satisfied_matches: DataFrame = calculate_query_satisfaction(matches, query_df)
-
-    satisfied_matches = satisfied_matches.orderBy("query_id", "query_path_id")
-
-    print(f"Match table with query satisfaction calculated for each path and query (disclaimer: None matched paths are removed from the match table but do contribute to the satisfaction score):")
-    satisfied_matches.show(50, truncate=False)
+    print(f"Match table with query coverage for each graph and query (pairs with coverage 0 are left out):")
+    satisfied_matches.orderBy("query_id", "graph_id").show(50, truncate=False)
 
     graphs_importance: dict[int, float] = {}
 
