@@ -62,3 +62,10 @@ datasets:
 	$(call version,6,1000,10,high)
 	$(call version,7,1000,50,low)
 	$(call version,8,1000,50,high)
+
+toy-example:
+	uv run python main.py \
+	--graph_file data/toy_restaurants_database.txt \
+	--query_log_file data/toy_restaurants_qlog.txt \
+	--output_file data/toy_restaurants_reduced.txt \
+	--importance_threshold 0.5
