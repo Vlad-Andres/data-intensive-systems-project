@@ -1,0 +1,100 @@
+1279.title."Jurassic Park"
+1280.name."Sam Neill"
+4276.type."Person"
+16248.name."Gail Katz"
+4276.type."Person"
+512.playedRole.513
+143.type."Person"
+4276.type."Person"
+10963.inMovie.10959
+1279.title."Jurassic Park"
+143.type."Person"
+1280.name."Sam Neill"
+1279.title."Jurassic Park"
+512.playedRole.513
+4576.playedRole.4577
+10963.inMovie.10959
+512.playedRole.513
+1279.title."Jurassic Park"
+11148.roleName."Victor Sullivan"
+512.playedRole.513
+1279.title."Jurassic Park"
+512.playedRole.513
+4576.playedRole.4577
+4576.playedRole.4577
+1280.name."Sam Neill"
+4576.playedRole.4577
+143.type."Person"
+4276.type."Person"
+16248.name."Gail Katz"
+16248.name."Gail Katz"
+143.type."Person"
+143.type."Person"
+10963.inMovie.10959
+1279.title."Jurassic Park"
+143.type."Person"
+16248.name."Gail Katz"
+15295.roleName."Fook Mi"
+4576.playedRole.4577
+1279.title."Jurassic Park"
+4576.playedRole.4577
+4276.type."Person"
+10963.inMovie.10959
+512.playedRole.513
+143.type."Person"
+143.type."Person"
+512.playedRole.513
+1280.name."Sam Neill"
+16248.name."Gail Katz"
+16248.name."Gail Katz"
+4276.type."Person"
+1279.title."Jurassic Park"
+143.type."Person"
+4698.actedIn.4684
+4276.type."Person"
+4576.playedRole.4577
+143.type."Person"
+16248.name."Gail Katz"
+4576.playedRole.4577
+1280.name."Sam Neill"
+10963.inMovie.10959
+16248.name."Gail Katz"
+4276.type."Person"
+1280.name."Sam Neill"
+10963.inMovie.10959
+10963.inMovie.10959
+143.type."Person"
+4576.playedRole.4577
+16248.name."Gail Katz"
+10963.inMovie.10959
+16248.name."Gail Katz"
+1279.title."Jurassic Park"
+1279.title."Jurassic Park"
+4276.type."Person"
+10963.inMovie.10959
+10963.inMovie.10959
+1279.title."Jurassic Park"
+4576.playedRole.4577
+4576.playedRole.4577
+1280.name."Sam Neill"
+4576.playedRole.4577
+10963.inMovie.10959
+10963.inMovie.10959
+512.playedRole.513
+143.type."Person"
+1280.name."Sam Neill"
+512.playedRole.513
+512.playedRole.513
+4276.type."Person"
+16248.name."Gail Katz"
+1280.name."Sam Neill"
+1280.name."Sam Neill"
+4276.type."Person"
+1280.name."Sam Neill"
+1279.title."Jurassic Park"
+1727.type."Person"
+4276.type."Person"
+16248.name."Gail Katz"
+1280.name."Sam Neill"
+512.playedRole.513
+512.playedRole.513

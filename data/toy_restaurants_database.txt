@@ -1,0 +1,4 @@
+<1,cuisine,"Italian">,<1,serves,"Salad">,<1,serves,"Pizza">
+<2,cuisine,"Greek">,<2,serves,"Salad">,<2,serves,"Gyros">
+<3,cuisine,"Dutch">,<3,serves,"Stamppot">,<3,serves,"Soup">
+<4,cuisine,"Chinese">,<4,serves,"Soup">,<4,serves,"Dumplings">

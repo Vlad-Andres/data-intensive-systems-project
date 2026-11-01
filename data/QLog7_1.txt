@@ -1,0 +1,100 @@
+15088.genre."Family"
+10326.actedIn.10315
+8324.born."1953"
+4132.type."Person"
+12673.actedIn.12670
+12673.actedIn.12670
+12673.actedIn.12670
+10326.actedIn.10315
+15732.actedIn.15720
+4132.type."Person"
+15088.genre."Family"
+10326.actedIn.10315
+4132.type."Person"
+4727.name."Tim Blake Nelson"
+15088.genre."Family"
+4132.type."Person"
+8324.born."1953"
+11524.actedIn.16055
+15088.genre."Family"
+8324.born."1953"
+11524.actedIn.16055
+8324.born."1953"
+15088.genre."Family"
+11524.actedIn.16055
+12673.actedIn.12670
+10326.actedIn.10315
+8704.directed.8689
+8324.born."1953"
+8704.directed.8689
+4132.type."Person"
+15088.genre."Family"
+4727.name."Tim Blake Nelson"
+11524.actedIn.16055
+4727.name."Tim Blake Nelson"
+12226.released."1980"
+4132.type."Person"
+8324.born."1953"
+12673.actedIn.12670
+17951.directed.17933
+4727.name."Tim Blake Nelson"
+8324.born."1953"
+12673.actedIn.12670
+8704.directed.8689
+12673.actedIn.12670
+8704.directed.8689
+4727.name."Tim Blake Nelson"
+4132.type."Person"
+11524.actedIn.16055
+10326.actedIn.10315
+4727.name."Tim Blake Nelson"
+10326.actedIn.10315
+10326.actedIn.10315
+12673.actedIn.12670
+15088.genre."Family"
+4727.name."Tim Blake Nelson"
+15088.genre."Family"
+12673.actedIn.12670
+10326.actedIn.10315
+8324.born."1953"
+8704.directed.8689
+11524.actedIn.16055
+8704.directed.8689
+11524.actedIn.16055
+4132.type."Person"
+4727.name."Tim Blake Nelson"
+12673.actedIn.12670
+2502.born."1974"
+12673.actedIn.12670
+8704.directed.8689
+11524.actedIn.16055
+8324.born."1953"
+11524.actedIn.16055
+4132.type."Person"
+4727.name."Tim Blake Nelson"
+8324.born."1953"
+8704.directed.8689
+11524.actedIn.16055
+15088.genre."Family"
+4727.name."Tim Blake Nelson"
+4727.name."Tim Blake Nelson"
+8704.directed.8689
+10326.actedIn.10315
+8704.directed.8689
+15088.genre."Family"
+8704.directed.8689
+4132.type."Person"
+11524.actedIn.16055
+12673.actedIn.12670
+8324.born."1953"
+10326.actedIn.10315
+8704.directed.8689
+4132.type."Person"
+4727.name."Tim Blake Nelson"
+15088.genre."Family"
+10326.actedIn.10315
+4132.type."Person"
+10326.actedIn.10315
+15088.genre."Family"
+11524.actedIn.16055
+8324.born."1953"

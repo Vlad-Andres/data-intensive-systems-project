@@ -1,0 +1,7 @@
+X.serves."Salad"
+X.serves."Salad"
+X.serves."Salad"
+X.serves."Salad"
+X.serves."Gyros"
+X.serves."Stamppot"
+X.serves."Soup"

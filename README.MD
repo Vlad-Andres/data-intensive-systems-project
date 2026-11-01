@@ -33,3 +33,11 @@ make dataset-images         # images of the 8 dataset versions
 make install                # installs the project with uv
 make clean                  # removes the generated html graphs
 ```
+
+
+### Reduce Function Metric
+
+To test the query coverage of a DB (after a Reduce), run:
+```
+python3 src/QLog_satisfaction.py <DB_path> <QLog_path>
+```

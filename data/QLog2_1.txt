@@ -1,0 +1,100 @@
+2701.inMovie.2700
+4357.name."Wyck Godfrey"
+10033.born."1971"
+2669.type."Person"
+4357.name."Wyck Godfrey"
+13481.actedIn.13478
+9598.runtime."98"
+9598.runtime."98"
+7578.name."Robert Ben Garant"
+13481.actedIn.13478
+2701.inMovie.2700
+1537.actedIn.3055
+13481.actedIn.13478
+9598.runtime."98"
+13481.actedIn.13478
+7578.name."Robert Ben Garant"
+9598.runtime."98"
+1537.actedIn.3055
+2669.type."Person"
+2669.type."Person"
+10033.born."1971"
+2669.type."Person"
+1537.actedIn.3055
+2701.inMovie.2700
+16331.type."Person"
+10033.born."1971"
+10033.born."1971"
+4357.name."Wyck Godfrey"
+8205.directed.8188
+2701.inMovie.2700
+2669.type."Person"
+10033.born."1971"
+2116.type."Person"
+7578.name."Robert Ben Garant"
+9598.runtime."98"
+10033.born."1971"
+13481.actedIn.13478
+1537.actedIn.3055
+7578.name."Robert Ben Garant"
+4357.name."Wyck Godfrey"
+7578.name."Robert Ben Garant"
+2669.type."Person"
+7578.name."Robert Ben Garant"
+7578.name."Robert Ben Garant"
+7578.name."Robert Ben Garant"
+13481.actedIn.13478
+13481.actedIn.13478
+13481.actedIn.13478
+10033.born."1971"
+1537.actedIn.3055
+2669.type."Person"
+2701.inMovie.2700
+7578.name."Robert Ben Garant"
+7578.name."Robert Ben Garant"
+10033.born."1971"
+4357.name."Wyck Godfrey"
+13481.actedIn.13478
+4357.name."Wyck Godfrey"
+4357.name."Wyck Godfrey"
+2701.inMovie.2700
+4357.name."Wyck Godfrey"
+2669.type."Person"
+9598.runtime."98"
+2669.type."Person"
+4357.name."Wyck Godfrey"
+4357.name."Wyck Godfrey"
+13481.actedIn.13478
+1537.actedIn.3055
+10033.born."1971"
+2669.type."Person"
+2701.inMovie.2700
+1537.actedIn.3055
+828.type."Person"
+9598.runtime."98"
+1537.actedIn.3055
+9598.runtime."98"
+2701.inMovie.2700
+9598.runtime."98"
+2669.type."Person"
+13481.actedIn.13478
+2701.inMovie.2700
+1537.actedIn.3055
+2701.inMovie.2700
+9598.runtime."98"
+1537.actedIn.3055
+2701.inMovie.2700
+9598.runtime."98"
+4357.name."Wyck Godfrey"
+1537.actedIn.3055
+9598.runtime."98"
+13481.actedIn.13478
+7578.name."Robert Ben Garant"
+10033.born."1971"
+10033.born."1971"
+2669.type."Person"
+2701.inMovie.2700
+1537.actedIn.3055
+10033.born."1971"
+4357.name."Wyck Godfrey"
+7578.name."Robert Ben Garant"
