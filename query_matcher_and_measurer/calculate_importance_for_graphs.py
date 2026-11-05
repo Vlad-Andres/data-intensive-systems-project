@@ -98,7 +98,12 @@ def measure_graph_based_on_partial_query_coverage(
         .groupBy("graph_id", "query_id")
         .agg(F.first("query_coverage").alias("query_coverage_first_value"))
         .groupBy("graph_id")
-        .agg(F.avg("query_coverage_first_value").alias("importance"))
+        .agg(
+        F.sum("query_coverage_first_value")
+        .cast("double")
+        .alias("importance")
+        )
+
     )
 
     importance_df = add_empty_matching_graphs_back_with_0_importance(graph_df, importance_df)
