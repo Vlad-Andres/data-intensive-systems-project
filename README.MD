@@ -34,10 +34,36 @@ make install                # installs the project with uv
 make clean                  # removes the generated html graphs
 ```
 
-
 ### Reduce Function Metric
 
 To test the query coverage of a DB (after a Reduce), run:
 ```
 python3 src/QLog_satisfaction.py <DB_path> <QLog_path>
 ```
+
+### Run the reduction
+
+From the project root, run:
+
+```bash
+python3 main.py \
+  --graph_file data/DatabaseX_1.txt \
+  --query_log_file data/QLogX_1.txt \
+  --importance_threshold 0.9 \
+  --tests True
+  --performance True
+```
+
+Options:
+
+--graph_file: input graph database.
+--query_log_file: input query log; its filename should look like
+QLog<db>_<number>.txt.
+--importance_threshold: fraction of graphs to keep (default: 0.9).
+--subqueries True: use the subquery-based importance measure.
+--tests True: test the reduced database against other qlogs.
+--performance True: print timing information.
+
+!!!!
+--graph_similarity True: currently a placeholder; graph-similarity
+selection is not implemented.
