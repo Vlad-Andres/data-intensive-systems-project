@@ -31,7 +31,6 @@ def query_coverages_of_graph_line(graph_line: str, graph_id: int, paths_by_query
             coverages.append((graph_id, query_text, query_coverage))
     return coverages
 
-
 def match_graphs_with_queries_using_variables(spark: SparkSession, graph_file: str, query_log_file: str) -> DataFrame:
     """
     Calculate the coverage of every query on every graph, supporting variables in the query paths.
@@ -41,8 +40,9 @@ def match_graphs_with_queries_using_variables(spark: SparkSession, graph_file: s
     Returns:
         DataFrame: graph_id, query_id, query_coverage for every pair with a coverage above 0.
     """
-    spark.sparkContext.addPyFile(str(SOURCE_DIRECTORY / "graph_parser.py"))
-    spark.sparkContext.addPyFile(str(SOURCE_DIRECTORY / "QLog_satisfaction.py"))
+    # cause error on execution time, and i do not see why this is needed in this functionality.
+    # spark.sparkContext.addPyFile(str(SOURCE_DIRECTORY / "graph_parser.py"))
+    # spark.sparkContext.addPyFile(str(SOURCE_DIRECTORY / "QLog_satisfaction.py"))
 
     query_lines = [
         (query_id, query_text.strip())
