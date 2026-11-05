@@ -167,7 +167,9 @@ if __name__ == "__main__":
     # - The next 3 qlogs of the corresponding db, to see how well the reduced database generalizes to unseen queries.
 
 
-    # Now I want to create a new database file with only the selected graphs, and save it to the output path    
+    # Now I want to create a new database file with only the selected graphs, and save it to the output path   
+    reductions_folder = Path(__file__).parent / "data/reductions"
+    reductions_folder.mkdir(parents=True, exist_ok=True) 
     create_new_database_file_from_selected_graphs(str(graph_file),best_selected_graph_ids,str(output_file))
 
     spark_stop_start_time = time.time()
