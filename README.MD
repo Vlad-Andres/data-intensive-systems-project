@@ -43,27 +43,18 @@ python3 src/QLog_satisfaction.py <DB_path> <QLog_path>
 
 ### Run the reduction
 
-From the project root, run:
-
-```bash
-python3 main.py \
-  --graph_file data/DatabaseX_1.txt \
-  --query_log_file data/QLogX_1.txt \
-  --importance_threshold 0.9 \
-  --tests True
-  --performance True
-```
-
 Options:
 
 --graph_file: input graph database.
 --query_log_file: input query log; its filename should look like
 QLog<db>_<number>.txt.
 --importance_threshold: fraction of graphs to keep (default: 0.9).
---subqueries True: use the subquery-based importance measure.
 --tests True: test the reduced database against other qlogs.
 --performance True: print timing information.
+--graph_similarity
 
-!!!!
---graph_similarity True: currently a placeholder; graph-similarity
-selection is not implemented.
+
+Example:
+```
+python3 main.py --graph data/DatabaseX_1.txt --qlog  data/QLog1_1.txt --graph_similarity True --similarity_budget 0.2 --query_coverage distributed --graph_selection rounds --check_qlog_satisfaction False --tests True --performance True
+```

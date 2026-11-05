@@ -12,6 +12,8 @@ from pyspark.sql import DataFrame, SparkSession, functions as F
 from pathlib import Path
 from graph_parser import read_graph_database
 from QLog_satisfaction import parse_query, query_coverage
+from query_matcher_and_measurer.select_graphs_by_information_gain import select_graphs_by_information_gain
+
 
 def create_new_database_file_from_selected_graphs(graph_text_file: str, selected_graph_ids: list[int], output_file_path: str):
     """
@@ -49,10 +51,10 @@ if __name__ == "__main__":
     parser.add_argument("--graph", type=str, default="data/DatabaseX_1.txt", help="Path to the graph text file.")
     parser.add_argument("--qlog", type=str, default="data/QLog1_1.txt", help="Path to the query log text file.")
     parser.add_argument("--graph_similarity", type=bool, default=False, help="Whether to consider graph similarity in the selection process.")
+    parser.add_argument("--similarity_budget",type=float,default=0.2,help="Fraction of the selected-graph budget reserved for information-gain selection (0 to 1).")
     parser.add_argument("--query_coverage", type=str, default="full", choices=["full", "partial","distributed"], help="Query coverage type: 'full' or 'partial'. or 'distributed'" )
     parser.add_argument("--graph_selection", type=str, default="simple", choices=["simple", "rounds"], help="Selection method to use: 'simple' or 'rounds'.")
-    parser.add_argument("--importance_threshold", type=float, default=0.9, help="Threshold for selecting graphs based on importance.")
-    parser.add_argument("--check_qlog_satisfaction", type=bool, default=False, help="Whether to check if all queries are satisfied by the selected graphs.")
+    parser.add_argument("--importance_threshold", type=float, default=0.9, help="Percentage of the db we want to keep.")
     parser.add_argument("--tests", type=bool, default=False, help="Whether to run tests on the reduced database.")
     parser.add_argument("--performance", type=bool, default=False, help="Whether to measure performance of the reduction and testing functions.")
 
@@ -88,9 +90,6 @@ if __name__ == "__main__":
     graphs_df = create_graphs_dataframe(spark, str(graph_file))
     graph_creation_time = time.time() - graph_creation_start_time
 
-    # I assume that all the queries are satisfied
-    satisfied_matches: DataFrame = spark.createDataFrame([], schema="query_id: int, graph_id: int")
-
     # I want to halve the qlog file: 
     # half will be used for the selection of the best graphs, and 
     # the other half will be used to test the reducted db
@@ -106,22 +105,14 @@ if __name__ == "__main__":
     query_log_file_first_half_path.write_text("\n".join(query_log_file_first_half), encoding="utf-8")
     query_log_file_second_half_path.write_text("\n".join(query_log_file_second_half), encoding="utf-8")
 
-    # QLog Goes Into a Spark Dataframe
+    # Match Phase: Match graphs with queries
 
-    qlog_creation_start_time = time.time()
+    qlog_creation_start_time = time.time() # How much time it takes to create the match table with query coverage for each graph and query and load it onto a Spark DataFrame
     qlog_creation_time = 0
-
-    if args.check_qlog_satisfaction:
-        satisfied_matches: DataFrame = match_graphs_with_queries_using_variables(spark, str(graph_file), str(query_log_file_first_half_path))
-        qlog_creation_time = time.time() - qlog_creation_start_time
-        #print(f"Match table with query coverage for each graph and query (pairs with coverage 0 are left out):")
-        #satisfied_matches.orderBy("query_id", "graph_id").show(50, truncate=False)
-    else:
-        # If we are not checking for satisfaction, we assume all queries are satisfied by all graphs
-        query_ids = spark.createDataFrame([(i,) for i, line in enumerate(query_log_file_first_half) if line.strip()],["query_id"],)
-        graph_ids = graphs_df.select("graph_id")
-        satisfied_matches = query_ids.crossJoin(graph_ids).withColumn("query_coverage", F.lit(1.0))
-        qlog_creation_time = time.time() - qlog_creation_start_time
+    satisfied_matches: DataFrame = match_graphs_with_queries_using_variables(spark, str(graph_file), str(query_log_file_first_half_path))
+    qlog_creation_time = time.time() - qlog_creation_start_time
+    #print(f"Match table with query coverage for each graph and query (pairs with coverage 0 are left out):")
+    #satisfied_matches.orderBy("query_id", "graph_id").show(50, truncate=False)
 
 
     graphs_importance: dict[int, float] = {}
@@ -141,8 +132,6 @@ if __name__ == "__main__":
 
     graphs_importance = measure_function(graphs_df, satisfied_matches)
     importance_threshold = args.importance_threshold
-    if args.graph_similarity and int(len(graphs_df) * args.importance_threshold)<1:
-        importance_threshold = 2 / len(graphs_df)
 
     if args.graph_selection == "simple":
         best_selected_graph_ids = select_best_graphs_by_importance_threshold(graphs_importance, importance_threshold)
@@ -155,14 +144,30 @@ if __name__ == "__main__":
     #  between the 2 lowest scoring graphs, which is adding the least new information to the selected graphs,
     #  and thus is the most similar to the already selected graphs, should be removed first.
 
-    if args.graph_similarity:
-        # Implement graph similarity logic here
-        pass  # Placeholder for graph similarity logic
+    best_selected_graph_ids_copy = best_selected_graph_ids.copy()  # Create a copy to avoid modifying the original list during iteration
+
+    graph_similarity_start_time = time.time()
+    if args.graph_similarity: # Reserve % of the selected-graph budget for raw information-gain selection, and the rest for query-based selection
+        best_selected_graph_ids = select_graphs_by_information_gain(graphs_df,graphs_importance,best_selected_graph_ids,args.similarity_budget)
+        graph_similarity_time = time.time() - graph_similarity_start_time
+
+        # I print the difference between the original best_selected_graph_ids and the new best_selected_graph_ids after considering graph similarity
+        removed_graphs = set(best_selected_graph_ids_copy) - set(best_selected_graph_ids)
+        added_graphs = set(best_selected_graph_ids) - set(best_selected_graph_ids_copy)
+
+        if removed_graphs:
+            print("\n============================= Graphs removed due to similarity consideration: =============================")
+            for graph_id in sorted(removed_graphs):
+                print(f"Removed graph_id {graph_id} with importance: {graphs_importance[graph_id]}")
+
+            print("\n============================= Graphs added due to similarity consideration: =============================")
+            for graph_id in sorted(added_graphs):
+                print(f"Added graph_id {graph_id} with importance: {graphs_importance[graph_id]}")
 
     print(f"\n============================= Selected graph IDs in pick order: =============================")
     for pick_order, graph_id in enumerate(best_selected_graph_ids, start=1):
         print(f"Pick {pick_order}: graph_id {graph_id} with importance: {graphs_importance[graph_id]}")
-    print("\n============================= Removed graphs (not selected) =============================") # Just one time, to see which graphs were not selected
+    print("\n============================= Removed graphs  =============================") # Just one time, to see which graphs were not selected
     for graph_id in graphs_importance.keys():
         if graph_id not in best_selected_graph_ids:
             print(f"Removed graph_id {graph_id} with importance: {graphs_importance[graph_id]}")
@@ -216,10 +221,12 @@ if __name__ == "__main__":
         print("\n============================= Performances =============================")
         print(f"Time taken for reduction function: {reduction_func_time:.2f} seconds")
         print(f"Time taken for {args.graph_selection} selection with {args.query_coverage} query coverage time: {selection_time:.2f} seconds")
-        print(f"Time taken for graph creation: {graph_creation_time:.2f} seconds")
-        print(f"Time taken for QLog creation: {qlog_creation_time:.2f} seconds")
+        print(f"Time taken for graph loading on Spark: {graph_creation_time:.2f} seconds")
+        print(f"Time taken for QLog loading on Spark (match phase): {qlog_creation_time:.2f} seconds")
         print(f"Time taken for Spark startup: {spark_startup_time:.2f} seconds")
         print(f"Time taken for Spark shutdown: {spark_stop_time:.2f} seconds")
+        if args.graph_similarity:
+            print(f"Time taken for graph similarity selection: {graph_similarity_time:.2f} seconds")
         db_file_size = os.path.getsize(graph_file)
         reduced_db_file_size = os.path.getsize(output_file)
         print(f"Original database file size: {db_file_size / (1024*1024):.2f} MB")
