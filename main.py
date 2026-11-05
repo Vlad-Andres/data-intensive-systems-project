@@ -95,10 +95,16 @@ if __name__ == "__main__":
     # half will be used for the selection of the best graphs, and 
     # the other half will be used to test the reducted db
 
+    # I need to create a new query log file with the first half of the queries, and another with the second half of the queries
+
     query_log_file_lines = query_log_file.read_text(encoding="utf-8").splitlines()
     half_index = len(query_log_file_lines) // 2
     query_log_file_first_half = query_log_file_lines[:half_index]
     query_log_file_second_half = query_log_file_lines[half_index:]
+    query_log_file_first_half_path = query_log_file.parent / f"QLog{original_db_number}_{original_qlog_number}_first_half.txt"
+    query_log_file_second_half_path = query_log_file.parent / f"QLog{original_db_number}_{original_qlog_number}_second_half.txt"
+    query_log_file_first_half_path.write_text("\n".join(query_log_file_first_half), encoding="utf-8")
+    query_log_file_second_half_path.write_text("\n".join(query_log_file_second_half), encoding="utf-8")
 
     # QLog Goes Into a Spark Dataframe
 
@@ -106,7 +112,7 @@ if __name__ == "__main__":
     qlog_creation_time = 0
 
     if args.check_qlog_satisfaction:
-        satisfied_matches: DataFrame = match_graphs_with_queries_using_variables(spark, str(graph_file), str(query_log_file_first_half))
+        satisfied_matches: DataFrame = match_graphs_with_queries_using_variables(spark, str(graph_file), str(query_log_file_first_half_path))
         qlog_creation_time = time.time() - qlog_creation_start_time
         #print(f"Match table with query coverage for each graph and query (pairs with coverage 0 are left out):")
         #satisfied_matches.orderBy("query_id", "graph_id").show(50, truncate=False)
@@ -116,7 +122,6 @@ if __name__ == "__main__":
         graph_ids = graphs_df.select("graph_id")
         satisfied_matches = query_ids.crossJoin(graph_ids).withColumn("query_coverage", F.lit(1.0))
         qlog_creation_time = time.time() - qlog_creation_start_time
-
 
 
     graphs_importance: dict[int, float] = {}
