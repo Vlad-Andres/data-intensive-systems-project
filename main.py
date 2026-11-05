@@ -46,10 +46,11 @@ if __name__ == "__main__":
     os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 
     parser = argparse.ArgumentParser(description=" Select best graphs based on importance measure and threshold.")
-    parser.add_argument("--graph_file", type=str, default="data/DatabaseX_1.txt", help="Path to the graph text file.")
-    parser.add_argument("--query_log_file", type=str, default="data/QLog1_1.txt", help="Path to the query log text file.")
+    parser.add_argument("--graph", type=str, default="data/DatabaseX_1.txt", help="Path to the graph text file.")
+    parser.add_argument("--qlog", type=str, default="data/QLog1_1.txt", help="Path to the query log text file.")
     parser.add_argument("--graph_similarity", type=bool, default=False, help="Whether to consider graph similarity in the selection process.")
-    parser.add_argument("--subqueries", type=bool, default=False, help="Whether to consider subqueries in the selection process.")
+    parser.add_argument("--query_coverage", type=str, default="full", choices=["full", "partial","distributed"], help="Query coverage type: 'full' or 'partial'. or 'distributed'" )
+    parser.add_argument("--graph_selection", type=str, default="simple", choices=["simple", "rounds"], help="Selection method to use: 'simple' or 'rounds'.")
     parser.add_argument("--importance_threshold", type=float, default=0.9, help="Threshold for selecting graphs based on importance.")
     parser.add_argument("--check_qlog_satisfaction", type=bool, default=False, help="Whether to check if all queries are satisfied by the selected graphs.")
     parser.add_argument("--tests", type=bool, default=False, help="Whether to run tests on the reduced database.")
@@ -57,14 +58,18 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    original_db_number = args.query_log_file.split("QLog")[1].split("_")[0].split(".")[0]
-    original_qlog_number = args.query_log_file.split("QLog")[1].split("_")[1].split(".")[0]
+    original_db_number = args.qlog.split("QLog")[1].split("_")[0].split(".")[0]
+    original_qlog_number = args.qlog.split("QLog")[1].split("_")[1].split(".")[0]
 
-    graph_file = Path(__file__).parent / args.graph_file
-    query_log_file = Path(__file__).parent / args.query_log_file
+    graph_file = Path(__file__).parent / args.graph
+    query_log_file = Path(__file__).parent / args.qlog
     output_file = f"data/reductions/Database{original_db_number}_{original_qlog_number}"
-    if args.subqueries:
-        output_file += "_subqueries"
+    if args.query_coverage == "full":
+        output_file += "_full_query_coverage"
+    elif args.query_coverage == "partial":
+        output_file += "_partial_query_coverage"
+    elif args.query_coverage == "distributed":
+        output_file += "_distributed_query_coverage"
     if args.graph_similarity:
         output_file += "_graph_similarity"
     output_file += ".txt"
@@ -75,6 +80,8 @@ if __name__ == "__main__":
     spark = SparkSession.builder.master("local[*]").appName("spark_session").getOrCreate()
     spark.sparkContext.setLogLevel("ERROR") # Avoid verbose logging from Spark
     spark_startup_time = time.time() - spark_startup_start_time
+
+    reduction_start_time = time.time()
 
     # DB goes into a Spark Dataframe
     graph_creation_start_time = time.time()
@@ -115,23 +122,29 @@ if __name__ == "__main__":
     graphs_importance: dict[int, float] = {}
 
     # Determine the importance measure function based on the presence of subqueries
-
-    if args.subqueries:
-        measure_function = measure_graph_importance_based_on_current_queries
-    else:
+    measure_function = None
+    if args.query_coverage == "full":
         measure_function = measure_graph_importance_based_on_full_query_coverage
+    elif args.query_coverage == "partial":
+        measure_function = measure_graph_based_on_partial_query_coverage
+    elif args.query_coverage == "distributed":
+        measure_function = measure_graph_importance_based_on_current_queries
 
     # Calculate the importance of each graph based on the selected measure function   
     
-    greedy_selection_start_time = time.time()
+    selection_start_time = time.time()
 
     graphs_importance = measure_function(graphs_df, satisfied_matches)
     importance_threshold = args.importance_threshold
     if args.graph_similarity and int(len(graphs_df) * args.importance_threshold)<1:
         importance_threshold = 2 / len(graphs_df)
-    best_selected_graph_ids = select_best_graphs_greedily(graphs_importance, satisfied_matches, importance_threshold)
 
-    greedy_selection_time = time.time() - greedy_selection_start_time
+    if args.graph_selection == "simple":
+        best_selected_graph_ids = select_best_graphs_by_importance_threshold(graphs_importance, importance_threshold)
+    elif args.graph_selection == "rounds":
+        best_selected_graph_ids = select_best_graphs_greedily(graphs_importance, satisfied_matches, importance_threshold)
+
+    selection_time = time.time() - selection_start_time
 
     ## Here I want to integrate graph similarity in the choice of the worse graphs:
     #  between the 2 lowest scoring graphs, which is adding the least new information to the selected graphs,
@@ -161,7 +174,7 @@ if __name__ == "__main__":
     spark.stop()
     spark_stop_time = time.time() - spark_stop_start_time
 
-    reduction_func_time = time.time() - start_time
+    reduction_func_time = time.time() - reduction_start_time
 
     # ================== TESTING =======================
 
@@ -195,7 +208,7 @@ if __name__ == "__main__":
     if args.performance:
         print("\n============================= Performances =============================")
         print(f"Time taken for reduction function: {reduction_func_time:.2f} seconds")
-        print(f"Time taken for greedy selection: {greedy_selection_time:.2f} seconds")
+        print(f"Time taken for {args.graph_selection} selection with {args.query_coverage} query coverage time: {selection_time:.2f} seconds")
         print(f"Time taken for graph creation: {graph_creation_time:.2f} seconds")
         print(f"Time taken for QLog creation: {qlog_creation_time:.2f} seconds")
         print(f"Time taken for Spark startup: {spark_startup_time:.2f} seconds")
