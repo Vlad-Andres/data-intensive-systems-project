@@ -1,7 +1,7 @@
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
 
-def convert_to_dict_graph_id_and_importance(importance_df):
+def convert_to_dict_graph_id_and_importance(importance_df: DataFrame) -> dict[int, float]:
     """
     Convert a DataFrame with graph_id and importance columns to a dictionary.
 
@@ -25,7 +25,7 @@ def convert_to_dict_graph_id_and_importance(importance_df):
         .collect()
     )
 
-def add_empty_matching_graphs_back_with_0_importance(graph_df, importance_df):
+def add_empty_matching_graphs_back_with_0_importance(graph_df: DataFrame, importance_df: DataFrame) -> DataFrame:
     return (
         graph_df
         .select("graph_id")
@@ -64,9 +64,8 @@ def measure_graph_importance_based_on_full_query_coverage(
 
     importance_df = (
         graphs_matches
+        .select("graph_id", "query_id", "query_coverage")
         .where(F.col("query_coverage") == 1.0)
-        .select("graph_id", "query_id")
-        .distinct()
         .groupBy("graph_id")
         .agg(F.count("query_id").cast("double").alias("importance"))
     )
@@ -95,20 +94,14 @@ def measure_graph_based_on_partial_query_coverage(
 
     importance_df = (
         graphs_matches
-        .groupBy("graph_id", "query_id")
-        .agg(F.first("query_coverage").alias("query_coverage_first_value"))
         .groupBy("graph_id")
-        .agg(
-        F.sum("query_coverage_first_value")
-        .cast("double")
-        .alias("importance")
-        )
-
+        .agg(F.sum("query_coverage").cast("double").alias("importance"))
     )
 
     importance_df = add_empty_matching_graphs_back_with_0_importance(graph_df, importance_df)
 
     return convert_to_dict_graph_id_and_importance(importance_df)
+
 def measure_graph_importance_based_on_current_queries(
     graph_df: DataFrame,
     graphs_matches: DataFrame,
