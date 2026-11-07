@@ -13,7 +13,7 @@ from pathlib import Path
 from graph_parser import read_graph_database
 from QLog_satisfaction import parse_query, query_coverage
 from query_matcher_and_measurer.select_graphs_by_information_gain import select_graphs_by_information_gain
-from query_matcher_and_measurer.plot_reduction import save_reduction_plots, save_future_plot
+from plotting.plot_reduction import save_reduction_plots, save_future_plot
 
 
 def create_new_database_file_from_selected_graphs(graph_text_file: str, selected_graph_ids: list[int], output_file_path: str):
@@ -139,7 +139,7 @@ if __name__ == "__main__":
 
     if args.graph_selection == "simple":  # sort once by importance, keep the top B·|D|
         best_selected_graph_ids = select_best_graphs_by_importance_threshold(graphs_importance, importance_threshold)
-    elif args.graph_selection == "rounds":  # greedy: keep the highest gain w(q) / ((have(q)+1)·H(|A(q)|)), recompute, repeat; importance only breaks ties
+    elif args.graph_selection == "rounds":  # greedy: keep the highest gain w(q) / ((have(q)+1)·H(|A(q)|)), recompute, repeat;
         best_selected_graph_ids = select_best_graphs_greedily(graphs_importance, satisfied_matches, importance_threshold)
     else:
         raise ValueError(f"Unsupported graph selection method: {args.graph_selection}")
