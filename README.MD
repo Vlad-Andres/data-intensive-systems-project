@@ -84,6 +84,8 @@ or one part of it:
 ./plotting/query-log-charts.sh    # how often each query is asked, one chart per query log type
 ./plotting/measure-charts.sh      # score of every graph under full, partial and distributed, side by side
 ./plotting/compare-methods.sh     # all methods on databases 5-8 × 4 query logs × B = 1, 2, 5, 10% (192 runs, progress bar)
+./plotting/compare-small-databases.sh     # all methods on the small databases 1-4 × 4 query logs × B = 20, 40% (96 runs)
+./plotting/compare-similarity-budgets.sh  # greedy + graph similarity budgets 0.1, 0.5, 1.0 on databases 5-8 × B = 1, 2% (96 runs; after compare-methods.sh)
 ```
 
 Every run of `main.py` saves its plots in `plots/runs/<run settings>/`, one folder per phase:
@@ -106,4 +108,6 @@ Plots across runs:
 |---|---|---|
 | `plots/q_logs/` | `plotting/query-log-charts.sh` | how often each query is asked, one chart per query log type |
 | `plots/measures/` | `plotting/measure-charts.sh` | full, partial and distributed scores side by side |
+| `plots/comparison/small_databases/` | `plotting/compare-small-databases.sh` | the same comparison for databases 1-4 with B = 20, 40% (`keep_<B>/`, `keep_curve.png`, `results.csv`) |
+| `plots/comparison/similarity_budget/` | `plotting/compare-similarity-budgets.sh` | past and future coverage against the graph similarity budget (`similarity_budget.png`, `results.csv`) |
 | `plots/comparison/` | `plotting/compare-methods.sh` | per B and database: methods × query logs (`keep_<B>/`), `keep_curve.png`, `timings.png`, and the data in `results.csv` and `timings.csv` |
