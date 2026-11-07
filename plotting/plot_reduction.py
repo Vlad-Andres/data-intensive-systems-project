@@ -173,7 +173,7 @@ def draw_coverage_table(times_asked: Counter, coverage_by_graph: dict, graph_cou
         return
 
     cells = np.array([[coverage_by_graph[graph_id].get(query, 0.0) for graph_id in columns] for query in queries])
-    figure, axes = plt.subplots(figsize=(6 + 0.3 * len(columns), 1.8 + 0.32 * len(queries)), layout="constrained")
+    figure, axes = plt.subplots(figsize=(max(11, 6 + 0.3 * len(columns)), 1.8 + 0.32 * len(queries)), layout="constrained")
     axes.pcolormesh(cells, cmap=COVERAGE_COLORMAP, vmin=0, vmax=1, edgecolors="#ffffff", linewidth=1.5)
     if cells.size <= 600:
         for row in range(len(queries)):
@@ -201,7 +201,7 @@ def draw_graph_scores(scores: dict[int, float], measure_name: str, selected_grap
     shown = [graph_id for graph_id in ranked if scores[graph_id] > 0 or graph_id in pick_order][:MAX_SCORE_ROWS]
     kept_not_shown = [graph_id for graph_id in selected_graph_ids if graph_id not in shown]
 
-    figure, axes = plt.subplots(figsize=(8, 1.6 + 0.3 * len(shown)), layout="constrained")
+    figure, axes = plt.subplots(figsize=(10, 1.6 + 0.3 * len(shown)), layout="constrained")
     rows = np.arange(len(shown))
     axes.barh(rows, [scores[g] for g in shown], height=0.7, color=[KEPT_ANSWERS if g in pick_order else DROPPED_ANSWERS for g in shown])
     for row, graph_id in zip(rows, shown):
@@ -258,7 +258,7 @@ def draw_answered_queries(times_asked: Counter, answered: dict, selected_graph_i
 
     heatmap_width = min(max(0.22 * len(columns), 2.5), 16)
     figure, (bar_axes, heatmap_axes) = plt.subplots(1, 2, sharey=True, layout="constrained",
-                                                    figsize=(6 + heatmap_width, min(1.8 + 0.3 * len(queries), 16)),
+                                                    figsize=(max(11, 6 + heatmap_width), min(1.8 + 0.3 * len(queries), 16)),
                                                     gridspec_kw={"width_ratios": [2.5, heatmap_width]})
     rows = np.arange(len(queries)) + 0.5
     bar_axes.barh(rows, [times_asked[query] for query in queries], height=0.7,
@@ -286,7 +286,7 @@ def draw_answered_queries(times_asked: Counter, answered: dict, selected_graph_i
     else:
         heatmap_axes.set_xticks([])
     column_note = f" ({len(columns)} shown, {hidden_columns} more)" if hidden_columns else ""
-    heatmap_axes.set_xlabel(f"graphs that fully answer a shown query (graph_id): kept in pick order | dropped{column_note}", color=MUTED_INK, fontsize=9)
+    heatmap_axes.set_xlabel(f"graphs that fully answer a shown query (graph_id)\nkept in pick order | dropped{column_note}", color=MUTED_INK, fontsize=9)
     bar_axes.invert_yaxis()  # Most asked query at the top (shared with the heatmap).
     clean(bar_axes)
     clean(heatmap_axes)

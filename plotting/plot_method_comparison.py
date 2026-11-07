@@ -206,7 +206,7 @@ def plot_keep_curve(results: list[dict], keeps: list[float], output_path: Path) 
         axes.set_xlabel("B = share of graphs kept", color=MUTED_INK, fontsize=9)
     figure.suptitle("Future (second half) coverage against the keep share B, averaged over the databases", x=0.01, ha="left", color=INK, fontsize=12)
     figure.legend(handles=[Line2D([], [], **LINE_STYLES[m], color=COLOR_BY_METHOD[m], label=m) for m in methods],
-                  loc="outside lower center", ncol=len(methods), frameon=False, fontsize=9, labelcolor=MUTED_INK)
+                  loc="outside lower center", ncol=len(methods), frameon=False, fontsize=9, labelcolor=MUTED_INK, handlelength=3.5)
     figure.savefig(output_path, dpi=150, facecolor="#ffffff")
     plt.close(figure)
     print(f"Saved {output_path.relative_to(PROJECT_DIRECTORY)}")

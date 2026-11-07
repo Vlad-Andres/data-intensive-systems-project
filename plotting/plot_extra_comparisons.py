@@ -116,9 +116,12 @@ def draw_similarity_budgets() -> None:
         axes.set_xlabel("graph similarity budget", color=MUTED_INK, fontsize=9)
     figure.suptitle("Effect of the graph similarity budget (share of the kept slots refilled by most new facts), averaged over the databases",
                     x=0.01, ha="left", color=INK, fontsize=12)
-    handles = [Line2D([], [], color=color, linestyle=linestyle, linewidth=2, marker="o", label=f"B = {keep:.0%} · {phase}")
-               for color, keep in zip(KEEP_COLORS, keeps) for phase, linestyle in (("future (second half)", "-"), ("past (first half)", "--"))]
-    figure.legend(handles=handles, loc="outside lower center", ncol=len(handles), frameon=False, fontsize=9, labelcolor=MUTED_INK)
+    # Colour = B, line style = past or future.
+    handles = [Line2D([], [], color=color, linewidth=3, label=f"B = {keep:.0%}") for color, keep in zip(KEEP_COLORS, keeps)]
+    handles += [Line2D([], [], color=MUTED_INK, linewidth=2, linestyle="-", label="future (second half)"),
+                Line2D([], [], color=MUTED_INK, linewidth=2, linestyle="--", label="past (first half)")]
+    figure.legend(handles=handles, loc="outside lower center", ncol=len(handles), frameon=False, fontsize=9, labelcolor=MUTED_INK,
+                  handlelength=3.5)
     BUDGET_FOLDER.mkdir(parents=True, exist_ok=True)
     output_path = BUDGET_FOLDER / "similarity_budget.png"
     figure.savefig(output_path, dpi=150, facecolor="#ffffff")
