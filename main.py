@@ -175,7 +175,7 @@ if __name__ == "__main__":
     plotting_start_time = time.time()
     plots_folder = Path(__file__).parent / "plots" / "runs" / Path(output_file).stem
     plot_title = (f"{Path(args.graph).stem} · {Path(args.qlog).stem} · {args.graph_selection} selection, {args.query_coverage} measure, "
-                  f"keep {args.importance_threshold:.0%}" + (f", similarity {args.similarity_budget}" if args.graph_similarity else ""))
+                  f"keep {args.importance_threshold:.0%}" + (f", graph similarity budget {args.similarity_budget}" if args.graph_similarity else ""))
     save_run_plots(satisfied_matches, query_log_file_first_half, graphs_importance, args.query_coverage, best_selected_graph_ids, str(plots_folder), plot_title)
     plotting_time = time.time() - plotting_start_time
 
@@ -232,7 +232,7 @@ if __name__ == "__main__":
 
         # Evaluation plot: exact coverage and closeness on the past, the future and the other logs, in plots/runs/<run>/4_evaluation/
         save_evaluation_plot(str(graph_file), best_selected_graph_ids,
-                             [("past (first half)", query_log_file_first_half)] + other_qlog_files, str(plots_folder), plot_title)
+                             [("past (first half)", query_log_file_first_half)] + other_qlog_files, str(plots_folder))
 
     testing_func_time = time.time() - start_time
 
