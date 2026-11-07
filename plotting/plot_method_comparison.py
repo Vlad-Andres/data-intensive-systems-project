@@ -1,17 +1,19 @@
 """
 Compare the reduction methods across databases, query logs and keep shares B, after examples/08_compare_methods.sh has made
-the reductions, e.g.:
-    uv run python -m plotting.plot_method_comparison --databases 5 6 7 8 --keeps 0.01 0.02 0.05 0.1
+the reductions:
+    uv run python -m plotting.plot_method_comparison --databases 5 6 7 8 --keeps 0.01 0.02 0.05 0.1   # compute + draw
+    uv run python -m plotting.plot_method_comparison --replot                                           # only redraw from the CSVs
 
 Metrics (see plotting/coverage_metrics.py), on the past (first half) and the future (second half) of every query log:
   exact coverage - % of query lines that at least one kept graph fully answers;
   closeness      - per query line the best closeness of a kept graph, averaged; near answers count partly.
 
 Saves in plots/comparison/:
+  results.csv                 every metric per B, database, query log and method (the plots are drawn from it)
+  timings.csv                 reduction time per run, copied from plots/runs/<run>/timings.json
   keep_<B>/DatabaseX_<n>.png  per database: methods x the 4 query logs, exact and closeness panels (bars = future, line = past)
   keep_curve.png              future exact coverage and closeness against B, per query log type, averaged over the databases
-  timings.png                 reduction time per method and database (from plots/runs/<run>/timings.json)
-  results.csv                 every number
+  timings.png                 reduction time per method and database
 """
 import argparse
 import csv
@@ -32,12 +34,13 @@ from graph_parser import read_graph_database  # noqa: E402  (src/ is on the path
 
 PROJECT_DIRECTORY = Path(__file__).resolve().parent.parent
 COMPARISON_FOLDER = PROJECT_DIRECTORY / "plots" / "comparison"
+RESULT_COLUMNS = ["past_exact", "future_exact", "past_closeness", "future_closeness"]
 
 # (label, part of the reduction file name written by main.py, with graph similarity?, colour)
 METHODS = [
     ("naive", "full_query_coverage_simple_selection", False, "#2a78d6"),
     ("greedy", "distributed_query_coverage_rounds_selection", False, "#eb6834"),
-    ("greedy + similarity", "distributed_query_coverage_rounds_selection", True, "#1baf7a"),
+    ("greedy + graph similarity", "distributed_query_coverage_rounds_selection", True, "#1baf7a"),
 ]
 RANDOM_LABEL, RANDOM_COLOR = "random", "#c9c8c3"
 COLOR_BY_METHOD = {RANDOM_LABEL: RANDOM_COLOR, **{label: color for label, _, _, color in METHODS}}
@@ -50,7 +53,7 @@ INK, MUTED_INK, GRID = "#1f1f1e", "#5f5e5a", "#e4e3df"
 LINE_STYLES = {
     RANDOM_LABEL: {"linewidth": 2, "linestyle": "--", "marker": "o", "markersize": 5},
     "naive": {"linewidth": 2, "marker": "o", "markersize": 5},
-    "greedy + similarity": {"linewidth": 6, "alpha": 0.45, "marker": "s", "markersize": 9},
+    "greedy + graph similarity": {"linewidth": 6, "alpha": 0.45, "marker": "s", "markersize": 9},
     "greedy": {"linewidth": 2, "marker": "o", "markersize": 5},
 }
 
@@ -62,6 +65,8 @@ def reduction_file(database: int, query_log: int, file_part: str, keep: float, s
         name += f"_graph_similarity_{similarity_budget}"
     return PROJECT_DIRECTORY / "data" / "reductions" / f"{name}.txt"
 
+
+# --------------------------------------------------------------------------------------------------------------- compute
 
 def compare_database(database: int, keep: float, similarity_budget: float) -> list[dict]:
     """Past and future exact coverage and closeness of every method (and random) on the 4 query logs of one database."""
@@ -96,6 +101,43 @@ def compare_database(database: int, keep: float, similarity_budget: float) -> li
             results.append(row)
     return results
 
+
+def collect_timings(databases: list[int], keeps: list[float], similarity_budget: float) -> list[dict]:
+    """Reduction time of every run, from plots/runs/<run>/timings.json."""
+    rows = []
+    for keep in keeps:
+        for database in databases:
+            for query_log in QUERY_LOG_NAMES:
+                for label, file_part, with_similarity, _ in METHODS:
+                    run = reduction_file(database, query_log, file_part, keep, similarity_budget if with_similarity else None).stem
+                    path = PROJECT_DIRECTORY / "plots" / "runs" / run / "timings.json"
+                    if path.exists():
+                        timings = json.loads(path.read_text())
+                        rows.append({"keep": keep, "database": database, "query_log": query_log, "method": label,
+                                     "reduction_seconds": timings["reduction_seconds"], "graphs": timings["graphs"]})
+    return rows
+
+
+def write_csv(path: Path, columns: list[str], rows: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def read_csv(path: Path, numeric: list[str]) -> list[dict]:
+    with open(path, newline="", encoding="utf-8") as file:
+        rows = list(csv.DictReader(file))
+    for row in rows:
+        row["keep"], row["database"] = float(row["keep"]), int(row["database"])
+        row["query_log"] = int(row["query_log"])
+        for column in numeric:
+            row[column] = float(row[column])
+    return rows
+
+
+# ------------------------------------------------------------------------------------------------------------------ draw
 
 def style_percent_axes(axes) -> None:
     axes.set_ylim(0, 105)
@@ -139,8 +181,8 @@ def plot_database(database: int, results: list[dict], keep: float, output_path: 
 
 def plot_keep_curve(results: list[dict], keeps: list[float], output_path: Path) -> None:
     """Future exact coverage (top) and closeness (bottom) against B, one panel per query log type, averaged over the databases."""
-    # Drawn in this order; greedy + similarity is wide and translucent underneath so the greedy line stays visible where they coincide.
-    methods = [RANDOM_LABEL, "naive", "greedy + similarity", "greedy"]
+    # Drawn in this order; greedy + graph similarity is wide and translucent underneath so the greedy line stays visible where they coincide.
+    methods = [RANDOM_LABEL, "naive", "greedy + graph similarity", "greedy"]
     figure, axes_grid = plt.subplots(2, len(QUERY_LOG_NAMES), figsize=(13, 7), layout="constrained", sharex=True, sharey=True)
     for row_axes, metric in zip(axes_grid, PANELS):
         for axes, (query_log, log_name) in zip(row_axes, QUERY_LOG_NAMES.items()):
@@ -170,44 +212,33 @@ def plot_keep_curve(results: list[dict], keeps: list[float], output_path: Path) 
     print(f"Saved {output_path.relative_to(PROJECT_DIRECTORY)}")
 
 
-def plot_timings(databases: list[int], keep: float, similarity_budget: float, output_path: Path) -> None:
-    """Mean reduction time over the 4 query logs per method and database, read from plots/runs/<run>/timings.json."""
-    seconds = {}
-    graph_counts = {}
-    for database in databases:
-        for label, file_part, with_similarity, _ in METHODS:
-            times = []
-            for query_log in QUERY_LOG_NAMES:
-                run = reduction_file(database, query_log, file_part, keep, similarity_budget if with_similarity else None).stem
-                path = PROJECT_DIRECTORY / "plots" / "runs" / run / "timings.json"
-                if path.exists():
-                    timings = json.loads(path.read_text())
-                    times.append(timings["reduction_seconds"])
-                    graph_counts[database] = timings["graphs"]
-            if times:
-                seconds[(database, label)] = statistics.mean(times)
-    if not seconds:
-        print("No timings.json found in plots/runs/: run examples/08_compare_methods.sh first.")
+def plot_timings(timings: list[dict], keep: float, output_path: Path) -> None:
+    """Mean reduction time over the 4 query logs per method and database."""
+    rows = [row for row in timings if row["keep"] == keep]
+    if not rows:
+        print(f"No timings for B = {keep}: run examples/08_compare_methods.sh first.")
         return
-
+    databases = sorted({row["database"] for row in rows})
+    graph_counts = {row["database"]: int(row["graphs"]) for row in rows}
     labels = [label for label, _, _, _ in METHODS]
     bar_width = 0.8 / len(labels)
     figure, axes = plt.subplots(figsize=(9, 4.5), layout="constrained")
     for group, database in enumerate(databases):
         for position, label in enumerate(labels):
-            if (database, label) in seconds:
+            values = [row["reduction_seconds"] for row in rows if row["database"] == database and row["method"] == label]
+            if values:
                 x = group + (position - (len(labels) - 1) / 2) * bar_width
-                value = seconds[(database, label)]
+                value = statistics.mean(values)
                 axes.bar(x, value, width=bar_width * 0.85, color=COLOR_BY_METHOD[label])
                 axes.annotate(f"{value:.1f}s", (x, value), xytext=(0, 2), textcoords="offset points", ha="center", va="bottom", fontsize=7, color=MUTED_INK)
-    axes.set_xticks(range(len(databases)), [f"DatabaseX_{d}\n({graph_counts.get(d, '?')} graphs)" for d in databases], fontsize=9, color=INK)
+    axes.set_xticks(range(len(databases)), [f"DatabaseX_{d}\n({graph_counts[d]} graphs)" for d in databases], fontsize=9, color=INK)
     axes.set_ylabel("seconds (mean over the 4 query logs)", color=MUTED_INK, fontsize=9)
     axes.yaxis.grid(True, color=GRID, linewidth=0.8)
     axes.set_axisbelow(True)
     axes.tick_params(length=0, labelsize=8, labelcolor=MUTED_INK)
     for spine in axes.spines.values():
         spine.set_visible(False)
-    axes.set_title(f"Reduction time with {keep:.0%} kept: match + scores + selection (+ similarity); Spark start-up and plots excluded",
+    axes.set_title(f"Reduction time with {keep:.0%} kept: match + scores + selection (+ graph similarity); Spark start-up and plots excluded",
                    loc="left", color=INK, fontsize=10)
     figure.legend(handles=[Patch(color=COLOR_BY_METHOD[label], label=label) for label in labels],
                   loc="outside lower center", ncol=len(labels), frameon=False, fontsize=8, labelcolor=MUTED_INK)
@@ -216,28 +247,36 @@ def plot_timings(databases: list[int], keep: float, similarity_budget: float, ou
     print(f"Saved {output_path.relative_to(PROJECT_DIRECTORY)}")
 
 
+def draw_all() -> None:
+    """Draw every comparison plot from results.csv and timings.csv."""
+    results = read_csv(COMPARISON_FOLDER / "results.csv", RESULT_COLUMNS)
+    keeps = sorted({row["keep"] for row in results})
+    for keep in keeps:
+        for database in sorted({row["database"] for row in results if row["keep"] == keep}):
+            plot_database(database, [r for r in results if r["keep"] == keep and r["database"] == database], keep,
+                          COMPARISON_FOLDER / f"keep_{keep}" / f"DatabaseX_{database}.png")
+    if len(keeps) > 1:
+        plot_keep_curve(results, keeps, COMPARISON_FOLDER / "keep_curve.png")
+    if (COMPARISON_FOLDER / "timings.csv").exists():
+        timings = read_csv(COMPARISON_FOLDER / "timings.csv", ["reduction_seconds"])
+        timing_keeps = sorted({row["keep"] for row in timings})
+        if timing_keeps:
+            plot_timings(timings, 0.02 if 0.02 in timing_keeps else timing_keeps[0], COMPARISON_FOLDER / "timings.png")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compare the reduction methods across databases, query logs and keep shares.")
     parser.add_argument("--databases", type=int, nargs="+", default=[5, 6, 7, 8], help="Database numbers to compare.")
     parser.add_argument("--keeps", type=float, nargs="+", default=[0.02], help="Shares of graphs kept, as passed to main.py --importance_threshold.")
-    parser.add_argument("--similarity_budget", type=float, default=0.2, help="Similarity budget, as passed to main.py.")
+    parser.add_argument("--similarity_budget", type=float, default=0.2, help="Graph similarity budget, as passed to main.py.")
+    parser.add_argument("--replot", action="store_true", help="Only redraw the plots from results.csv and timings.csv.")
     args = parser.parse_args()
 
-    all_results = []
-    for keep in args.keeps:
-        for database in args.databases:
-            results = compare_database(database, keep, args.similarity_budget)
-            plot_database(database, results, keep, COMPARISON_FOLDER / f"keep_{keep}" / f"DatabaseX_{database}.png")
-            all_results.extend(results)
-    if len(args.keeps) > 1:
-        plot_keep_curve(all_results, sorted(args.keeps), COMPARISON_FOLDER / "keep_curve.png")
-    timing_keep = 0.02 if 0.02 in args.keeps else args.keeps[0]
-    plot_timings(args.databases, timing_keep, args.similarity_budget, COMPARISON_FOLDER / "timings.png")
-
-    COMPARISON_FOLDER.mkdir(parents=True, exist_ok=True)
-    with open(COMPARISON_FOLDER / "results.csv", "w", newline="", encoding="utf-8") as results_file:
-        columns = ["past_exact", "future_exact", "past_closeness", "future_closeness"]
-        writer = csv.DictWriter(results_file, fieldnames=["keep", "database", "query_log", "method", *columns])
-        writer.writeheader()
-        writer.writerows({**row, **{column: f"{row[column]:.1f}" for column in columns}} for row in all_results)
-    print(f"Saved {(COMPARISON_FOLDER / 'results.csv').relative_to(PROJECT_DIRECTORY)}")
+    if not args.replot:
+        results = [row for keep in args.keeps for database in args.databases for row in compare_database(database, keep, args.similarity_budget)]
+        write_csv(COMPARISON_FOLDER / "results.csv", ["keep", "database", "query_log", "method", *RESULT_COLUMNS],
+                  [{**row, **{column: f"{row[column]:.2f}" for column in RESULT_COLUMNS}} for row in results])
+        write_csv(COMPARISON_FOLDER / "timings.csv", ["keep", "database", "query_log", "method", "reduction_seconds", "graphs"],
+                  [{**row, "reduction_seconds": f"{row['reduction_seconds']:.3f}"} for row in collect_timings(args.databases, args.keeps, args.similarity_budget)])
+        print(f"Saved {(COMPARISON_FOLDER / 'results.csv').relative_to(PROJECT_DIRECTORY)} and timings.csv")
+    draw_all()

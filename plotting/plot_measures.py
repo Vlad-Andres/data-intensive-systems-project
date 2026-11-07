@@ -6,9 +6,11 @@ Show what the three importance measures (full, partial, distributed) give every 
 Rows are all graphs of the database (best rank first), columns are measures; use a small database so every graph fits. Each cell shows the score and the graph's rank in that column; the colour is the score
 relative to the highest score of that column (white = 0, dark blue = highest), because the three measures use different scales.
 For demonstration the scores use the whole query log (main.py only uses its first half).
-Saves plots/measures/<database>_<query log>.png.
+Saves plots/measures/<database>_<query log>.csv (the scores) and .png, drawn from the CSV (redraw with plotting.replot).
 """
 import argparse
+import csv
+import json
 import os
 import sys
 import tempfile
@@ -79,6 +81,27 @@ def plot_measures(scores_by_measure: dict[str, dict[int, float]], title: str, ou
     print(f"Saved {output_path.relative_to(PROJECT_DIRECTORY)}")
 
 
+def save_measures(scores_by_measure: dict[str, dict[int, float]], title: str, base_path: Path) -> None:
+    """Save the scores (base_path.csv) and the title (base_path.json), then draw base_path.png from them."""
+    base_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(base_path.with_suffix(".csv"), "w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerow(["graph_id", *MEASURES])
+        for graph_id in sorted(scores_by_measure["full"]):
+            writer.writerow([graph_id, *(scores_by_measure[measure][graph_id] for measure in MEASURES)])
+    base_path.with_suffix(".json").write_text(json.dumps({"title": title}))
+    draw_measures(base_path)
+
+
+def draw_measures(base_path: Path) -> None:
+    """Draw base_path.png from base_path.csv and base_path.json."""
+    with open(base_path.with_suffix(".csv"), newline="", encoding="utf-8") as file:
+        rows = list(csv.DictReader(file))
+    scores_by_measure = {measure: {int(row["graph_id"]): float(row[measure]) for row in rows} for measure in MEASURES}
+    title = json.loads(base_path.with_suffix(".json").read_text())["title"]
+    plot_measures(scores_by_measure, title, base_path.with_suffix(".png"))
+
+
 if __name__ == "__main__":
     os.environ["PYSPARK_PYTHON"] = sys.executable
     os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
@@ -101,8 +124,8 @@ if __name__ == "__main__":
         scores_by_measure = {name: measure(graphs_df, matches) for name, measure in MEASURES.items()}
     spark.stop()
 
-    plot_measures(
+    save_measures(
         scores_by_measure,
         f"Graph importance per measure: {graph_file.stem} · {query_log_file.stem} (whole log)",
-        PROJECT_DIRECTORY / "plots" / "measures" / f"{graph_file.stem}_{query_log_file.stem}.png",
+        PROJECT_DIRECTORY / "plots" / "measures" / f"{graph_file.stem}_{query_log_file.stem}",
     )
