@@ -113,3 +113,4 @@ Plots across runs:
 | `plots/comparison/similarity_budget/` | `plotting/compare-similarity-budgets.sh` | past and future coverage against the graph similarity budget (`similarity_budget.png`, `results.csv`) |
 | `plots/baseline/` | `plotting/baseline-comparison.sh` | the methods on the baseline dataset per B (`comparison.png`, `timings.png`, `query_log.png` and their CSVs) |
 | `plots/comparison/` | `plotting/compare-methods.sh` | per B and database: methods × query logs (`keep_<B>/`), `keep_curve.png`, `timings.png`, and the data in `results.csv` and `timings.csv` |
+| `report_figures/` | `uv run python -m plotting.report_figures` | the report's plots, drawn at their printed size from the CSVs above (the diagram crops come from Lucid) |
