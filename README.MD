@@ -70,8 +70,28 @@ Step-by-step scripts in `examples/`, from the simplest reduction to the full one
 ./examples/05_greedy_with_graph_similarity.sh  # + graph similarity
 ./examples/06_graph_similarity_budget_tradeoff.sh
 ./examples/07_large_keep_with_timings.sh
-./examples/08_compare_methods.sh               # all methods on databases 5-8 × 4 query logs (~48 runs), one chart per database
-./examples/09_query_log_charts.sh               # one bar chart per query log type: how often each query is asked
-./examples/10_compare_measures.sh             # score of every graph under full, partial and distributed, side by side
+./examples/08_compare_methods.sh               # all methods on databases 5-8 × 4 query logs × B = 1, 2, 5, 10% (192 runs)
+./examples/09_query_log_charts.sh              # one bar chart per query log type: how often each query is asked
+./examples/10_compare_measures.sh              # score of every graph under full, partial and distributed, side by side
 ```
-Each run prints the test coverage and saves two plots in `plots/<run settings>/`: `answered_queries.png` (which queries are still answered) `kept_graphs.png` (which graphs of the database were kept) and `future/preserved_answers.png` (share of answers kept for the unseen queries, if a user needs 1, 3, 10 or all answers). They use `data/DatabaseX_7.txt` with `data/QLog7_2.txt`, keeping 2% of the graphs; change this with `GRAPH`, `QLOG` and `KEEP`, e.g. `QLOG=data/QLog7_4.txt ./examples/04_greedy_rounds.sh`.
+They use `data/DatabaseX_7.txt` with `data/QLog7_2.txt`, keeping 2% of the graphs; change this with `GRAPH`, `QLOG` and `KEEP`, e.g. `QLOG=data/QLog7_4.txt ./examples/04_greedy_rounds.sh`.
+
+### Plots
+
+Every run of `main.py` saves its plots in `plots/runs/<run settings>/`, one folder per phase:
+
+| Folder | Plot | Shows |
+|---|---|---|
+| `1_match/` | `coverage_table.png` | share of each past query a graph satisfies (1 = full answer), ×n = times asked |
+| `2_scores/` | `graph_scores.png` | the highest importance scores under the chosen measure, kept graphs with their pick order |
+| `3_selection/` | `answered_queries.png` | which past queries the kept graphs still answer, weighted by times asked |
+| `3_selection/` | `kept_graphs.png` | one square per graph of the database: kept or dropped, answers a query or not |
+| `4_evaluation/` | `coverage.png` | exact coverage and closeness on the past, the future and the other logs, against a random reduction (with `--tests True`) |
+
+The run also writes `timings.json`. Plots across runs:
+
+| Folder | Made by | Shows |
+|---|---|---|
+| `plots/q_logs/` | `09_query_log_charts.sh` | how often each query is asked, one chart per query log type |
+| `plots/measures/` | `10_compare_measures.sh` | full, partial and distributed scores side by side |
+| `plots/comparison/` | `08_compare_methods.sh` | per B and database: methods × query logs (`keep_<B>/`), `keep_curve.png`, `timings.png`, `results.csv` |

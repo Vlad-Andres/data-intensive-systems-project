@@ -13,7 +13,8 @@ from pathlib import Path
 from graph_parser import read_graph_database
 from QLog_satisfaction import parse_query, query_coverage
 from query_matcher_and_measurer.select_graphs_by_information_gain import select_graphs_by_information_gain
-from plotting.plot_reduction import save_reduction_plots, save_future_plot
+from plotting.plot_reduction import save_run_plots, save_evaluation_plot
+import json
 
 
 def create_new_database_file_from_selected_graphs(graph_text_file: str, selected_graph_ids: list[int], output_file_path: str):
@@ -170,11 +171,13 @@ if __name__ == "__main__":
             for graph_id in sorted(added_graphs):
                 print(f"Added graph_id {graph_id} with importance: {graphs_importance[graph_id]}")
 
-    # Plots of the reduction, saved in plots/<name of the reduction>/
-    plots_folder = Path(__file__).parent / "plots" / Path(output_file).stem
-    plot_title = (f"{Path(args.graph).stem} · {Path(args.qlog).stem} (first half) · {args.graph_selection} selection, {args.query_coverage} coverage"
-                  + (f", similarity {args.similarity_budget}" if args.graph_similarity else ""))
-    save_reduction_plots(satisfied_matches, query_log_file_first_half, list(graphs_importance), best_selected_graph_ids, str(plots_folder), plot_title)
+    # Plots of the match, score and selection phases, saved in plots/runs/<name of the reduction>/ (not counted in the timings)
+    plotting_start_time = time.time()
+    plots_folder = Path(__file__).parent / "plots" / "runs" / Path(output_file).stem
+    plot_title = (f"{Path(args.graph).stem} · {Path(args.qlog).stem} · {args.graph_selection} selection, {args.query_coverage} measure, "
+                  f"keep {args.importance_threshold:.0%}" + (f", similarity {args.similarity_budget}" if args.graph_similarity else ""))
+    save_run_plots(satisfied_matches, query_log_file_first_half, graphs_importance, args.query_coverage, best_selected_graph_ids, str(plots_folder), plot_title)
+    plotting_time = time.time() - plotting_start_time
 
     print(f"\n============================= Selected graph IDs in pick order: =============================")
     for pick_order, graph_id in enumerate(best_selected_graph_ids, start=1):
@@ -198,7 +201,7 @@ if __name__ == "__main__":
     spark.stop()
     spark_stop_time = time.time() - spark_stop_start_time
 
-    reduction_func_time = time.time() - reduction_start_time
+    reduction_func_time = time.time() - reduction_start_time - plotting_time
 
     # ================== TESTING =======================
 
@@ -227,10 +230,21 @@ if __name__ == "__main__":
         if total_queries:
             print(f"Average query coverage: {total_coverage / total_queries:.2f}%")
 
-        # Plot of how many answers the reduced database keeps for the unseen queries, in plots/<name of the reduction>/future/
-        save_future_plot(str(graph_file), best_selected_graph_ids, other_qlog_files, str(plots_folder / "future"), plot_title)
+        # Evaluation plot: exact coverage and closeness on the past, the future and the other logs, in plots/runs/<run>/4_evaluation/
+        save_evaluation_plot(str(graph_file), best_selected_graph_ids,
+                             [("past (first half)", query_log_file_first_half)] + other_qlog_files, str(plots_folder), plot_title)
 
     testing_func_time = time.time() - start_time
+
+    # Timings of this run, read by the method comparison (plotting/plot_method_comparison.py)
+    (plots_folder / "timings.json").write_text(json.dumps({
+        "reduction_seconds": reduction_func_time,
+        "selection_seconds": selection_time,
+        "similarity_seconds": graph_similarity_time if args.graph_similarity else 0.0,
+        "spark_startup_seconds": spark_startup_time,
+        "graphs": len(graphs_importance),
+        "kept": len(best_selected_graph_ids),
+    }, indent=2))
 
     if args.performance:
         print("\n============================= Performances =============================")

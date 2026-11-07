@@ -1,4 +1,12 @@
-import sys
+"""
+Plots of one reduction run, one folder per phase of main.py:
+
+  plots/runs/<run>/1_match/coverage_table.png        how much of each (past) query each graph satisfies
+  plots/runs/<run>/2_scores/graph_scores.png         the importance score of every graph under the chosen measure
+  plots/runs/<run>/3_selection/answered_queries.png  which past queries the kept graphs still answer, weighted by times asked
+  plots/runs/<run>/3_selection/kept_graphs.png       one square per graph of the database: kept or dropped
+  plots/runs/<run>/4_evaluation/coverage.png         exact coverage and closeness on the past, the future and the other logs
+"""
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -9,57 +17,138 @@ matplotlib.use("Agg")  # Only write image files, never open a window that would 
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
+from matplotlib.lines import Line2D
 from matplotlib.patches import Patch, Rectangle
 from pyspark.sql import DataFrame
-from pyspark.sql import functions as F
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
-from graph_parser import read_graph_database  # noqa: E402
-from QLog_satisfaction import graph_satisfies_query, parse_query  # noqa: E402
+from plotting.coverage_metrics import METRICS, ClosenessIndex
+from graph_parser import read_graph_database  # noqa: E402  (src/ is on the path through plotting.coverage_metrics)
 
 # Hue = kept (blue) or dropped (gray); darker = the graph answers a query.
 KEPT_ANSWERS, KEPT_NOTHING = "#256abf", "#b7d3f6"
 DROPPED_ANSWERS, DROPPED_NOTHING = "#8a8984", "#e4e3df"
-INK, MUTED_INK = "#1f1f1e", "#5f5e5a"
+INK, MUTED_INK, GRID = "#1f1f1e", "#5f5e5a", "#e4e3df"
+COVERAGE_COLORMAP = LinearSegmentedColormap.from_list("coverage", ["#ffffff", "#cde2fb", "#86b6ef", "#3987e5", "#1c5cab", "#0d366b"])
+MAX_COLUMNS = 50
+MAX_SCORE_ROWS = 25
 
 
-def save_reduction_plots(
+def shorten(text: str, length: int = 45) -> str:
+    return text if len(text) <= length else text[: length - 1] + "…"
+
+
+def save_run_plots(
     graphs_matches: DataFrame,
     query_lines: list[str],
-    all_graph_ids: list[int],
+    graphs_importance: dict[int, float],
+    measure_name: str,
     selected_graph_ids: list[int],
     output_folder: str,
     title: str,
 ) -> None:
     """
-    Save two plots of a reduction in output_folder:
-      answered_queries.png - which queries the reduced database still answers, weighted by how often they are asked;
-      kept_graphs.png      - one square per graph of the database: kept or dropped, and whether it answers a query.
+    Save the plots of the match, score and selection phases of a run.
 
     Args:
         graphs_matches: DataFrame with graph_id, query_id and query_coverage, query_id being the line index in query_lines.
-        query_lines: The lines of the query log that was matched.
-        all_graph_ids: Every graph of the database.
+        query_lines: The lines of the query log that was matched (the past, first half).
+        graphs_importance: Score of every graph under the chosen measure.
+        measure_name: Name of that measure (full, partial or distributed).
         selected_graph_ids: The kept graphs, in pick order.
-        output_folder: Folder to save the plots in.
+        output_folder: plots/runs/<run>.
         title: Title shown above the plots.
     """
     query_by_line = {line_index: line.strip() for line_index, line in enumerate(query_lines) if line.strip()}
-    queries_answered_by_graph = defaultdict(set)
-    for row in graphs_matches.where(F.col("query_coverage") == 1.0).select("graph_id", "query_id").collect():
-        queries_answered_by_graph[row["graph_id"]].add(query_by_line[row["query_id"]])
+    times_asked = Counter(query_by_line.values())
+    coverage_by_graph = defaultdict(dict)  # graph_id -> {query: coverage}
+    for row in graphs_matches.select("graph_id", "query_id", "query_coverage").collect():
+        coverage_by_graph[row["graph_id"]][query_by_line[row["query_id"]]] = row["query_coverage"]
+    queries_answered_by_graph = {graph_id: {query for query, value in coverages.items() if value == 1.0}
+                                 for graph_id, coverages in coverage_by_graph.items()}
+    queries_answered_by_graph = {graph_id: queries for graph_id, queries in queries_answered_by_graph.items() if queries}
 
-    Path(output_folder).mkdir(parents=True, exist_ok=True)
-    plot_answered_queries(Counter(query_by_line.values()), queries_answered_by_graph, selected_graph_ids, title,
-                          Path(output_folder) / "answered_queries.png")
-    plot_kept_graphs(all_graph_ids, queries_answered_by_graph, set(selected_graph_ids), title,
-                     Path(output_folder) / "kept_graphs.png")
+    folder = Path(output_folder)
+    for phase in ("1_match", "2_scores", "3_selection"):
+        (folder / phase).mkdir(parents=True, exist_ok=True)
+    plot_coverage_table(times_asked, coverage_by_graph, len(graphs_importance), title, folder / "1_match" / "coverage_table.png")
+    plot_graph_scores(graphs_importance, measure_name, selected_graph_ids, title, folder / "2_scores" / "graph_scores.png")
+    plot_answered_queries(times_asked, queries_answered_by_graph, selected_graph_ids, title, folder / "3_selection" / "answered_queries.png")
+    plot_kept_graphs(list(graphs_importance), queries_answered_by_graph, set(selected_graph_ids), title, folder / "3_selection" / "kept_graphs.png")
     print(f"\nPlots saved in {output_folder}")
+
+
+def plot_coverage_table(times_asked: Counter, coverage_by_graph: dict, graph_count: int, title: str, output_path: Path) -> None:
+    """
+    The match table, readable: one row per distinct query (with how often it is asked), one column per graph that fully
+    answers at least one query, cell = share of the query's parts the graph satisfies (1 = full answer).
+    """
+    queries = [query for query, _ in times_asked.most_common()]
+    answering = [graph_id for graph_id, coverages in coverage_by_graph.items() if 1.0 in coverages.values()]
+    columns = sorted(answering, key=lambda graph_id: (-sum(times_asked[q] for q, v in coverage_by_graph[graph_id].items() if v == 1.0), graph_id))
+    hidden = max(len(columns) - MAX_COLUMNS, 0)
+    columns = columns[:MAX_COLUMNS]
+    if not columns:
+        print("No graph fully answers any query, so there is no coverage table to draw.")
+        return
+
+    cells = np.array([[coverage_by_graph[graph_id].get(query, 0.0) for graph_id in columns] for query in queries])
+    figure, axes = plt.subplots(figsize=(6 + 0.3 * len(columns), 1.8 + 0.32 * len(queries)), layout="constrained")
+    axes.pcolormesh(cells, cmap=COVERAGE_COLORMAP, vmin=0, vmax=1, edgecolors="#ffffff", linewidth=1.5)
+    if cells.size <= 600:
+        for row in range(len(queries)):
+            for column in range(len(columns)):
+                value = cells[row, column]
+                if value > 0:
+                    axes.text(column + 0.5, row + 0.5, "1" if value == 1.0 else f"{value:.2g}", ha="center", va="center",
+                              fontsize=7, color="#ffffff" if value > 0.6 else INK)
+    axes.invert_yaxis()
+    axes.set_yticks(np.arange(len(queries)) + 0.5, [f"{shorten(query)}  ×{times_asked[query]}" for query in queries], fontsize=8, color=INK)
+    axes.set_xticks(np.arange(len(columns)) + 0.5, columns, fontsize=7, color=MUTED_INK, rotation=90 if len(columns) > 20 else 0)
+    note = f" (first {MAX_COLUMNS} shown, {hidden} more)" if hidden else ""
+    axes.set_xlabel(f"graph_id: the {len(answering)} of {graph_count} graphs that fully answer at least one query{note}", color=MUTED_INK, fontsize=9)
+    axes.tick_params(length=0)
+    for spine in axes.spines.values():
+        spine.set_visible(False)
+    axes.set_title(f"{title}\nMatch: share of each query's parts a graph satisfies (1 = full answer) · ×n = times asked",
+                   loc="left", color=INK, fontsize=10)
+    figure.savefig(output_path, dpi=150, facecolor="#ffffff")
+    plt.close(figure)
+
+
+def plot_graph_scores(graphs_importance: dict[int, float], measure_name: str, selected_graph_ids: list[int], title: str, output_path: Path) -> None:
+    """The highest scoring graphs under the measure, coloured kept / dropped, kept graphs labelled with their pick order."""
+    pick_order = {graph_id: position for position, graph_id in enumerate(selected_graph_ids, start=1)}
+    ranked = sorted(graphs_importance, key=lambda graph_id: (-graphs_importance[graph_id], graph_id))
+    shown = [graph_id for graph_id in ranked if graphs_importance[graph_id] > 0 or graph_id in pick_order][:MAX_SCORE_ROWS]
+    kept_not_shown = [graph_id for graph_id in selected_graph_ids if graph_id not in shown]
+
+    figure, axes = plt.subplots(figsize=(8, 1.6 + 0.3 * len(shown)), layout="constrained")
+    rows = np.arange(len(shown))
+    axes.barh(rows, [graphs_importance[g] for g in shown], height=0.7,
+              color=[KEPT_ANSWERS if g in pick_order else DROPPED_ANSWERS for g in shown])
+    for row, graph_id in zip(rows, shown):
+        label = f"{graphs_importance[graph_id]:.3g}" + (f"   picked #{pick_order[graph_id]}" if graph_id in pick_order else "")
+        axes.annotate(label, (graphs_importance[graph_id], row), xytext=(4, 0), textcoords="offset points", va="center", fontsize=8, color=MUTED_INK)
+    axes.set_yticks(rows, [f"graph {graph_id}" for graph_id in shown], fontsize=8, color=INK)
+    axes.invert_yaxis()
+    axes.set_xlabel(f"importance score ({measure_name})", color=MUTED_INK, fontsize=9)
+    axes.xaxis.grid(True, color=GRID, linewidth=0.8)
+    axes.set_axisbelow(True)
+    axes.tick_params(length=0, labelsize=8, labelcolor=MUTED_INK)
+    for spine in axes.spines.values():
+        spine.set_visible(False)
+    note = (f" · {len(kept_not_shown)} kept graphs rank lower and are not shown" if kept_not_shown else "")
+    axes.set_title(f"{title}\nScores: the {len(shown)} highest of {len(graphs_importance)} graphs under the {measure_name} measure{note}",
+                   loc="left", color=INK, fontsize=10)
+    figure.legend(handles=[Patch(color=KEPT_ANSWERS, label="kept (pick order shown)"), Patch(color=DROPPED_ANSWERS, label="dropped")],
+                  loc="outside lower center", ncol=2, frameon=False, fontsize=8, labelcolor=MUTED_INK)
+    figure.savefig(output_path, dpi=150, facecolor="#ffffff")
+    plt.close(figure)
 
 
 def plot_answered_queries(times_asked: Counter, queries_answered_by_graph: dict, selected_graph_ids: list[int], title: str, output_path: Path) -> None:
     """
-    One row per distinct query, most asked first.
+    One row per distinct past query, most asked first.
     Left: a bar as long as the number of times the query is asked; blue if a kept graph still answers it, gray if it is lost.
     Right: the graphs that fully answer a query, kept graphs (in pick order) left of the line, dropped graphs right of it.
     """
@@ -88,23 +177,21 @@ def plot_answered_queries(times_asked: Counter, queries_answered_by_graph: dict,
     heatmap_width = min(max(0.22 * len(columns), 2.5), 16)
     figure, (bar_axes, heatmap_axes) = plt.subplots(
         1, 2, sharey=True, layout="constrained",
-        figsize=(6 + heatmap_width, min(1.5 + 0.3 * len(queries), 16)),
+        figsize=(6 + heatmap_width, min(1.8 + 0.3 * len(queries), 16)),
         gridspec_kw={"width_ratios": [2.5, heatmap_width]},
     )
     rows = np.arange(len(queries)) + 0.5
 
-    bar_axes.barh(
-        rows, [times_asked[query] for query in queries], height=0.7,
-        color=[KEPT_ANSWERS if answered else DROPPED_ANSWERS for answered in is_answered],
-    )
+    bar_axes.barh(rows, [times_asked[query] for query in queries], height=0.7,
+                  color=[KEPT_ANSWERS if answered else DROPPED_ANSWERS for answered in is_answered])
     for row, query in zip(rows, queries):
         bar_axes.annotate(f"{times_asked[query]}", (times_asked[query], row), xytext=(3, 0), textcoords="offset points",
                           va="center", fontsize=8, color=MUTED_INK)
-    bar_axes.set_yticks(rows, [query if len(query) <= 45 else query[:44] + "…" for query in queries], fontsize=8, color=INK)
+    bar_axes.set_yticks(rows, [shorten(query) for query in queries], fontsize=8, color=INK)
     bar_axes.set_xticks([])
-    bar_axes.set_xlabel("times asked", color=MUTED_INK, fontsize=9)
+    bar_axes.set_xlabel("times the query is asked", color=MUTED_INK, fontsize=9)
     bar_axes.set_title(
-        f"{title}\nAsks still answered: {answered_asks}/{total_asks} ({answered_asks / total_asks:.0%})",
+        f"{title}\nSelection: past query lines still fully answered by a kept graph: {answered_asks}/{total_asks} ({answered_asks / total_asks:.0%})",
         loc="left", color=INK, fontsize=10,
     )
 
@@ -120,7 +207,7 @@ def plot_answered_queries(times_asked: Counter, queries_answered_by_graph: dict,
         heatmap_axes.set_xticks(np.arange(len(columns)) + 0.5, columns, fontsize=7, color=MUTED_INK)
     else:
         heatmap_axes.set_xticks([])
-    heatmap_axes.set_xlabel("graph_id, kept in pick order | dropped", color=MUTED_INK, fontsize=9)
+    heatmap_axes.set_xlabel("graphs that fully answer a past query (graph_id): kept in pick order | dropped", color=MUTED_INK, fontsize=9)
 
     bar_axes.invert_yaxis()  # Most asked query at the top (shared with the heatmap).
     for axes in (bar_axes, heatmap_axes):
@@ -129,7 +216,8 @@ def plot_answered_queries(times_asked: Counter, queries_answered_by_graph: dict,
             spine.set_visible(False)
 
     figure.legend(
-        handles=[Patch(color=KEPT_ANSWERS, label="kept / still answered"), Patch(color=DROPPED_ANSWERS, label="dropped / lost")],
+        handles=[Patch(color=KEPT_ANSWERS, label="query still answered / answer in a kept graph"),
+                 Patch(color=DROPPED_ANSWERS, label="query lost / answer only in a dropped graph")],
         loc="outside lower center", ncol=2, frameon=False, fontsize=8, labelcolor=MUTED_INK,
     )
     figure.savefig(output_path, dpi=150, facecolor="#ffffff")
@@ -141,10 +229,10 @@ def plot_kept_graphs(all_graph_ids: list[int], queries_answered_by_graph: dict, 
     answers = set(queries_answered_by_graph)
     graphs = set(all_graph_ids)
     groups = [
-        ("kept, answers a query", KEPT_ANSWERS, len(kept & answers)),
-        ("kept, answers no query", KEPT_NOTHING, len(kept - answers)),
-        ("dropped, answered a query", DROPPED_ANSWERS, len(answers - kept)),
-        ("dropped, answers no query", DROPPED_NOTHING, len(graphs - kept - answers)),
+        ("kept, fully answers a past query", KEPT_ANSWERS, len(kept & answers)),
+        ("kept, answers no past query", KEPT_NOTHING, len(kept - answers)),
+        ("dropped, fully answered a past query", DROPPED_ANSWERS, len(answers - kept)),
+        ("dropped, answers no past query", DROPPED_NOTHING, len(graphs - kept - answers)),
     ]
     squares = [color for _, color, count in groups for _ in range(count)]
 
@@ -159,7 +247,7 @@ def plot_kept_graphs(all_graph_ids: list[int], queries_answered_by_graph: dict, 
     axes.set_ylim(rows, 0)
     axes.set_aspect("equal")
     axes.axis("off")
-    axes.set_title(f"{title}\n{len(kept)} of {len(graphs)} graphs kept ({len(kept) / len(graphs):.0%})",
+    axes.set_title(f"{title}\nSelection: one square per graph of the database · {len(kept)} of {len(graphs)} kept ({len(kept) / len(graphs):.0%})",
                    loc="left", color=INK, fontsize=10)
     axes.legend(
         handles=[Patch(color=color, label=f"{label} ({count})") for label, color, count in groups],
@@ -169,66 +257,51 @@ def plot_kept_graphs(all_graph_ids: list[int], queries_answered_by_graph: dict, 
     plt.close(figure)
 
 
-ANSWERS_NEEDED = [1, 3, 10, None]  # None = all answers
-PRESERVED_COLORMAP = LinearSegmentedColormap.from_list("preserved", ["#f3f7fd", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"])
+EXACT_COLOR, CLOSENESS_COLOR = "#2a78d6", "#9ec5f4"
 
 
-def preserved_answers(answering_graphs_per_line: list[set[int]], kept: set[int], answers_needed: int | None) -> float | None:
+def save_evaluation_plot(graph_file: str, selected_graph_ids: list[int], query_sets: list[tuple[str, list[str]]], output_folder: str, title: str) -> None:
     """
-    Same score as evaluate_reduction.measure_preserved_query_answers: for every query line with at least one answer in the
-    full database, min(answers_needed, answers kept) / min(answers_needed, answers in the full database), averaged over those lines.
-    """
-    scores = []
-    for answering_graphs in answering_graphs_per_line:
-        if not answering_graphs:
-            continue
-        answers_kept, answers_in_full_database = len(answering_graphs & kept), len(answering_graphs)
-        if answers_needed is not None:
-            answers_kept, answers_in_full_database = min(answers_needed, answers_kept), min(answers_needed, answers_in_full_database)
-        scores.append(answers_kept / answers_in_full_database)
-    return sum(scores) / len(scores) if scores else None
-
-
-def save_future_plot(graph_file: str, selected_graph_ids: list[int], future_query_logs: list[tuple[str, list[str]]], output_folder: str, title: str) -> None:
-    """
-    Save output_folder/preserved_answers.png: for every unseen query log (rows) and every number of answers a user needs (columns),
-    the share of those answers the reduced database still has. Query lines with no answer in the full database are left out.
+    Save output_folder/4_evaluation/coverage.png: for every query set (the past half, the future half, the other logs of the
+    database) the exact coverage and the closeness of the reduced database, with a random reduction of the same size as reference.
     """
     graphs = read_graph_database(graph_file)
     kept = set(selected_graph_ids)
-    answering_graphs_by_query = {}
-    rows = []
-    for label, lines in future_query_logs:
-        answering_graphs_per_line = []
-        for query in (line.strip() for line in lines if line.strip()):
-            if query not in answering_graphs_by_query:
-                paths = parse_query(query)
-                answering_graphs_by_query[query] = {graph_id for graph_id, graph in enumerate(graphs) if graph_satisfies_query(graph, paths)}
-            answering_graphs_per_line.append(answering_graphs_by_query[query])
-        rows.append((label.removesuffix(".txt"), answering_graphs_per_line))
-    rows.append(("all unseen queries", [answering for _, per_line in rows for answering in per_line]))
+    index = ClosenessIndex(graphs)
+    labels, values, baselines = [], {metric: [] for metric in METRICS}, {metric: [] for metric in METRICS}
+    for label, lines in query_sets:
+        closeness = index.of_lines(lines)
+        if not closeness:
+            continue
+        labels.append(f"{label.removesuffix('.txt')}\n({len(closeness)} lines)")
+        for metric, (method_metric, random_metric) in METRICS.items():
+            values[metric].append(method_metric(closeness, kept))
+            baselines[metric].append(random_metric(closeness, len(graphs), len(kept)))
 
-    scores = np.array([[preserved_answers(per_line, kept, needed) for needed in ANSWERS_NEEDED] for _, per_line in rows], dtype=float)
-    row_labels = [f"{label}  ({sum(1 for answering in per_line if answering)}/{len(per_line)} answerable)" for label, per_line in rows]
-
-    figure, axes = plt.subplots(figsize=(9, 1.6 + 0.45 * len(rows)), layout="constrained")
-    axes.imshow(np.nan_to_num(scores, nan=0.0), cmap=PRESERVED_COLORMAP, vmin=0.0, vmax=1.0, aspect="auto")
-    for row in range(len(rows)):
-        for column in range(len(ANSWERS_NEEDED)):
-            score = scores[row, column]
-            axes.text(column, row, "–" if np.isnan(score) else f"{score:.0%}", ha="center", va="center", fontsize=9,
-                      color="#ffffff" if score > 0.55 else INK, fontweight="bold" if row == len(rows) - 1 else "normal")
-    axes.axhline(len(rows) - 1.5, color="#ffffff", linewidth=4)  # Separates the combined row.
-    axes.set_xticks(range(len(ANSWERS_NEEDED)), ["1" if needed == 1 else "all" if needed is None else str(needed) for needed in ANSWERS_NEEDED],
-                    fontsize=9, color=INK)
-    axes.set_yticks(range(len(rows)), row_labels, fontsize=9, color=INK)
-    axes.set_xlabel("answers a user needs (c)", color=MUTED_INK, fontsize=9)
-    figure.suptitle(f"{title}\nAnswers still in the reduced database for unseen queries", x=0.01, ha="left", color=INK, fontsize=10)
+    figure, axes = plt.subplots(figsize=(2 + 1.6 * len(labels), 4.6), layout="constrained")
+    width = 0.36
+    for offset, (metric, color, name) in zip((-width / 2, width / 2), (("exact", EXACT_COLOR, "exact: fully answered"), ("closeness", CLOSENESS_COLOR, "closeness: near answers count partly"))):
+        x = np.arange(len(labels)) + offset
+        axes.bar(x, values[metric], width=width * 0.9, color=color, label=name)
+        for position, value, baseline in zip(x, values[metric], baselines[metric]):
+            axes.annotate(f"{value:.0f}%", (position, value), xytext=(0, 2), textcoords="offset points", ha="center", va="bottom", fontsize=7, color=MUTED_INK)
+            axes.plot([position - width * 0.42, position + width * 0.42], [baseline, baseline], color=INK, linewidth=1.6)
+    axes.set_xticks(range(len(labels)), labels, fontsize=8, color=INK)
+    axes.set_ylim(0, 108)
+    axes.set_yticks([0, 25, 50, 75, 100], ["0%", "25%", "50%", "75%", "100%"], fontsize=8, color=MUTED_INK)
+    axes.set_ylabel("query lines", color=MUTED_INK, fontsize=9)
+    axes.yaxis.grid(True, color=GRID, linewidth=0.8)
+    axes.set_axisbelow(True)
     axes.tick_params(length=0)
     for spine in axes.spines.values():
         spine.set_visible(False)
+    axes.set_title(f"{title}\nEvaluation: how well the reduced database answers each set of queries", loc="left", color=INK, fontsize=10)
+    handles, _ = axes.get_legend_handles_labels()
+    figure.legend(handles=handles + [Line2D([], [], color=INK, linewidth=1.6, label="random reduction of the same size")],
+                  loc="outside lower center", ncol=3, frameon=False, fontsize=8, labelcolor=MUTED_INK)
 
-    Path(output_folder).mkdir(parents=True, exist_ok=True)
-    figure.savefig(Path(output_folder) / "preserved_answers.png", dpi=150, facecolor="#ffffff")
+    path = Path(output_folder) / "4_evaluation" / "coverage.png"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    figure.savefig(path, dpi=150, facecolor="#ffffff")
     plt.close(figure)
-    print(f"Future plot saved in {output_folder}")
+    print(f"Evaluation plot saved in {path.parent}")
