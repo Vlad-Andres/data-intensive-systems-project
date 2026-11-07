@@ -58,3 +58,17 @@ Example:
 ```
 python3 main.py --graph data/DatabaseX_1.txt --qlog  data/QLog1_1.txt --graph_similarity True --similarity_budget 0.2 --query_coverage distributed --graph_selection rounds --check_qlog_satisfaction False --tests True --performance True
 ```
+
+### Examples
+
+Step-by-step scripts in `examples/`, from the simplest reduction to the full one (run from anywhere, they use `uv` and Java 21):
+```bash
+./examples/01_naive_full_coverage.sh           # sort once by fully answered queries
+./examples/02_naive_partial_coverage.sh        # + partly answered queries count
+./examples/03_naive_distributed_coverage.sh    # + a query's point is split over its answering graphs
+./examples/04_greedy_rounds.sh                 # greedy: one graph per round, gains recomputed
+./examples/05_greedy_with_graph_similarity.sh  # + graph similarity
+./examples/06_graph_similarity_budget_tradeoff.sh
+./examples/07_large_keep_with_timings.sh
+```
+Each run prints the test coverage and saves two plots in `plots/<run settings>/`: `answered_queries.png` (which queries are still answered) `kept_graphs.png` (which graphs of the database were kept) and `future/preserved_answers.png` (share of answers kept for the unseen queries, if a user needs 1, 3, 10 or all answers). They use `data/DatabaseX_7.txt` with `data/QLog7_2.txt`, keeping 2% of the graphs; change this with `GRAPH`, `QLOG` and `KEEP`, e.g. `QLOG=data/QLog7_4.txt ./examples/04_greedy_rounds.sh`.

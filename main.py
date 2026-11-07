@@ -13,6 +13,7 @@ from pathlib import Path
 from graph_parser import read_graph_database
 from QLog_satisfaction import parse_query, query_coverage
 from query_matcher_and_measurer.select_graphs_by_information_gain import select_graphs_by_information_gain
+from query_matcher_and_measurer.plot_reduction import save_reduction_plots, save_future_plot
 
 
 def create_new_database_file_from_selected_graphs(graph_text_file: str, selected_graph_ids: list[int], output_file_path: str):
@@ -72,8 +73,9 @@ if __name__ == "__main__":
         output_file += "_partial_query_coverage"
     elif args.query_coverage == "distributed":
         output_file += "_distributed_query_coverage"
+    output_file += f"_{args.graph_selection}_selection_keep_{args.importance_threshold}"
     if args.graph_similarity:
-        output_file += "_graph_similarity"
+        output_file += f"_graph_similarity_{args.similarity_budget}"
     output_file += ".txt"
 
     start_time = time.time()
@@ -119,24 +121,28 @@ if __name__ == "__main__":
 
     # Determine the importance measure function based on the presence of subqueries
     measure_function = None
-    if args.query_coverage == "full":
+    if args.query_coverage == "full":  # 1 point per query line the graph fully answers
         measure_function = measure_graph_importance_based_on_full_query_coverage
-    elif args.query_coverage == "partial":
+    elif args.query_coverage == "partial":  # per query line, the share of its paths the graph satisfies (e.g. 1 of 2 = 0.5)
         measure_function = measure_graph_based_on_partial_query_coverage
-    elif args.query_coverage == "distributed":
+    elif args.query_coverage == "distributed":  # each query line gives 1 point, split over the graphs that fully answer it: w(q) / |A(q)|
         measure_function = measure_graph_importance_based_on_current_queries
 
     # Calculate the importance of each graph based on the selected measure function   
+    if measure_function is None:
+        raise ValueError(f"Unsupported query coverage type: {args.query_coverage}")
     
     selection_start_time = time.time()
 
     graphs_importance = measure_function(graphs_df, satisfied_matches)
     importance_threshold = args.importance_threshold
 
-    if args.graph_selection == "simple":
+    if args.graph_selection == "simple":  # sort once by importance, keep the top B·|D|
         best_selected_graph_ids = select_best_graphs_by_importance_threshold(graphs_importance, importance_threshold)
-    elif args.graph_selection == "rounds":
+    elif args.graph_selection == "rounds":  # greedy: keep the highest gain w(q) / ((have(q)+1)·H(|A(q)|)), recompute, repeat; importance only breaks ties
         best_selected_graph_ids = select_best_graphs_greedily(graphs_importance, satisfied_matches, importance_threshold)
+    else:
+        raise ValueError(f"Unsupported graph selection method: {args.graph_selection}")
 
     selection_time = time.time() - selection_start_time
 
@@ -163,6 +169,12 @@ if __name__ == "__main__":
             print("\n============================= Graphs added due to similarity consideration: =============================")
             for graph_id in sorted(added_graphs):
                 print(f"Added graph_id {graph_id} with importance: {graphs_importance[graph_id]}")
+
+    # Plots of the reduction, saved in plots/<name of the reduction>/
+    plots_folder = Path(__file__).parent / "plots" / Path(output_file).stem
+    plot_title = (f"{Path(args.graph).stem} · {Path(args.qlog).stem} (first half) · {args.graph_selection} selection, {args.query_coverage} coverage"
+                  + (f", similarity {args.similarity_budget}" if args.graph_similarity else ""))
+    save_reduction_plots(satisfied_matches, query_log_file_first_half, list(graphs_importance), best_selected_graph_ids, str(plots_folder), plot_title)
 
     print(f"\n============================= Selected graph IDs in pick order: =============================")
     for pick_order, graph_id in enumerate(best_selected_graph_ids, start=1):
@@ -214,6 +226,9 @@ if __name__ == "__main__":
 
         if total_queries:
             print(f"Average query coverage: {total_coverage / total_queries:.2f}%")
+
+        # Plot of how many answers the reduced database keeps for the unseen queries, in plots/<name of the reduction>/future/
+        save_future_plot(str(graph_file), best_selected_graph_ids, other_qlog_files, str(plots_folder / "future"), plot_title)
 
     testing_func_time = time.time() - start_time
 
