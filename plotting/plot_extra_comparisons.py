@@ -113,8 +113,8 @@ def draw_similarity_budgets() -> None:
                 axes.set_title(log_name.replace("\n", " · "), loc="left", color=INK, fontsize=10)
         row_axes[0].set_ylabel("exact coverage" if metric == "exact" else "closeness", color=MUTED_INK, fontsize=9)
     for axes in axes_grid[-1]:
-        axes.set_xlabel("graph similarity budget (share of kept slots refilled)", color=MUTED_INK, fontsize=9)
-    figure.suptitle("Effect of the graph similarity budget on greedy + graph similarity, averaged over the databases",
+        axes.set_xlabel("graph similarity budget", color=MUTED_INK, fontsize=9)
+    figure.suptitle("Effect of the graph similarity budget (share of the kept slots refilled by most new facts), averaged over the databases",
                     x=0.01, ha="left", color=INK, fontsize=12)
     handles = [Line2D([], [], color=color, linestyle=linestyle, linewidth=2, marker="o", label=f"B = {keep:.0%} · {phase}")
                for color, keep in zip(KEEP_COLORS, keeps) for phase, linestyle in (("future (second half)", "-"), ("past (first half)", "--"))]

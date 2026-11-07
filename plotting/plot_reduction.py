@@ -37,6 +37,7 @@ INK, MUTED_INK, GRID = "#1f1f1e", "#5f5e5a", "#e4e3df"
 COVERAGE_COLORMAP = LinearSegmentedColormap.from_list("coverage", ["#ffffff", "#cde2fb", "#86b6ef", "#3987e5", "#1c5cab", "#0d366b"])
 MAX_COLUMNS = 50
 MAX_SCORE_ROWS = 25
+MAX_QUERY_ROWS = 40  # Larger logs show only their most asked queries.
 
 
 # ----------------------------------------------------------------------------------------------------------------- files
@@ -161,7 +162,8 @@ def clean(axes) -> None:
 
 def draw_coverage_table(times_asked: Counter, coverage_by_graph: dict, graph_count: int, title: str, output_path: Path) -> None:
     """One row per distinct past query (with how often it is asked), one column per graph that fully answers at least one query."""
-    queries = [query for query, _ in times_asked.most_common()]
+    queries = [query for query, _ in times_asked.most_common(MAX_QUERY_ROWS)]
+    rows_note = f" · the {len(queries)} most asked of {len(times_asked)} queries shown" if len(times_asked) > len(queries) else ""
     answering = [graph_id for graph_id, coverages in coverage_by_graph.items() if 1.0 in coverages.values()]
     columns = sorted(answering, key=lambda graph_id: (-sum(times_asked[q] for q, v in coverage_by_graph[graph_id].items() if v == 1.0), graph_id))
     hidden = max(len(columns) - MAX_COLUMNS, 0)
@@ -186,7 +188,7 @@ def draw_coverage_table(times_asked: Counter, coverage_by_graph: dict, graph_cou
     note = f" (first {MAX_COLUMNS} shown, {hidden} more)" if hidden else ""
     axes.set_xlabel(f"graph_id: the {len(answering)} of {graph_count} graphs that fully answer at least one query{note}", color=MUTED_INK, fontsize=9)
     clean(axes)
-    axes.set_title(f"{title}\nMatch: share of each query's parts a graph satisfies (1 = full answer) · ×n = times asked",
+    axes.set_title(f"{title}\nMatch: share of each query's parts a graph satisfies (1 = full answer) · ×n = times asked{rows_note}",
                    loc="left", color=INK, fontsize=10)
     figure.savefig(output_path, dpi=150, facecolor="#ffffff")
     plt.close(figure)
@@ -227,11 +229,17 @@ def draw_answered_queries(times_asked: Counter, answered: dict, selected_graph_i
     Left: a bar as long as the number of times the query is asked; blue if a kept graph still answers it, gray if it is lost.
     Right: the graphs that fully answer a query, kept graphs (in pick order) left of the line, dropped graphs right of it.
     """
-    queries = [query for query, _ in times_asked.most_common()]
+    all_queries = [query for query, _ in times_asked.most_common()]
+    queries = all_queries[:MAX_QUERY_ROWS]
     kept = set(selected_graph_ids)
-    kept_columns = [graph_id for graph_id in selected_graph_ids if graph_id in answered]
-    dropped_columns = sorted((graph_id for graph_id in answered if graph_id not in kept),
-                             key=lambda graph_id: -sum(times_asked[query] for query in answered[graph_id]))
+    kept_answering_any = [graph_id for graph_id in selected_graph_ids if graph_id in answered]
+    shown = set(queries)
+    # Columns: graphs that answer a shown query, kept ones first, at most MAX_COLUMNS (kept graphs take priority).
+    kept_columns = [graph_id for graph_id in kept_answering_any if answered[graph_id] & shown][:MAX_COLUMNS - 10]
+    dropped_columns = sorted((graph_id for graph_id in answered if graph_id not in kept and answered[graph_id] & shown),
+                             key=lambda graph_id: -sum(times_asked[query] for query in answered[graph_id] & shown))
+    hidden_columns = max(len(kept_columns) + len(dropped_columns) - MAX_COLUMNS, 0)
+    dropped_columns = dropped_columns[:MAX_COLUMNS - len(kept_columns)]
     columns = kept_columns + dropped_columns
     if not columns:
         print("No graph fully answers any query, so there is no answered queries plot to draw.")
@@ -243,9 +251,10 @@ def draw_answered_queries(times_asked: Counter, answered: dict, selected_graph_i
         for row, query in enumerate(queries):
             if query in answered[graph_id]:
                 cells[row, column] = 2 if graph_id in kept else 1
-    is_answered = [any(query in answered[graph_id] for graph_id in kept_columns) for query in queries]
-    answered_asks = sum(times_asked[query] for query, ok in zip(queries, is_answered) if ok)
+    is_answered = [any(query in answered[graph_id] for graph_id in kept_answering_any) for query in queries]
+    answered_asks = sum(times_asked[query] for query in all_queries if any(query in answered[graph_id] for graph_id in kept_answering_any))
     total_asks = sum(times_asked.values())
+    rows_note = f" · the {len(queries)} most asked of {len(all_queries)} queries shown" if len(all_queries) > len(queries) else ""
 
     heatmap_width = min(max(0.22 * len(columns), 2.5), 16)
     figure, (bar_axes, heatmap_axes) = plt.subplots(1, 2, sharey=True, layout="constrained",
@@ -261,19 +270,23 @@ def draw_answered_queries(times_asked: Counter, answered: dict, selected_graph_i
     bar_axes.set_xticks([])
     bar_axes.set_xlabel("times the query is asked", color=MUTED_INK, fontsize=9)
     bar_axes.set_title(f"{title}\nSelection: past query lines still fully answered by a kept graph: "
-                       f"{answered_asks}/{total_asks} ({answered_asks / total_asks:.0%})", loc="left", color=INK, fontsize=10)
+                       f"{answered_asks}/{total_asks} ({answered_asks / total_asks:.0%}){rows_note}", loc="left", color=INK, fontsize=10)
 
     heatmap_axes.pcolormesh(cells, cmap=ListedColormap(["#ffffff", DROPPED_ANSWERS, KEPT_ANSWERS]), vmin=-0.5, vmax=2.5,
                             edgecolors="#ffffff" if len(columns) <= 80 else "face", linewidth=1.5 if len(columns) <= 80 else 0)
     heatmap_axes.axvline(len(kept_columns), color=INK, linewidth=1.2)
-    heatmap_axes.text(len(kept_columns) - 0.3, -0.2, "kept", ha="right", va="bottom", fontsize=8, color=INK)
+    header = heatmap_axes.get_xaxis_transform()  # x in data coordinates, y in axes coordinates (1 = top edge).
+    heatmap_axes.annotate("kept", (len(kept_columns), 1), xycoords=header, xytext=(-3, 3), textcoords="offset points",
+                          ha="right", va="bottom", fontsize=8, color=INK)
     if dropped_columns:
-        heatmap_axes.text(len(kept_columns) + 0.3, -0.2, "dropped", ha="left", va="bottom", fontsize=8, color=INK)
+        heatmap_axes.annotate("dropped", (len(kept_columns), 1), xycoords=header, xytext=(3, 3), textcoords="offset points",
+                              ha="left", va="bottom", fontsize=8, color=INK)
     if len(columns) <= 40:
         heatmap_axes.set_xticks(np.arange(len(columns)) + 0.5, columns, fontsize=7, color=MUTED_INK)
     else:
         heatmap_axes.set_xticks([])
-    heatmap_axes.set_xlabel("graphs that fully answer a past query (graph_id): kept in pick order | dropped", color=MUTED_INK, fontsize=9)
+    column_note = f" ({len(columns)} shown, {hidden_columns} more)" if hidden_columns else ""
+    heatmap_axes.set_xlabel(f"graphs that fully answer a shown query (graph_id): kept in pick order | dropped{column_note}", color=MUTED_INK, fontsize=9)
     bar_axes.invert_yaxis()  # Most asked query at the top (shared with the heatmap).
     clean(bar_axes)
     clean(heatmap_axes)

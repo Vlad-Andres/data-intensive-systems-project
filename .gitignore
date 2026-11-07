@@ -8,8 +8,8 @@ data/imdb_raw/
 
 # Run outputs of main.py (regenerated on every run)
 data/reductions/
-data/QLog*_first_half.txt
-data/QLog*_second_half.txt
+**/QLog*_first_half.txt
+**/QLog*_second_half.txt
 
 # Plots made by main.py (regenerated on every run)
 plots/
