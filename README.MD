@@ -70,13 +70,21 @@ Step-by-step scripts in `examples/`, from the simplest reduction to the full one
 ./examples/05_greedy_with_graph_similarity.sh  # + graph similarity
 ./examples/06_graph_similarity_budget_tradeoff.sh
 ./examples/07_large_keep_with_timings.sh
-./examples/08_compare_methods.sh               # all methods on databases 5-8 × 4 query logs × B = 1, 2, 5, 10% (192 runs)
-./examples/09_query_log_charts.sh              # one bar chart per query log type: how often each query is asked
-./examples/10_compare_measures.sh              # score of every graph under full, partial and distributed, side by side
 ```
 They use `data/DatabaseX_7.txt` with `data/QLog7_2.txt`, keeping 2% of the graphs; change this with `GRAPH`, `QLOG` and `KEEP`, e.g. `QLOG=data/QLog7_4.txt ./examples/04_greedy_rounds.sh`.
 
 ### Plots
+
+All plot scripts are in `plotting/`. To make every plot (about 30 minutes, most of it the 192 comparison runs):
+```bash
+./plotting/run-all-plots.sh
+```
+or one part of it:
+```bash
+./plotting/query-log-charts.sh    # how often each query is asked, one chart per query log type
+./plotting/measure-charts.sh      # score of every graph under full, partial and distributed, side by side
+./plotting/compare-methods.sh     # all methods on databases 5-8 × 4 query logs × B = 1, 2, 5, 10% (192 runs, progress bar)
+```
 
 Every run of `main.py` saves its plots in `plots/runs/<run settings>/`, one folder per phase:
 
@@ -88,10 +96,14 @@ Every run of `main.py` saves its plots in `plots/runs/<run settings>/`, one fold
 | `3_selection/` | `kept_graphs.png` | one square per graph of the database: kept or dropped, answers a query or not |
 | `4_evaluation/` | `coverage.png` | exact coverage and closeness on the past, the future and the other logs, against a random reduction (with `--tests True`) |
 
-The run also writes `timings.json`. Plots across runs:
+Every plot is drawn from a CSV saved next to it (the run also writes `run_info.json`, `queries.csv` and `timings.json`), so after changing how a plot looks you can redraw everything without running anything again:
+```bash
+uv run python -m plotting.replot                     # or: --only runs comparison measures q_logs
+```
+Plots across runs:
 
 | Folder | Made by | Shows |
 |---|---|---|
-| `plots/q_logs/` | `09_query_log_charts.sh` | how often each query is asked, one chart per query log type |
-| `plots/measures/` | `10_compare_measures.sh` | full, partial and distributed scores side by side |
-| `plots/comparison/` | `08_compare_methods.sh` | per B and database: methods × query logs (`keep_<B>/`), `keep_curve.png`, `timings.png`, `results.csv` |
+| `plots/q_logs/` | `plotting/query-log-charts.sh` | how often each query is asked, one chart per query log type |
+| `plots/measures/` | `plotting/measure-charts.sh` | full, partial and distributed scores side by side |
+| `plots/comparison/` | `plotting/compare-methods.sh` | per B and database: methods × query logs (`keep_<B>/`), `keep_curve.png`, `timings.png`, and the data in `results.csv` and `timings.csv` |

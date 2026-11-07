@@ -1,5 +1,5 @@
 """
-Compare the reduction methods across databases, query logs and keep shares B, after examples/08_compare_methods.sh has made
+Compare the reduction methods across databases, query logs and keep shares B, after plotting/compare-methods.sh has made
 the reductions:
     uv run python -m plotting.plot_method_comparison --databases 5 6 7 8 --keeps 0.01 0.02 0.05 0.1   # compute + draw
     uv run python -m plotting.plot_method_comparison --replot                                           # only redraw from the CSVs
@@ -90,7 +90,7 @@ def compare_database(database: int, keep: float, similarity_budget: float) -> li
         for label, file_part, with_similarity, _ in METHODS:
             path = reduction_file(database, query_log, file_part, keep, similarity_budget if with_similarity else None)
             if not path.exists():
-                print(f"Missing {path.relative_to(PROJECT_DIRECTORY)}: run examples/08_compare_methods.sh first.")
+                print(f"Missing {path.relative_to(PROJECT_DIRECTORY)}: run plotting/compare-methods.sh first.")
                 continue
             kept_lines = set(path.read_text(encoding="utf-8").splitlines())
             kept = {graph_id for graph_id, line in enumerate(database_lines) if line in kept_lines}
@@ -216,7 +216,7 @@ def plot_timings(timings: list[dict], keep: float, output_path: Path) -> None:
     """Mean reduction time over the 4 query logs per method and database."""
     rows = [row for row in timings if row["keep"] == keep]
     if not rows:
-        print(f"No timings for B = {keep}: run examples/08_compare_methods.sh first.")
+        print(f"No timings for B = {keep}: run plotting/compare-methods.sh first.")
         return
     databases = sorted({row["database"] for row in rows})
     graph_counts = {row["database"]: int(row["graphs"]) for row in rows}

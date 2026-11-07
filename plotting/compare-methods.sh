@@ -4,7 +4,7 @@
 set -e
 KEEPS=${KEEPS:-"0.01 0.02 0.05 0.1"}
 DATABASES=${DATABASES:-"5 6 7 8"}
-source "$(dirname "$0")/_setup.sh"
+source "$(dirname "$0")/../examples/_setup.sh"
 
 METHODS=(
     "naive|--graph_selection simple --query_coverage full"

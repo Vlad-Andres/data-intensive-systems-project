@@ -28,7 +28,7 @@ def replot_comparison() -> None:
     if (COMPARISON_FOLDER / "results.csv").exists():
         draw_comparison()
     else:
-        print("No plots/comparison/results.csv yet: run examples/08_compare_methods.sh first.")
+        print("No plots/comparison/results.csv yet: run plotting/compare-methods.sh first.")
 
 
 def replot_measures() -> None:
