@@ -32,36 +32,56 @@ make dataset-images         # images of the 8 dataset versions
 
 make install                # installs the project with uv
 make clean                  # removes the generated html graphs
+make toy-example            # runs the reduction on the toy restaurant dataset
 ```
+
+### Setup
+
+The reduction uses PySpark. Install Java 21 separately, then select it before
+running Spark commands:
+```bash
+brew install openjdk@21
+export JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+java -version                # should report Java 21
+make install                 # installs Python dependencies with uv
+```
+
+`make install` 
 
 ### Reduce Function Metric
 
 To test the query coverage of a DB (after a Reduce), run:
 ```
-python3 src/QLog_satisfaction.py <DB_path> <QLog_path>
+uv run python src/QLog_satisfaction.py <DB_path> <QLog_path>
 ```
 
 ### Run the reduction
 
 Options:
 
---graph: input graph database.
---qlog: input query log.
---output_file: optional path for the reduced graph database.
---importance_threshold: fraction of graphs to keep (default: 0.9).
---tests True: test the reduced database against other qlogs.
---performance True: print timing information.
---graph_similarity
-
+* `--graph`: input graph database.
+* `--qlog`: input query log.
+* `--output_file`: optional path for the reduced graph database.
+* `--importance_threshold`: fraction of graphs to keep (default: `0.9`).
+* `--tests True`: test the reduced database against other qlogs.
+* `--performance True`: print timing information.
+* `--graph_similarity True`: include graph similarity in selection.
 
 Example:
 ```
-python3 main.py --graph data/DatabaseX_1.txt --qlog  data/QLog1_1.txt --graph_similarity True --similarity_budget 0.2 --query_coverage distributed --graph_selection rounds --check_qlog_satisfaction False --tests True --performance True
+uv run python main.py --graph data/DatabaseX_1.txt --qlog data/QLog1_1.txt --graph_similarity True --similarity_budget 0.2 --query_coverage distributed --graph_selection rounds --tests True --performance True
+```
+
+Toy example:
+```
+make toy-example
 ```
 
 ### Examples
 
-Step-by-step scripts in `examples/`, from the simplest reduction to the full one (run from anywhere, they use `uv` and Java 21):
+Step-by-step scripts in `examples/`, from the simplest reduction to the full one
+(run from anywhere; they change to the project root and use `uv`):
 ```bash
 ./examples/01_naive_full_coverage.sh           # sort once by fully answered queries
 ./examples/02_naive_partial_coverage.sh        # + partly answered queries count
