@@ -1,5 +1,33 @@
 ## DIS project on graph database reduction
+### Run the reduction
 
+From the project root, run a reduction with:
+
+```bash
+python3 main.py --graph data/DatabaseX_1.txt --qlog data/QLog1_1.txt \
+  --query_coverage full --graph_selection simple --importance_threshold 0.9
+```
+
+`--graph` and `--qlog` are paths relative to the project root. The query-log filename must follow the
+`QLog<database number>_<log number>.txt` pattern; `main.py` uses those numbers in the output filename.
+The reduced database is written to `data/reductions/`.
+
+Arguments:
+
+| Argument | Default | Description |
+|---|---|---|
+| `--graph` | `data/DatabaseX_1.txt` | Input graph database. |
+| `--qlog` | `data/QLog1_1.txt` | Query log used to select graphs. Its lines are split in half: the first half guides selection, and the second half is reserved for evaluation. |
+| `--query_coverage` | `full` | How query coverage contributes to graph importance: `full` scores fully answered queries; `partial` includes partial path coverage; `distributed` shares each fully answered query's score among the graphs answering it. |
+| `--graph_selection` | `simple` | `simple` ranks graphs once by importance; `rounds` greedily selects one graph at a time, recalculating its gain. |
+| `--importance_threshold` | `0.9` | Fraction of the input graphs to keep, from 0 to 1. |
+| `--graph_similarity` | `False` | Enable an information-gain-based selection step to account for graph similarity. |
+| `--similarity_budget` | `0.2` | Fraction of the selected-graph budget reserved for information-gain selection when graph similarity is enabled. |
+| `--tests` | `False` | Evaluate the reduced database against the second half of the input query log and other available logs for that database. |
+| `--performance` | `False` | Print timing and database-size statistics. |
+
+For the boolean options, pass `True` to enable them, or omit them to leave them disabled. Do not pass
+`False`: the current argument parser treats any supplied value, including the string `False`, as true.
 
 ![graphs visualised](images/graphs-small.png)
 
@@ -54,28 +82,6 @@ make install                 # installs Python dependencies with uv
 To test the query coverage of a DB (after a Reduce), run:
 ```
 uv run python src/QLog_satisfaction.py <DB_path> <QLog_path>
-```
-
-### Run the reduction
-
-Options:
-
-* `--graph`: input graph database.
-* `--qlog`: input query log.
-* `--output_file`: optional path for the reduced graph database.
-* `--importance_threshold`: fraction of graphs to keep (default: `0.9`).
-* `--tests True`: test the reduced database against other qlogs.
-* `--performance True`: print timing information.
-* `--graph_similarity True`: include graph similarity in selection.
-
-Example:
-```
-uv run python main.py --graph data/DatabaseX_1.txt --qlog data/QLog1_1.txt --graph_similarity True --similarity_budget 0.2 --query_coverage distributed --graph_selection rounds --tests True --performance True
-```
-
-Toy example:
-```
-make toy-example
 ```
 
 ### Examples
