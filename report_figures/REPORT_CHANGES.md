@@ -5,7 +5,8 @@ Your current state: the theory part has the figures and text from the previous r
 ## 0. How figure placement works (why figures were far from their text)
 
 - A wide figure (`figure*`) is **never** placed on the page where it is in the source: LaTeX puts it at the top of the **next** page or later. So every `figure*` below goes about one page **before** the text that cites it, at the spot named in the instructions.
-- A one-column `figure` with `[H]` (the `float` package is loaded) stays exactly where it is in the source, right after the paragraph that cites it. If an `[H]` figure leaves a big gap at the bottom of a column, change it to `[!htbp]`.
+- A one-column `figure` uses `[!htbp]`: it goes right where it is in the source if it fits, otherwise to the top or bottom of the same or next column. Do not use `[H]`: when an `[H]` figure does not fit, LaTeX leaves the rest of the column empty or stretches the gaps between equations.
+- Code listings are wrapped in a `minipage` so a listing never breaks across a column or runs off the page (see section 3).
 - At most two wide figures share the top of a page, in source order.
 - `\newpage` pushes every waiting figure out at once and leaves half-empty columns: all of them go (listed below).
 - All plots are drawn at the size they are printed (fonts match the text) and have no titles inside; the caption says what they show. The diagrams contain no formulas; formulas are LaTeX equations.
@@ -37,6 +38,21 @@ After the `\usepackage` lines, add (lets two wide figures share the top of a pag
 
 ```latex
 \renewcommand{\dbltopfraction}{0.85}
+\raggedbottom
+```
+
+`\raggedbottom` stops LaTeX from stretching the space between paragraphs and equations to fill a column.
+
+## 3. implementation.tex
+
+Wrap every `lstlisting` (five of them) in a minipage, so each listing stays in one piece:
+
+```latex
+\noindent\begin{minipage}{\columnwidth}
+\begin{lstlisting}[language=Python]
+...
+\end{lstlisting}
+\end{minipage}
 ```
 
 ---
@@ -110,7 +126,7 @@ where $w(q)$ is the number of times query $q$ is asked and $|A(q)|$ the number o
 **Replace** your current block with `greedy_pick_order_databasex7.png` by this one, directly after your paragraph `Figure~\ref{fig:diagram_greedy} shows the loop ...` (the plot is now one column wide and about 7 cm high):
 
 ```latex
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/greedy_pick_order_databasex7.png}
   \caption{Greedy on DatabaseX\_7 with QLog7\_2 and $B=2\%$: the 14 highest distributed scores, all kept, with their pick order. Graph 915 ties for the third-highest score but is picked seventh, because graphs 373 and 753 already answer its query.}
@@ -190,7 +206,7 @@ In `\subsubsection{Baseline}` under Query logs, after the paragraph ending `... 
 ```latex
 566 of its 1,726 distinct queries (3,528 of the 5,962 lines) put two edge labels directly after each other, e.g.\ \texttt{3.holds.chequeCNY}, which the path syntax of the project does not allow (Section~\ref{sec:baseline_commentary}). We removed these queries; the remaining log has 2,434 lines and 1,160 distinct queries (Figure~\ref{fig:baseline_qlog}), its most asked query is asked 40 times, and 57\% of its second-half lines were already asked in the first half.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/baseline_query_log.png}
   \caption{How often each distinct query of the filtered baseline query log is asked. The distribution is Zipf-like: half of the lines come from 101 of the 1,160 queries.}
@@ -213,7 +229,7 @@ On every set of query lines we measure:
 
 Figure~\ref{fig:worked_selection} follows one reduction through the phases. Many graphs partly answer each query, but only eight graphs fully answer at least one. The greedy keeps graphs 1, 4, 12 and 6, which answer 24 of the 25 past queries. Graphs 6 and 17 are each the only full answer to one query and have the same gain in the last round; the slot goes to graph 6, so the query that only graph 17 answers is lost. On the future half the reduced database still fully answers 64\% of the lines (74\% closeness), against 21\% (52\%) for a random selection of four graphs (Figure~\ref{fig:worked_evaluation}). On the other query logs of the database it falls below random (14\% against 20\% on QLog4\_1, 5\% against 20\% on QLog4\_2): a reduction made for one workload does not serve another.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/worked_example_evaluation.png}
   \caption{Evaluation of the reduction of Figure~\ref{fig:worked_selection} on the past, the future and the other query logs of DatabaseX\_4. Black line: expected value of a random selection of four graphs.}
@@ -249,13 +265,17 @@ Under `\subsection{Findings}` (empty now), **insert all of this, in this order:*
 
 The greedy is the best method (Figure~\ref{fig:keep_curve}, Table~\ref{tab:future_exact}). Averaged over the large databases, the four query logs and the four keep shares, it fully answers 63.4\% of the future lines, against 52.1\% for naive and 14.0\% for random. It never answers fewer past lines than naive (better in 32 of the 64 cases, equal in the others) and answers more future lines in 27 cases, the same in 31 and fewer in 6. The advantage is largest when space is tight: at $B=1\%$ the greedy answers 60.4\% of the future lines and naive 36.5\%; at $B=10\%$ both keep almost every useful graph (67.2\% and 65.9\%).
 
-\begin{table}[H]
+\begin{table}[!htbp]
   \centering
   \caption{Future exact coverage (\%), averaged over DatabaseX\_5--8 and $B\in\{1,2,5,10\}\%$.}
   \label{tab:future_exact}
-  \begin{tabular}{lccccc}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{lrrrrr}
     \toprule
-    Method & QLog\_1 & QLog\_2 & QLog\_3 & QLog\_4 & all \\
+    & \multicolumn{4}{c}{query log type} & \\
+    \cmidrule(lr){2-5}
+    Method & 1 & 2 & 3 & 4 & all \\
     \midrule
     random & 8.0 & 8.8 & 28.5 & 10.5 & 14.0 \\
     naive & 89.8 & 30.1 & 21.2 & 67.2 & 52.1 \\
@@ -267,7 +287,7 @@ The greedy is the best method (Figure~\ref{fig:keep_curve}, Table~\ref{tab:futur
 
 How much the past helps depends on the query log (Figure~\ref{fig:comparison_db7}). On QLog\_4 the greedy answers every future line because the future sub-queries are parts of the big past queries, which the kept graphs answer; naive reaches 67\%. On QLog\_1 the future repeats the past, and both methods answer almost everything once the budget allows. On QLog\_2 only about 30\% of the future is answerable from the past, because the new popular queries of the second half concern graphs that no past query pointed to.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/comparison_databasex7_keep1.png}
   \caption{DatabaseX\_7 with $B=1\%$: future (bars) and past (black lines) exact coverage and closeness per method and query log.}
@@ -287,13 +307,13 @@ On QLog\_3 a random selection answers more future lines than every method (28.5\
 
 \subsubsection{Graph similarity}
 
-Graph similarity gives no measurable gain: with budget 0.2 it changes the future exact coverage by less than one point on average (63.1\% against 63.4\%), and it loses past answers when slots are scarce (Figure~\ref{fig:similarity_budget}). With $B=1\%$, a budget of 0.5 lowers the future coverage from 60.4\% to 49.2\%, and a budget of 1, which ignores the query log completely, leaves 11.5\%. The step maximises the number of facts that no kept graph has yet, but a query is answered by a single graph, so facts spread over different graphs do not answer more queries. Moreover, facts contain node identifiers and only 8--15\% of them occur in more than one graph, so the graphs with the most new facts are simply the largest graphs.
+Graph similarity gives no§ measurable gain: with budget 0.2 it changes the future exact coverage by less than one point on average (63.1\% against 63.4\%), and it loses past answers when slots are scarce (Figure~\ref{fig:similarity_budget}). With $B=1\%$, a budget of 0.5 lowers the future coverage from 60.4\% to 49.2\%, and a budget of 1, which ignores the query log completely, leaves 11.5\%. The step maximises the number of facts that no kept graph has yet, but a query is answered by a single graph, so facts spread over different graphs do not answer more queries. Moreover, facts contain node identifiers and only 8--15\% of them occur in more than one graph, so the graphs with the most new facts are simply the largest graphs.
 
 \subsubsection{Small databases}
 
 On the 20-graph databases almost every query has a single answering graph, so the methods differ little (Figure~\ref{fig:small_databases}). With $B=20\%$ the greedy answers 29.3\% of the future lines, naive 24.8\% and random 21.7\%; with $B=40\%$ the greedy answers 62.0\%, naive 60.9\% and random 42.3\%. As on the large databases, random is better on QLog\_3.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/small_databases.png}
   \caption{Small databases DatabaseX\_1--4: future (bars) and past (black lines) exact coverage per query log, averaged over the four databases, with $B=20\%$ and $40\%$.}
@@ -304,7 +324,7 @@ On the 20-graph databases almost every query has a single answering graph, so th
 
 With $B=2\%$ a reduction takes 3--5\,s on DatabaseX\_5--7 and 5--9\,s on DatabaseX\_8, whose file is about twice as large (Figure~\ref{fig:timings}). The time hardly depends on $B$: averaged over the large databases the greedy takes 4.6--5.3\,s for every $B$ from 1\% to 10\%. The greedy costs about one second more than naive (three seconds on DatabaseX\_8), and graph similarity another 0.5--0.8\,s.
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/comparison_timings.png}
   \caption{Reduction time with $B=2\%$ (match, scores and selection; without Spark start-up), mean over the four query logs.}
@@ -315,14 +335,14 @@ With $B=2\%$ a reduction takes 3--5\,s on DatabaseX\_5--7 and 5--9\,s on Databas
 
 On the baseline the greedy is clearly better than naive, more than on our databases (Figure~\ref{fig:baseline}): it answers 43.9\% of the future lines with $B=1\%$ (naive 26.0\%, random 5.4\%) and 52.0\% with $B=2\%$ (naive 28.8\%, random 10.2\%). The baseline log asks many different queries (663 distinct queries in the first half), so even 2\% of the graphs answers only 55\% of the past lines and the order of the picks matters. The future coverage is close to the past coverage for small budgets (52.0\% against 54.7\% with $B=2\%$) because popular queries recur; with $B=10\%$ the extra graphs answer rare past queries that do not come back (82.9\% past, 67.9\% future). Graph similarity is again within about one point of the greedy. A reduction takes 16--19\,s with naive and 36--47\,s with the greedy, because the baseline has 3.4 times more graphs and 1,160 distinct queries (Figure~\ref{fig:baseline_timings}).
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/baseline_comparison.png}
   \caption{Baseline dataset (group 15, filtered): future (bars) and past (black lines) exact coverage and closeness per keep share $B$.}
   \label{fig:baseline}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth]{figures/baseline_timings.png}
   \caption{Reduction time on the baseline dataset (3,370 graphs).}

@@ -45,9 +45,9 @@ python3 src/QLog_satisfaction.py <DB_path> <QLog_path>
 
 Options:
 
---graph_file: input graph database.
---query_log_file: input query log; its filename should look like
-QLog<db>_<number>.txt.
+--graph: input graph database.
+--qlog: input query log.
+--output_file: optional path for the reduced graph database.
 --importance_threshold: fraction of graphs to keep (default: 0.9).
 --tests True: test the reduced database against other qlogs.
 --performance True: print timing information.

@@ -52,6 +52,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=" Select best graphs based on importance measure and threshold.")
     parser.add_argument("--graph", type=str, default="data/DatabaseX_1.txt", help="Path to the graph text file.")
     parser.add_argument("--qlog", type=str, default="data/QLog1_1.txt", help="Path to the query log text file.")
+    parser.add_argument("--output_file", type=str, help="Path to save the reduced graph database.")
     parser.add_argument("--graph_similarity", type=bool, default=False, help="Whether to consider graph similarity in the selection process.")
     parser.add_argument("--similarity_budget",type=float,default=0.2,help="Fraction of the selected-graph budget reserved for information-gain selection (0 to 1).")
     parser.add_argument("--query_coverage", type=str, default="full", choices=["full", "partial","distributed"], help="Query coverage type: 'full' or 'partial'. or 'distributed'" )
@@ -62,22 +63,24 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    original_db_number = args.qlog.split("QLog")[1].split("_")[0].split(".")[0]
-    original_qlog_number = args.qlog.split("QLog")[1].split("_")[1].split(".")[0]
-
     graph_file = Path(__file__).parent / args.graph
     query_log_file = Path(__file__).parent / args.qlog
-    output_file = f"data/reductions/Database{original_db_number}_{original_qlog_number}"
-    if args.query_coverage == "full":
-        output_file += "_full_query_coverage"
-    elif args.query_coverage == "partial":
-        output_file += "_partial_query_coverage"
-    elif args.query_coverage == "distributed":
-        output_file += "_distributed_query_coverage"
-    output_file += f"_{args.graph_selection}_selection_keep_{args.importance_threshold}"
-    if args.graph_similarity:
-        output_file += f"_graph_similarity_{args.similarity_budget}"
-    output_file += ".txt"
+    qlog_name = query_log_file.stem
+    if qlog_name.startswith("QLog") and "_" in qlog_name:
+        original_db_number, original_qlog_number = qlog_name[4:].split("_", 1)
+    else:
+        original_db_number = graph_file.stem
+        original_qlog_number = qlog_name
+
+    if args.output_file:
+        output_file = Path(__file__).parent / args.output_file
+    else:
+        output_file = Path(__file__).parent / "data/reductions" / (
+            f"Database{original_db_number}_{original_qlog_number}"
+            f"_{args.query_coverage}_query_coverage"
+            f"_{args.graph_selection}_selection_keep_{args.importance_threshold}"
+            f"{f'_graph_similarity_{args.similarity_budget}' if args.graph_similarity else ''}.txt"
+        )
 
     start_time = time.time()
     spark_startup_start_time = time.time()
@@ -173,7 +176,7 @@ if __name__ == "__main__":
 
     # Plots of the match, score and selection phases, saved in plots/runs/<name of the reduction>/ (not counted in the timings)
     plotting_start_time = time.time()
-    plots_folder = Path(__file__).parent / "plots" / "runs" / Path(output_file).stem
+    plots_folder = Path(__file__).parent / "plots" / "runs" / output_file.stem
     plot_title = (f"{Path(args.graph).stem} · {Path(args.qlog).stem} · {args.graph_selection} selection, {args.query_coverage} measure, "
                   f"keep {args.importance_threshold:.0%}" + (f", graph similarity budget {args.similarity_budget}" if args.graph_similarity else ""))
     save_run_plots(satisfied_matches, query_log_file_first_half, graphs_importance, args.query_coverage, best_selected_graph_ids, str(plots_folder), plot_title)
@@ -193,7 +196,7 @@ if __name__ == "__main__":
 
 
     # Now I want to create a new database file with only the selected graphs, and save it to the output path   
-    reductions_folder = Path(__file__).parent / "data/reductions"
+    reductions_folder = output_file.parent
     reductions_folder.mkdir(parents=True, exist_ok=True) 
     create_new_database_file_from_selected_graphs(str(graph_file),best_selected_graph_ids,str(output_file))
 
