@@ -68,6 +68,7 @@ make toy-example            # runs the reduction on the toy restaurant dataset
 The reduction uses PySpark. Install Java 21 separately, then select it before
 running Spark commands:
 ```bash
+brew install uv
 brew install openjdk@21
 export JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"
