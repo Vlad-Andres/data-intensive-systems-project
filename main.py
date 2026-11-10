@@ -55,9 +55,9 @@ if __name__ == "__main__":
     parser.add_argument("--output_file", type=str, help="Path to save the reduced graph database.")
     parser.add_argument("--graph_similarity", type=bool, default=False, help="Whether to consider graph similarity in the selection process.")
     parser.add_argument("--similarity_budget",type=float,default=0.2,help="Fraction of the selected-graph budget reserved for information-gain selection (0 to 1).")
-    parser.add_argument("--query_coverage", type=str, default="full", choices=["full", "partial","distributed"], help="Query coverage type: 'full' or 'partial'. or 'distributed'" )
-    parser.add_argument("--graph_selection", type=str, default="simple", choices=["simple", "rounds"], help="Selection method to use: 'simple' or 'rounds'.")
-    parser.add_argument("--importance_threshold", type=float, default=0.9, help="Percentage of the db we want to keep.")
+    parser.add_argument("--query_coverage", type=str, default="distributed", choices=["full", "partial","distributed"], help="Query coverage type: 'full' or 'partial'. or 'distributed'" )
+    parser.add_argument("--graph_selection", type=str, default="rounds", choices=["simple", "rounds"], help="Selection method to use: 'simple' or 'rounds'.")
+    parser.add_argument("--importance_threshold", type=float, default=0.5, help="Percentage of the db we want to keep.")
     parser.add_argument("--tests", type=bool, default=False, help="Whether to run tests on the reduced database.")
     parser.add_argument("--performance", type=bool, default=False, help="Whether to measure performance of the reduction and testing functions.")
 
