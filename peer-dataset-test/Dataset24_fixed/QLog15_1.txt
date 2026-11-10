@@ -1,0 +1,2434 @@
+1015743.creditCardSAR.1014013
+1244.holds.1005316.ownedBy.5003607.type."Sole Proprietorship"
+1013905.heldAt.144225.group."Israel"
+152416.holds.1014044.ownedBy.5002848.type."Country"
+1002429.achEUR.1000205.achUSD.1001479
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1006074.chequeCNY.1003295
+1009182.heldAt.17708.group."Mountain Savings"
+1002994.achUSD.1001292.achEUR.1001146
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1011957.chequeILS.1012030
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+43735.holds.1011943.ownedBy.5013547.type."Corporation"
+1006436.chequeUSD.1009441
+43460.holds.1011911.ownedBy.5013426.type."Corporation"
+1009981.chequeEUR.1006754
+43460.holds.1011911.ownedBy.5013426.type."Corporation"
+1010390.ownedBy.5007545.type."Partnership",1010352.achEUR.1010390
+1002360.achUSD.1000805.heldAt.1412.group."First"
+1007558.chequeUSD.1005149
+1004026.reinvestmentEUR.1004026
+38486.holds.1011750.ownedBy.5006386.type."Corporation"
+1008472.ownedBy.5008580.type."Corporation",1010669.heldAt.24963.group."Germany"
+1010692.creditCardCAD.1010631
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1001270.achUSD.1001071.achJPY.1001387
+1000618.achUSD.1001088.achEUR.1002018
+1005125.chequeEUR.1006538
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1001353.achUSD.1000268.achCHF.1002780
+1015155.creditCardUSD.1006742
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1007923.heldAt.12893.group."Savings"
+1011782.chequeEUR.1015528
+1001511.achUSD.1001905.achUSD.1001023
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+16388.holds.1008829.ownedBy.5007992.type."Corporation"
+1011252.cashUSD.1009556
+13432.holds.1008194.ownedBy.5005369.type."Sole Proprietorship"
+1007923.heldAt.12893.group."Savings"
+1009111.creditCardILS.1015717
+1012634.reinvestmentUSD.1012634
+48526.holds.1002493.ownedBy.5002747.type."Corporation"
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+26.holds.1000484.ownedBy.5002051.type."Sole Proprietorship"
+1001559.achUSD.1001197.achCAD.1003051
+1000953.achEUR.1000399.heldAt.22.group."Germany"
+1000560.achSAR.1000630.achSAR.1000553
+1010274.ownedBy.5007388.type."Partnership",1014381.heldAt.214529.group."India"
+1000502.achCNY.1001591.heldAt.13649.group."China"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1244.holds.1005316.ownedBy.5003607.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+115359.holds.1012577.ownedBy.5005512.type."Corporation"
+1010768.chequeUSD.1012896
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1010018.heldAt.21940.group."First"
+1012411.heldAt.112637.group."India"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1014258.creditCardINR.1012617
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+13858.holds.1008245.ownedBy.5008106.type."Corporation"
+1001373.achCHF.1002797.heldAt.139793.group."Switzerland"
+1006134.chequeEUR.1009091
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1001200.achUSD.1002150.heldAt.23842.group."First"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+1008971.heldAt.16792.group."Russia",1008971.cashRUB.1012722
+70.holds.1004284.ownedBy.5010811.type."Sole Proprietorship"
+1001251.achCHF.1003129.heldAt.240229.group."Switzerland"
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+211.holds.1000572.ownedBy.5002043.type."Partnership"
+1012733.creditCardJPY.1012676
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1001958.achUSD.1000737.heldAt.1244.group."Bank of Arkadelphia"
+126783.holds.1013195.ownedBy.5006030.type."Corporation"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+1003101.achILS.1002474.heldAt.43735.group."Israel"
+701.holds.1005016.ownedBy.5003312.type."Sole Proprietorship"
+1015426.wireCHF.1015370
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+1004188.heldAt.26.group."UK",1014723.creditCardGBP.1010314,1014709.heldAt.220541.group."UK"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1002318.achCNY.1001901.achEUR.1002375
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1002499.achSAR.1002821.achSAR.1002822
+1010535.creditCardUSD.1009458
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1001511.achUSD.1001905.achEUR.1002057
+14663.holds.1008479.ownedBy.5007693.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1010941.heldAt.27140.group."Germany",1010173.creditCardEUR.1010941
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+1001688.achEUR.1002975.heldAt.220888.group."Spain"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1000651.achUSD.1000109.heldAt.10.group."National"
+1004983.chequeUSD.1009883
+1000651.achUSD.1000109.heldAt.10.group."National"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1002879.achMXN.1000600.heldAt.214.group."Canada"
+12.holds.1003760.ownedBy.5008403.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1008012.ownedBy.5009493.type."Sole Proprietorship",1000291.ownedBy.5002637.type."Sole Proprietorship"
+1002144.achEUR.1002020.achUSD.1002050
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1000908.achEUR.1001219.heldAt.5464.group."Italy"
+1003311.chequeINR.1012345
+1010106.heldAt.22345.group."Savings"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+1004203.chequeMXN.1013441
+1002149.achCNY.1000748.achUSD.1001968
+1000706.achUSD.1001292.achEUR.1002013
+1005125.chequeEUR.1006538
+1013887.heldAt.143496.group."Israel"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+1010214.creditCardUSD.1009889,1010214.heldAt.22828.group."Bank of Chicago",1009889.chequeUSD.1007102
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+20.holds.1000367.ownedBy.5000647.type."Partnership"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+12.holds.1000218.ownedBy.5000013.type."Sole Proprietorship"
+1003121.achUSD.1002230.achUSD.1002696
+1004616.heldAt.210.group."Canada"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+12.holds.1000238.ownedBy.5000739.type."Corporation"
+1011645.heldAt.34523.group."Mexico"
+1005785.heldAt.1665.group."Savings"
+1001426.achCNY.1001901.achUSD.1001457
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+11.holds.1000171.ownedBy.5000699.type."Partnership"
+1014322.ownedBy.5005376.type."Corporation",1014322.creditCardUSD.1011554
+48526.holds.1002493.ownedBy.5002747.type."Corporation"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1015851.bitcoinBTC.1014104
+1006382.wireEUR.1013696
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1008461.creditCardEUR.1014892
+11.holds.1000171.ownedBy.5000699.type."Partnership"
+1003463.chequeRUB.1003463
+1002418.achUSD.1001197.achJPY.1001440
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1015639.cashILS.1015674
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1005906.heldAt.1688.group."Arbor Thrift"
+1007486.heldAt.11128.group."Japan",1014195.ownedBy.5009981.type."Corporation"
+18067.holds.1009287.ownedBy.5009418.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1002901.achUSD.1001307.achUSD.1001063
+1014718.cashGBP.1003520
+1014637.heldAt.219449.group."Spain"
+1005249.heldAt.1198.group."Israel"
+13858.holds.1008245.ownedBy.5008106.type."Corporation"
+1006591.cashUSD.1003242,1014153.heldAt.210319.group."Japan"
+1005575.creditCardEUR.1012591
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1002078.chequeGBP.1013061
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1010631.heldAt.24856.group."Canada"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+14663.holds.1008479.ownedBy.5007693.type."Partnership"
+1001889.achUSD.1001905.achUSD.1001982
+1001606.achJPY.1000480.heldAt.24.group."Japan"
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1006290.achUSD.1008418
+220.holds.1004824.ownedBy.5003031.type."Corporation"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1003703.heldAt.11.group."Finland"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+22.holds.1004130.ownedBy.5006556.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+1292.holds.1000763.ownedBy.5002816.type."Partnership"
+26.holds.1000484.ownedBy.5002051.type."Sole Proprietorship"
+1000043.achEUR.1000874.achUSD.1000820
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1006200.achUSD.1013649
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+213.holds.1004689.ownedBy.5011450.type."Sole Proprietorship"
+11.holds.1000171.ownedBy.5000699.type."Partnership"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+1002490.achSAR.1002827.achSAR.1000562
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1002491.achSAR.1000564.heldAt.119.group."Israel"
+1012017.heldAt.45000.group."Israel",1004778.heldAt.217.group."Israel",1015596.ownedBy.5013352.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1001368.achRUB.1002629.heldAt.116904.group."Russia"
+1001721.achUSD.1002896.achBRL.1002774
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+70.holds.1004284.ownedBy.5010811.type."Sole Proprietorship"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+132523.holds.1013385.ownedBy.5013819.type."Partnership"
+1001323.achUSD.1001548.heldAt.13145.group."First"
+15231.holds.1008574.ownedBy.5007807.type."Partnership"
+20.holds.1000367.ownedBy.5000647.type."Partnership"
+1002812.achUSD.1002370.achEUR.1002182
+1000251.heldAt.12.group."National",1000251.achEUR.1000191
+15231.holds.1008574.ownedBy.5007807.type."Partnership"
+1000323.achRUB.1001760.achRUB.1000154
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+12803.holds.1001509.ownedBy.5001843.type."Partnership"
+1010030.chequeUSD.1009450,1009450.heldAt.18549.group."National",1010030.heldAt.21940.group."First"
+1012562.heldAt.114674.group."Flagstone Savings",1008784.ownedBy.5004774.type."Corporation"
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+1001473.achUSD.1001905.achUSD.1001094
+12719.holds.1007865.ownedBy.5012362.type."Partnership"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1004863.heldAt.220.group."National"
+1009430.ownedBy.5004940.type."Sole Proprietorship",1005308.ownedBy.5003603.type."Sole Proprietorship"
+1005125.chequeEUR.1006538
+1002151.achUSD.1001024.achINR.1001665
+1001542.achJPY.1000299.achEUR.1001238
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1009842.chequeGBP.1010055
+1011885.heldAt.43049.group."Israel"
+1006376.ownedBy.5004167.type."Corporation",1014169.chequeUSD.1006376
+1003752.chequeEUR.1007759
+1005880.achUSD.1005448
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1001994.achUSD.1001796.heldAt.17327.group."First"
+1002636.achUSD.1002370.achEUR.1001842
+1015050.creditCardUSD.1006113
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1011064.chequeEUR.1011513
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+21611.holds.1009897.ownedBy.5003763.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+1013887.heldAt.143496.group."Israel"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+21381.holds.1009772.ownedBy.5009373.type."Sole Proprietorship"
+126426.holds.1013188.ownedBy.5005777.type."Partnership"
+21381.holds.1009772.ownedBy.5009373.type."Sole Proprietorship"
+1005024.chequeEUR.1005690,1008034.heldAt.13083.group."Italy"
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+1001561.achEUR.1000657.achJPY.1001321
+1014410.creditCardUSD.1012509
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1001765.achUSD.1001197.achJPY.1001440
+116425.holds.1012655.ownedBy.5010805.type."Corporation"
+32595.holds.1011549.ownedBy.5007244.type."Sole Proprietorship"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1012519.heldAt.113798.group."Capital Bancorp",1003685.ownedBy.5010887.type."Sole Proprietorship"
+1000270.achUSD.1002896.achAUD.1002727
+1000841.achMXN.1000493.achUSD.1000691
+1005575.creditCardEUR.1012591
+1002862.achUSD.1002896.achEUR.1001600
+40404.holds.1002464.ownedBy.5002560.type."Partnership"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1010979.cashEUR.1005651
+908.holds.1005091.ownedBy.5003389.type."Corporation"
+1004974.heldAt.410.group."Germany"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1001102.achCHF.1002795.achUSD.1001155
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1004561.bitcoinBTC.1015851
+132554.holds.1013393.ownedBy.5006211.type."Partnership"
+1006402.creditCardUSD.1013693,1008558.heldAt.15085.group."National"
+1003310.heldAt.3.group."China"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+10060.holds.1007315.ownedBy.5009925.type."Sole Proprietorship"
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+133313.holds.1013419.ownedBy.5010063.type."Sole Proprietorship"
+1004715.creditCardMXN.1004204
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1005785.heldAt.1665.group."Savings"
+113744.holds.1002575.ownedBy.5002358.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1000864.achCHF.1003147.heldAt.241869.group."Switzerland"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+21611.holds.1009907.ownedBy.5003772.type."Sole Proprietorship"
+11.holds.1000171.ownedBy.5000699.type."Partnership"
+28771.holds.1011263.ownedBy.5011613.type."Sole Proprietorship"
+1007706.wireILS.1007542
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1014083.bitcoinBTC.1004583,1003945.bitcoinBTC.1014083
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+22155.holds.1002061.ownedBy.5002108.type."Corporation"
+1011629.chequeMXN.1011632,1011629.heldAt.34032.group."First"
+1001232.achCNY.1002001.heldAt.21615.group."China"
+1002730.achUSD.1001307.achRUB.1002927
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1011081.achEUR.1015355,1007824.ownedBy.5007168.type."Partnership"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+1001319.achUSD.1001867.achJPY.1001317
+1004098.heldAt.22.group."Germany"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1002561.achUSD.1001197.achUSD.1001050
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1010432.ownedBy.5004327.type."Partnership",1001820.achCHF.1000541
+1002639.achUSD.1002595.heldAt.115249.group."Savings"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+43849.holds.1011961.ownedBy.5013596.type."Sole Proprietorship"
+1001421.achUSD.1002879.achCAD.1003045
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1000180.achGBP.1002058.heldAt.22091.group."UK"
+43849.holds.1011951.ownedBy.5013584.type."Corporation"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+223.holds.1000636.ownedBy.5002715.type."Partnership"
+1011416.chequeUSD.1007134
+1002007.achINR.1002875.achINR.1002560
+1003101.achCAD.1002250.achUSD.1000047
+223090.holds.1014899.ownedBy.5007416.type."Sole Proprietorship"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1000171.heldAt.11.group."Finland"
+214.holds.1000589.ownedBy.5002129.type."Sole Proprietorship"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+1006395.chequeUSD.1010826
+1002903.achEUR.1000912.heldAt.1547.group."Italy"
+1001753.creditCardRUB.1003552
+223090.holds.1014899.ownedBy.5007416.type."Sole Proprietorship"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1002149.achEUR.1000853.heldAt.1490.group."Italy"
+1002066.achUSD.1013299
+1005092.wireUSD.1008062
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1003088.achUSD.1001111.achEUR.1001257
+1467.holds.1000827.ownedBy.5002156.type."Partnership"
+1000667.achUSD.1000818.heldAt.1420.group."Golden Bancorp"
+1011461.heldAt.30775.group."Bank of Augusta",1013623.ownedBy.5006335.type."Sole Proprietorship"
+1000417.achEUR.1002015.heldAt.21749.group."Spain"
+1001852.achUSD.1002254.heldAt.26442.group."National"
+1008337.chequeEUR.1006621
+214.holds.1000589.ownedBy.5002129.type."Sole Proprietorship"
+1015245.heldAt.234331.group."Mexico",1004558.bitcoinBTC.1012157
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1001295.achEUR.1002273.achEUR.1000165
+25536.holds.1010745.ownedBy.5007862.type."Partnership"
+1007762.creditCardEUR.1007944
+21884.holds.1002035.ownedBy.5002053.type."Partnership"
+1006656.heldAt.4523.group."Savings"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1001103.achUSD.1000268.achCNY.1002388
+1010106.heldAt.22345.group."Savings"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+113744.holds.1012509.ownedBy.5012601.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1013283.ownedBy.5006116.type."Partnership",1013214.achAUD.1011164
+1002812.achUSD.1002370.achEUR.1002182
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1012454.heldAt.113060.group."Italy"
+1000005.achEUR.1000217.heldAt.12.group."National"
+1005096.chequeUSD.1003618
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+1003949.bitcoinBTC.1004588
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1004641.chequeAUD.1004648
+1006492.ownedBy.5004276.type."Partnership",1011408.creditCardEUR.1013777
+1004897.chequeSAR.1012071
+1003760.creditCardEUR.1009080
+1000762.achUSD.1001197.achJPY.1001440
+1006100.creditCardUSD.1012146
+1008259.heldAt.13862.group."Germany"
+1010136.heldAt.22575.group."UK"
+1005420.reinvestmentUSD.1005420
+1010180.chequeEUR.1010283,1010283.ownedBy.5007396.type."Partnership",1010180.wireEUR.1010283
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1008762.creditCardUSD.1007988
+21884.holds.1002035.ownedBy.5002053.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1003383.creditCardRUB.1004943,1003213.ownedBy.5002897.type."Partnership",1003383.chequeRUB.1014498
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1014895.creditCardUSD.1011679,1005318.ownedBy.5003609.type."Partnership"
+1006322.heldAt.2952.group."Sunrise Credit Union"
+1006054.heldAt.2385.group."Hearthstone Savings"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1012751.cashRUB.1008930
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1000424.achUSD.1001905.achUSD.1001522
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1007893.chequeEUR.1006278
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1005519.ownedBy.5014090.type."Sole Proprietorship",1009657.ownedBy.5005748.type."Sole Proprietorship",1009860.wireUSD.1007675
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1010971.chequeEUR.1012131,1011447.creditCardILS.1012024
+1002200.achUSD.1001390.heldAt.11157.group."Savings"
+1009139.heldAt.17491.group."Russia"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1014138.cashJPY.1007655,1014138.creditCardJPY.1013418
+1005803.chequeEUR.1012452
+1047.holds.1000709.ownedBy.5002836.type."Corporation"
+1006436.chequeUSD.1009441
+1002397.achUSD.1002171.heldAt.24515.group."Savings"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+1013549.cashUSD.1013395
+22.holds.1000409.ownedBy.5000670.type."Corporation"
+1002743.achCHF.1003147.achUSD.1002088
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1001616.achUSD.1001405.achEUR.1000263
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1005126.cashEUR.1006681
+13432.holds.1008194.ownedBy.5005369.type."Sole Proprietorship"
+1011511.ownedBy.5009071.type."Corporation",1011511.heldAt.32297.group."First"
+1014604.creditCardEUR.1015738
+24941.holds.1010656.ownedBy.5011596.type."Partnership"
+1002418.achUSD.1001197.achCAD.1002231
+12719.holds.1007865.ownedBy.5012362.type."Partnership"
+148348.holds.1002820.ownedBy.5002751.type."Corporation"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1002645.achEUR.1002239.heldAt.25866.group."Spain"
+1003646.heldAt.10.group."National"
+1006174.chequeUSD.1015359
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+1012956.cashJPY.1010266
+1002963.achRUB.1000071.heldAt.4.group."China"
+1008762.creditCardUSD.1007988
+1002318.achCNY.1001901.achEUR.1003019
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+133313.holds.1013419.ownedBy.5010063.type."Sole Proprietorship"
+16011.holds.1008713.ownedBy.5007959.type."Sole Proprietorship"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+16792.holds.1008970.ownedBy.5010720.type."Corporation"
+22155.holds.1002061.ownedBy.5002108.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1010929.heldAt.27120.group."Canada"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+238190.holds.1015373.ownedBy.5012772.type."Corporation"
+1014271.creditCardJPY.1003974
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+16388.holds.1008829.ownedBy.5007992.type."Corporation"
+1003156.achCNY.1001901.achEUR.1002375
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1000568.achSAR.1000637.heldAt.223.group."Saudi Arabia"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1002419.achJPY.1002515.achILS.1000292
+1007264.chequeJPY.1007402
+1001769.achUSD.1002773.achEUR.1002373
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+24856.holds.1010617.ownedBy.5011557.type."Sole Proprietorship"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+1009573.ownedBy.5009675.type."Partnership",1008226.ownedBy.5009483.type."Corporation"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+1005668.chequeEUR.1005603
+1005685.cashEUR.1010943,1005685.chequeEUR.1008706
+13858.holds.1008245.ownedBy.5008106.type."Corporation"
+1005196.heldAt.1068.group."National"
+1004952.cashEUR.1010271
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+2439.holds.1006078.ownedBy.5003972.type."Corporation"
+1000897.achUSD.1001197.achEUR.1001675
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+1010106.heldAt.22345.group."Savings"
+1007139.creditCardEUR.1012886,1007541.cashUSD.1010900
+1008122.achEUR.1006758,1004158.achEUR.1008122
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1001518.achRUB.1002638.achCNY.1002800
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+12.holds.1003760.ownedBy.5008403.type."Partnership"
+1014278.chequeINR.1008491
+1006241.achUSD.1011258
+1006479.creditCardEUR.1015338
+1015470.achCHF.1004458,1004458.heldAt.117.group."Switzerland"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+1001616.achUSD.1001405.achEUR.1000263
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1011429.chequeCNY.1007209
+1002728.achJPY.1000299.achCAD.1000102
+28.holds.1004247.ownedBy.5012203.type."Corporation"
+1014375.cashSAR.1014547
+1009196.creditCardUSD.1009523
+1008030.wireEUR.1005671
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1002672.achUSD.1002773.achSAR.1002494
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1000837.achEUR.1000176.heldAt.11.group."Finland"
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+1014908.creditCardUSD.1013249,1014908.ownedBy.5005878.type."Corporation",1013249.heldAt.128684.group."National"
+1012734.chequeRUB.1009402
+1014366.chequeEUR.1008399,1014366.heldAt.214100.group."France",1008399.heldAt.14329.group."Austria"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+1000900.achUSD.1000983,1011298.ownedBy.5008596.type."Partnership"
+25536.holds.1010745.ownedBy.5007862.type."Partnership"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+1003508.creditCardRUB.1008927
+1009900.chequeUSD.1012749
+1004220.heldAt.28.group."Australia",1009349.ownedBy.5008680.type."Sole Proprietorship"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1000157.achUSD.1001905.achUSD.1001982
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1.holds.1003212.ownedBy.5002896.type."Corporation"
+1000563.achSAR.1000548.achSAR.1000628
+1006167.chequeUSD.1014162
+223.holds.1000636.ownedBy.5002715.type."Partnership"
+21381.holds.1001974.ownedBy.5001633.type."Partnership"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+1009939.chequeEUR.1005380
+214.holds.1000589.ownedBy.5002129.type."Sole Proprietorship"
+139216.holds.1013702.ownedBy.5009155.type."Sole Proprietorship"
+1001031.achUSD.1002773.achEUR.1002098
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+16388.holds.1008829.ownedBy.5007992.type."Corporation"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+1011104.achEUR.1010386
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1008896.heldAt.16649.group."Russia"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1010148.chequeUSD.1006927
+113744.holds.1002575.ownedBy.5002358.type."Partnership"
+1006569.ownedBy.5004322.type."Partnership",1005042.chequeUSD.1006569
+1002116.achUSD.1001484.achMXN.1002422
+1011420.heldAt.29944.group."China"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1002404.achGBP.1000573.heldAt.211.group."UK"
+1014525.heldAt.217959.group."Lithuania"
+11.holds.1000171.ownedBy.5000699.type."Partnership"
+1000146.achUSD.1001197.achCAD.1002231
+22.holds.1000409.ownedBy.5000670.type."Corporation"
+1001511.achUSD.1001905.achUSD.1001699
+1009145.creditCardRUB.1012744
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+148016.holds.1002815.ownedBy.5002731.type."Sole Proprietorship"
+241775.holds.1015557.ownedBy.5009163.type."Sole Proprietorship"
+1002918.achEUR.1002514.heldAt.111141.group."Greece"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1004028.chequeMXN.1007148
+1010405.heldAt.23776.group."UK"
+1244.holds.1005316.ownedBy.5003607.type."Sole Proprietorship"
+1000123.achUSD.1000002.heldAt.1.group."Arbor Savings"
+1010298.heldAt.23402.group."Bank of Fairfield"
+223.holds.1000635.ownedBy.5002714.type."Partnership"
+1013858.heldAt.143430.group."Israel"
+1002822.heldAt.148350.group."Saudi Arabia",1002821.ownedBy.5002755.type."Partnership"
+1005952.cashUSD.1008743
+1008801.reinvestmentJPY.1012592
+223090.holds.1014899.ownedBy.5007416.type."Sole Proprietorship"
+24856.holds.1010617.ownedBy.5011557.type."Sole Proprietorship"
+1000052.achMXN.1000493.achUSD.1000017
+1006651.chequeUSD.1007734
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+40404.holds.1002464.ownedBy.5002560.type."Partnership"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1004421.heldAt.116.group."Switzerland"
+1000250.achEUR.1000161.achEUR.1000834
+1005497.chequeUSD.1005433,1005497.creditCardUSD.1005145
+1008392.cashEUR.1008547
+1001075.achUSD.1000996.heldAt.1729.group."Willows Bancorp"
+2053.holds.1001015.ownedBy.5000224.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1008030.wireEUR.1005671
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1007057.chequeEUR.1015665
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1001464.achUSD.1001190.heldAt.4503.group."Golden Thrift"
+16388.holds.1008829.ownedBy.5007992.type."Corporation"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1001113.achCNY.1001901.achINR.1002586
+44565.holds.1011984.ownedBy.5002604.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1006824.creditCardEUR.1010528,1010528.ownedBy.5007658.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1007159.chequeUSD.1011287
+1008412.creditCardUSD.1013318
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1009885.achJPY.1004995
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1002010.achUSD.1002370.achEUR.1001842
+1000568.achSAR.1000630.achSAR.1000568
+1012130.heldAt.49089.group."Germany"
+1001055.achEUR.1002392.heldAt.29794.group."Italy"
+1003158.achUSD.1002879.achUSD.1003030
+1002262.achUSD.1000268.achCHF.1002780
+1001994.achAUD.1002303.heldAt.27995.group."Australia"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+220.holds.1004824.ownedBy.5003031.type."Corporation"
+1012262.creditCardUSD.1005991,1009731.ownedBy.5003468.type."Sole Proprietorship"
+1005952.cashUSD.1008743
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1011501.heldAt.31799.group."Netherlands"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1000101.achUSD.1001459.achRUB.1001759
+1008683.heldAt.15964.group."Spain"
+16388.holds.1008829.ownedBy.5007992.type."Corporation"
+12.holds.1000218.ownedBy.5000013.type."Sole Proprietorship"
+16011.holds.1008713.ownedBy.5007959.type."Sole Proprietorship"
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+1005297.reinvestmentUSD.1005297,1010381.chequeEUR.1010012
+1005506.chequeUSD.1006978
+214881.holds.1014408.ownedBy.5010485.type."Sole Proprietorship"
+214.holds.1000589.ownedBy.5002129.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1002338.achUSD.1002879.achEUR.1002352
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+148016.holds.1002816.ownedBy.5002733.type."Partnership"
+908.holds.1005091.ownedBy.5003389.type."Corporation"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1009196.creditCardUSD.1009523
+1003621.cashUSD.1008320
+21611.holds.1009897.ownedBy.5003763.type."Corporation"
+139216.holds.1013702.ownedBy.5009155.type."Sole Proprietorship"
+1015722.heldAt.246581.group."Israel"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1000908.achEUR.1001219.heldAt.5464.group."Italy"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+132554.holds.1013393.ownedBy.5006211.type."Partnership"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1007390.heldAt.10614.group."National"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+1001932.achUSD.1001292.heldAt.8771.group."Sappo"
+1011104.achEUR.1010386
+223.holds.1000635.ownedBy.5002714.type."Partnership"
+1011818.heldAt.40312.group."Switzerland",1004415.heldAt.116.group."Switzerland",1003127.chequeCHF.1011818
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1003762.chequeUSD.1012636,1003762.creditCardUSD.1005554
+1002077.achUSD.1003035.heldAt.225263.group."Bank of Miami"
+1012960.creditCardCAD.1014971
+1003061.achGBP.1002112.achEUR.1000390
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1006103.cashUSD.1009871
+111631.holds.1012308.ownedBy.5005300.type."Sole Proprietorship"
+1001720.achUSD.1000939.achSAR.1002817
+34670.holds.1011649.ownedBy.5009586.type."Corporation"
+1004202.creditCardMXN.1015256,1004720.heldAt.213.group."Mexico",1015256.ownedBy.5002351.type."Partnership"
+1006555.ownedBy.5004312.type."Sole Proprietorship",1005168.ownedBy.5003445.type."Partnership"
+1003424.heldAt.6.group."India",1014253.heldAt.212789.group."India"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1011510.chequeUSD.1012874
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+21611.holds.1009907.ownedBy.5003772.type."Sole Proprietorship"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+214322.holds.1014374.ownedBy.5001409.type."Corporation"
+1009709.achUSD.1009898
+1013593.achCHF.1004471
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1003968.creditCardINR.1014296
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+1000549.heldAt.118.group."Switzerland",1014906.chequeUSD.1012500
+43460.holds.1011911.ownedBy.5013426.type."Corporation"
+1012356.ownedBy.5010222.type."Partnership",1012356.heldAt.112064.group."India"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1002149.achEUR.1000853.achUSD.1001968
+20.holds.1000367.ownedBy.5000647.type."Partnership"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1013285.ownedBy.5002299.type."Corporation",1012316.ownedBy.5005308.type."Sole Proprietorship",1013285.chequeUSD.1012316
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+220.holds.1004824.ownedBy.5003031.type."Corporation"
+1002721.achUSD.1001111.achUSD.1002367
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1001691.achUSD.1000019.heldAt.1.group."Arbor Savings"
+1004368.chequeILS.1012031,1002822.achSAR.1002499
+1002044.achUSD.1002896.achEUR.1002293
+1004146.achILS.1010328
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1003616.heldAt.10.group."National",1005290.heldAt.1244.group."Bank of Arkadelphia"
+1005146.creditCardUSD.1010475
+1001741.achUSD.1002896.achAUD.1002727
+1002672.achUSD.1002773.achUSD.1002334
+1011169.heldAt.28611.group."Australia",1004213.chequeAUD.1011111,1011111.creditCardAUD.1011318
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1004656.chequeBRL.1004277
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+1001103.achUSD.1000268.achCHF.1002780
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1010955.chequeEUR.1008042
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+2439.holds.1006078.ownedBy.5003972.type."Corporation"
+17649.holds.1001813.ownedBy.5001223.type."Sole Proprietorship"
+908.holds.1005091.ownedBy.5003389.type."Corporation"
+1008030.wireEUR.1005671
+1002148.achUSD.1001070.heldAt.2845.group."Sea"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+134920.holds.1013476.ownedBy.5012515.type."Corporation"
+27637.holds.1011046.ownedBy.5004888.type."Partnership"
+148016.holds.1002816.ownedBy.5002733.type."Partnership"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1014967.creditCardCAD.1004624
+1013887.heldAt.143496.group."Israel"
+1000738.ownedBy.5000183.type."Corporation",1007538.heldAt.11318.group."First"
+1011511.heldAt.32297.group."First"
+1006436.chequeUSD.1009441
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+1006281.heldAt.2915.group."France"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1000692.achUSD.1000768.achUSD.1000949
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1005792.chequeEUR.1005649
+10.holds.1003620.ownedBy.5002969.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1012508.chequeUSD.1013226
+1009985.chequeGBP.1014843
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1010542.creditCardUSD.1014790
+1008900.chequeRUB.1008923
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+12719.holds.1007865.ownedBy.5012362.type."Partnership"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1013129.creditCardCAD.1013137
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1010018.heldAt.21940.group."First"
+1014258.heldAt.212789.group."India",1014258.cashINR.1012617
+1002137.ownedBy.5001067.type."Sole Proprietorship",1001686.achEUR.1002137
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1013858.heldAt.143430.group."Israel"
+18067.holds.1009287.ownedBy.5009418.type."Corporation"
+1009791.ownedBy.5008585.type."Partnership",1007841.heldAt.12561.group."Spain"
+12.holds.1000221.ownedBy.5000732.type."Corporation"
+1004123.heldAt.22.group."Germany"
+1007500.creditCardUSD.1011588
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1010018.heldAt.21940.group."First"
+1003273.cashINR.1009353
+1005750.wireGBP.1008632
+1009612.chequeCNY.1009333,1009612.reinvestmentCNY.1009612,1009333.ownedBy.5009462.type."Partnership"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1001253.achGBP.1000574.achUSD.1000772
+126783.holds.1013195.ownedBy.5006030.type."Corporation"
+1004598.cashCAD.1003998
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+223.holds.1000635.ownedBy.5002714.type."Partnership"
+119.holds.1000564.ownedBy.5002725.type."Sole Proprietorship"
+1001765.achUSD.1001197.achCAD.1002231
+1005840.heldAt.1669.group."Germany",1005840.chequeEUR.1012243
+1003537.creditCardCAD.1013148
+1001414.achEUR.1002015.achEUR.1001670
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1001765.achUSD.1001197.achEUR.1000842
+1013598.achCHF.1004335
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+1007973.chequeUSD.1004815
+12.holds.1000221.ownedBy.5000732.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1001161.achUSD.1000805.achGBP.1002991
+1009643.chequeUSD.1011043
+1002032.achUSD.1002370.achEUR.1002979
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+1005575.creditCardEUR.1012591
+1008211.chequeEUR.1012060,1008211.chequeEUR.1015239
+1000164.achINR.1001596.heldAt.13667.group."India"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+1003463.cashINR.1008921
+1007281.creditCardUSD.1012269,1007269.ownedBy.5009882.type."Corporation"
+43849.holds.1011961.ownedBy.5013596.type."Sole Proprietorship"
+1004863.heldAt.220.group."National"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1003635.chequeUSD.1013097,1006741.heldAt.5140.group."Bank of Laramie"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1013440.heldAt.133686.group."Mexico",1013440.chequeCHF.1004446,1013440.achMXN.1013440
+1000636.achSAR.1000548.achSAR.1000630
+1013858.heldAt.143430.group."Israel"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1006436.chequeUSD.1009441
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1010537.heldAt.24515.group."Savings"
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+1004997.heldAt.513.group."National"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+1008534.heldAt.15055.group."Germany",1014418.heldAt.215064.group."National"
+1005413.heldAt.1362.group."Golden Bancorp"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1002763.achUSD.1000621.heldAt.220.group."National"
+1002812.achUSD.1002370.achEUR.1001589
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+134920.holds.1013476.ownedBy.5012515.type."Corporation"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+3.holds.1003267.ownedBy.5001668.type."Partnership"
+115359.holds.1012577.ownedBy.5005512.type."Corporation"
+1002892.achUSD.1002773.achUSD.1000722
+1000897.achUSD.1001197.achCAD.1003051
+1010088.chequeUSD.1006734
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1000701.achMXN.1000493.achUSD.1000757
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1000349.achUSD.1000225.heldAt.12.group."National"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1010548.ownedBy.5004456.type."Partnership",1011279.ownedBy.5011772.type."Partnership"
+1006207.heldAt.2824.group."Future Cooperative",1010279.chequeEUR.1012260
+1009017.heldAt.16927.group."Russia"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1001721.achUSD.1002896.achRUB.1000494
+1004235.heldAt.28.group."Australia"
+1005321.creditCardCNY.1007231,1002490.achSAR.1000562
+1000078.achUSD.1002749.heldAt.132306.group."First"
+1001854.achINR.1000315.heldAt.16.group."India"
+1008807.heldAt.16333.group."Plateau Credit Union"
+1015268.ownedBy.5012495.type."Sole Proprietorship",1004389.heldAt.115.group."Brazil"
+12.holds.1000218.ownedBy.5000013.type."Sole Proprietorship"
+1004656.achMXN.1013480
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+34670.holds.1011649.ownedBy.5009586.type."Corporation"
+1008667.creditCardJPY.1007046
+1002892.achUSD.1002773.achAUD.1002324
+1006025.reinvestmentEUR.1006025
+147042.holds.1013963.ownedBy.5009191.type."Sole Proprietorship"
+1000545.achUSD.1001307.achEUR.1002263
+1003154.achGBP.1002113.achRUB.1002931
+1005361.cashUSD.1006263,1008427.ownedBy.5004442.type."Sole Proprietorship"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+1004242.heldAt.28.group."Australia"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1000846.achUSD.1002879.achEUR.1002372
+1001232.achCAD.1003037.achUSD.1001685
+43849.holds.1011951.ownedBy.5013584.type."Corporation"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1001927.achUSD.1001214.achCAD.1002718
+38486.holds.1011750.ownedBy.5006386.type."Corporation"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1001899.achUSD.1001905.achUSD.1001495
+1009248.chequeEUR.1015143,1003205.heldAt.1.group."Arbor Savings"
+1007811.creditCardUSD.1006081
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+48526.holds.1002493.ownedBy.5002747.type."Corporation"
+1001679.achEUR.1001037.achBRL.1000156
+1001542.achJPY.1000299.achJPY.1000394
+214322.holds.1014374.ownedBy.5001409.type."Corporation"
+1000621.achUSD.1001883.heldAt.18511.group."Bank of Denver"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1000699.achCNY.1001848.achCHF.1003116
+1002728.achJPY.1000299.achUSD.1002771
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1005081.heldAt.795.group."First"
+1011005.creditCardUSD.1013630
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+132523.holds.1013385.ownedBy.5013819.type."Partnership"
+1004034.chequeEUR.1009922
+1013283.ownedBy.5006116.type."Partnership",1013214.achAUD.1011164
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1001857.achUSD.1002918.heldAt.215841.group."First"
+21381.holds.1001974.ownedBy.5001633.type."Partnership"
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+34670.holds.1011649.ownedBy.5009586.type."Corporation"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1001623.achCHF.1002795.achEUR.1000211
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+1002755.achGBP.1000574.achUSD.1001290
+1001064.achUSD.1000676.heldAt.701.group."First"
+113744.holds.1012509.ownedBy.5012601.type."Partnership"
+1013559.heldAt.136237.group."Brazil"
+1005242.creditCardILS.1004777,1013821.heldAt.143242.group."Israel"
+1010018.heldAt.21940.group."First"
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+1015426.creditCardCHF.1015442
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1009797.cashEUR.1010325
+1006362.ownedBy.5004155.type."Corporation",1010456.heldAt.23885.group."Brownstone Bancorp",1006362.heldAt.3051.group."Acme Community"
+1010774.heldAt.25637.group."Arbor Bancorp"
+1000669.achEUR.1002015.achEUR.1000780
+1.holds.1003212.ownedBy.5002896.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1001367.achUSD.1002128.heldAt.23537.group."Capital Trust"
+154653.holds.1014115.ownedBy.5002848.type."Country"
+1015025.creditCardUSD.1014222
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+1007602.chequeUSD.1010562,1010568.achCAD.1004695
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+16927.holds.1009008.ownedBy.5010742.type."Partnership"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1006284.chequeEUR.1011231
+1004789.achUSD.1003580,1005738.heldAt.1601.group."Acme Cooperative"
+1000250.achEUR.1000161.heldAt.11.group."Finland"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1013300.heldAt.130169.group."Bank of Miami"
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+1009525.chequeUSD.1013303
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1008030.wireEUR.1005671
+1001560.achCHF.1003147.achUSD.1000831
+139216.holds.1013702.ownedBy.5009155.type."Sole Proprietorship"
+1008724.chequeUSD.1014984,1008724.creditCardUSD.1014242
+1009440.chequeUSD.1011208
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+22155.holds.1002061.ownedBy.5002108.type."Corporation"
+1010162.reinvestmentEUR.1010162,1013975.ownedBy.5007257.type."Sole Proprietorship"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1009122.creditCardUSD.1014985
+14077.holds.1008310.ownedBy.5011885.type."Corporation"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+1014093.heldAt.154043.group."Crytpo"
+1003731.chequeEUR.1000359
+1009368.creditCardCNY.1007769
+1002660.achEUR.1000205.achUSD.1001479
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1002862.achUSD.1002896.achMXN.1000604
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+28771.holds.1011263.ownedBy.5011613.type."Sole Proprietorship"
+19477.holds.1009545.ownedBy.5009558.type."Corporation"
+24941.holds.1010656.ownedBy.5011596.type."Partnership"
+1000558.achSAR.1000630.achSAR.1000568
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1005541.creditCardUSD.1006032
+1006349.heldAt.3045.group."Austria"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+1000899.achUSD.1000818.achUSD.1000758
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+28.holds.1004247.ownedBy.5012203.type."Corporation"
+1013577.achUSD.1013311
+1001985.achUSD.1001197.achBRL.1002768
+1003451.creditCardBRL.1013229
+1000574.achUSD.1001208.heldAt.5140.group."Bank of Laramie"
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+1686.holds.1005888.ownedBy.5003784.type."Partnership"
+20.holds.1000367.ownedBy.5000647.type."Partnership"
+22155.holds.1002061.ownedBy.5002108.type."Corporation"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1002137.ownedBy.5001067.type."Sole Proprietorship",1001686.ownedBy.5001145.type."Sole Proprietorship",1001686.heldAt.15231.group."Finland"
+1007736.achUSD.1007662
+1002387.achEUR.1002008.heldAt.21745.group."Austria"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1005291.chequeUSD.1015308,1005291.cashUSD.1006665
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1011253.heldAt.28771.group."Savings"
+1006074.heldAt.2439.group."Savings"
+21884.holds.1002035.ownedBy.5002053.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+1004203.chequeMXN.1013441
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+18428.holds.1009413.ownedBy.5007041.type."Partnership"
+22.holds.1004130.ownedBy.5006556.type."Sole Proprietorship"
+1005005.chequeUSD.1015124
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+1008803.ownedBy.5007968.type."Sole Proprietorship",1008803.chequeEUR.1011184
+1006874.ownedBy.5008544.type."Sole Proprietorship",1008712.ownedBy.5007958.type."Sole Proprietorship"
+1244.holds.1005316.ownedBy.5003607.type."Sole Proprietorship"
+1009446.heldAt.18549.group."National"
+1008205.chequeEUR.1014440
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1005291.chequeUSD.1015308,1005291.cashUSD.1006665
+1004811.chequeUSD.1006321
+1000391.achUSD.1002384.achUSD.1000136
+1002724.achCAD.1002253.achCHF.1000525
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1011294.heldAt.29069.group."France"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1002859.achUSD.1000818.heldAt.1420.group."Golden Bancorp"
+132523.holds.1013385.ownedBy.5013819.type."Partnership"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1011048.bitcoinBTC.1013565
+125906.holds.1002713.ownedBy.5002232.type."Partnership"
+1000568.achAUD.1003063.achSAR.1000639
+1000207.achEUR.1002020.achUSD.1000121
+1002429.achEUR.1000205.achUSD.1001555
+1004863.heldAt.220.group."National"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+1007923.heldAt.12893.group."Savings"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1001630.achEUR.1001512.achEUR.1001083
+1047.holds.1000709.ownedBy.5002836.type."Corporation"
+14077.holds.1008310.ownedBy.5011885.type."Corporation"
+1009360.heldAt.18196.group."China"
+1008874.heldAt.16586.group."Savings"
+1015743.chequeSAR.1014013,1004464.ownedBy.5012660.type."Corporation"
+1001197.achUSD.1002361.heldAt.29251.group."Bank of Detroit"
+1012321.heldAt.111764.group."Golden Credit Union",1012321.creditCardUSD.1003261
+1002002.wireMXN.1005604
+1009608.chequeCNY.1003333
+1014700.chequeGBP.1014822,1010269.heldAt.23331.group."UK",1014822.ownedBy.5011158.type."Corporation"
+1008958.wireCNY.1009658
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1012852.chequeGBP.1012953
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1009490.ownedBy.5005075.type."Corporation",1009490.heldAt.18819.group."Savings"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1467.holds.1000827.ownedBy.5002156.type."Partnership"
+1001616.achUSD.1001405.achEUR.1000263
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1002713.achGBP.1000574.achCNY.1002386
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1004863.heldAt.220.group."National"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1015061.heldAt.227171.group."First",1015061.achUSD.1011274
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+1000745.achUSD.1002542.achCHF.1000541
+1008497.ownedBy.5007725.type."Corporation",1006377.heldAt.3051.group."Acme Community",1008497.achUSD.1006377
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1001292.achEUR.1001375.heldAt.11056.group."Germany"
+1000630.achSAR.1000553.heldAt.119.group."Israel"
+1002812.achUSD.1002370.achEUR.1002182
+15.holds.1003926.ownedBy.5002321.type."Partnership"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1008889.heldAt.16643.group."Italy",1011138.heldAt.28255.group."Bank of Augusta",1008889.ownedBy.5008076.type."Sole Proprietorship"
+1001162.achCNY.1001901.achEUR.1003019
+1001081.achCAD.1002196.heldAt.24922.group."Canada"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+2947.holds.1006294.ownedBy.5005908.type."Sole Proprietorship"
+1014079.heldAt.153502.group."Crytpo",1004562.heldAt.124.group."Crytpo",1004562.bitcoinBTC.1014079
+1.holds.1003262.ownedBy.5003006.type."Sole Proprietorship"
+1001557.achCHF.1003124.heldAt.239604.group."Switzerland"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1244.holds.1005316.ownedBy.5003607.type."Sole Proprietorship"
+26.holds.1000484.ownedBy.5002051.type."Sole Proprietorship"
+1010270.cashCAD.1004155
+1547.holds.1000904.ownedBy.5000847.type."Sole Proprietorship"
+1004775.cashILS.1011962
+1000417.achEUR.1002015.achCNY.1000051
+148348.holds.1002820.ownedBy.5002751.type."Corporation"
+1002279.achUSD.1002773.achAUD.1002324
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+148016.holds.1002816.ownedBy.5002733.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+1008414.ownedBy.5004431.type."Sole Proprietorship",1008414.chequeUSD.1010423
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+28771.holds.1011263.ownedBy.5011613.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+3242.holds.1006456.ownedBy.5013512.type."Partnership"
+1003691.cashEUR.1009914
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1011104.achEUR.1010386
+6129.holds.1006914.ownedBy.5004703.type."Corporation"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1004931.creditCardRUB.1008965
+142836.holds.1013799.ownedBy.5013419.type."Corporation"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+22.holds.1000409.ownedBy.5000670.type."Corporation"
+1001056.achUSD.1001302.achUSD.1003080
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+11471.holds.1007585.ownedBy.5003673.type."Sole Proprietorship"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1008070.chequeINR.1003797
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+1000103.reinvestmentCAD.1000103,1011702.ownedBy.5009113.type."Sole Proprietorship"
+1002234.achUSD.1002370.achUSD.1002084
+1002054.achUSD.1002773.achUSD.1001344
+1010314.heldAt.23501.group."UK"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1015686.chequeILS.1013835,1013836.ownedBy.5013473.type."Sole Proprietorship"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1005952.cashUSD.1008743
+119.holds.1000564.ownedBy.5002725.type."Sole Proprietorship"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+126426.holds.1013188.ownedBy.5005777.type."Partnership"
+1004602.chequeCAD.1000101
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+1006555.ownedBy.5004312.type."Sole Proprietorship",1005168.ownedBy.5003445.type."Partnership"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1003088.achUSD.1001111.achUSD.1002694
+1008365.creditCardUSD.1011325
+1014725.heldAt.220572.group."UK",1003545.creditCardCAD.1004000
+214881.holds.1014408.ownedBy.5010485.type."Sole Proprietorship"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+1002994.achUSD.1001292.achCNY.1000058
+1011104.achEUR.1010386
+1008652.heldAt.15768.group."First"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1005952.cashUSD.1008743
+1001994.achEUR.1001363.heldAt.10709.group."Italy"
+1010321.creditCardEUR.1006876
+1003061.achGBP.1002112.achCNY.1003155
+1002936.achEUR.1002978.achINR.1002860
+1002763.achUSD.1000621.achINR.1002565
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+1002901.achUSD.1001307.achUSD.1001726
+1002590.achUSD.1002370.achGBP.1000584
+1008762.creditCardUSD.1007988
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1001607.ownedBy.5000477.type."Corporation",1003649.cashUSD.1011715
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+1002160.achGBP.1000574.achUSD.1002346
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1001112.achCHF.1003147.heldAt.241869.group."Switzerland"
+1013283.cashINR.1013310
+220.holds.1004824.ownedBy.5003031.type."Corporation"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1006745.creditCardEUR.1013004,1006745.chequeEUR.1010792
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1006874.ownedBy.5008544.type."Sole Proprietorship",1008712.ownedBy.5007958.type."Sole Proprietorship"
+1012454.heldAt.113060.group."Italy"
+1010106.heldAt.22345.group."Savings"
+1002499.heldAt.50528.group."Saudi Arabia",1012479.creditCardINR.1004311
+14077.holds.1008310.ownedBy.5011885.type."Corporation"
+1004203.chequeMXN.1013441
+1013887.heldAt.143496.group."Israel"
+1003414.cashMXN.1003911
+1006455.creditCardUSD.1013637
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1003113.reinvestmentUSD.1003113
+20.holds.1000367.ownedBy.5000647.type."Partnership"
+18067.holds.1009287.ownedBy.5009418.type."Corporation"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1012541.chequeEUR.1015141,1010884.ownedBy.5008358.type."Sole Proprietorship",1012541.creditCardEUR.1015141
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1003631.heldAt.10.group."National"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1003730.chequeEUR.1005133
+1001410.achUSD.1000990.achEUR.1000704
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1004146.achILS.1010328
+1011001.creditCardUSD.1010865
+20.holds.1000353.ownedBy.5000638.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+214881.holds.1014408.ownedBy.5010485.type."Sole Proprietorship"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1002911.heldAt.215803.group."Italy",1001380.achCNY.1001860,1002928.achEUR.1002911
+1004684.heldAt.212.group."UK",1015179.ownedBy.5006159.type."Sole Proprietorship"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1009177.creditCardEUR.1006352
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1014941.heldAt.224449.group."Flagstone Federal",1008389.heldAt.14325.group."National"
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+1001232.achCHF.1000537.heldAt.117.group."Switzerland"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1005634.chequeEUR.1006393
+1013887.heldAt.143496.group."Israel"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1008762.creditCardUSD.1007988
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+1010616.ownedBy.5007743.type."Partnership",1008140.heldAt.13265.group."Germany"
+24941.holds.1010656.ownedBy.5011596.type."Partnership"
+1012248.chequeEUR.1012259,1008337.heldAt.14233.group."Germany"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1014261.heldAt.212789.group."India"
+1012263.ownedBy.5005258.type."Partnership",1011452.heldAt.30474.group."China"
+223090.holds.1014899.ownedBy.5007416.type."Sole Proprietorship"
+1001005.achUSD.1001004.achEUR.1000230
+1000915.achUSD.1002896.achJPY.1002846
+1000301.achUSD.1001689.achUSD.1001053
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1000947.achINR.1002545.heldAt.112064.group."India"
+1000119.achUSD.1002879.achUSD.1001130
+1002772.achEUR.1000968.achUSD.1001092
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1008816.ownedBy.5004799.type."Partnership",1008816.heldAt.16333.group."Plateau Credit Union"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+43849.holds.1011961.ownedBy.5013596.type."Sole Proprietorship"
+1012374.chequeEUR.1009163
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1013227.heldAt.127999.group."Australia"
+21611.holds.1009897.ownedBy.5003763.type."Corporation"
+16011.holds.1008713.ownedBy.5007959.type."Sole Proprietorship"
+1004988.chequeUSD.1005521
+1011191.creditCardCHF.1015166
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1011252.reinvestmentJPY.1009556
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1009196.creditCardUSD.1009523
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1008889.heldAt.16643.group."Italy",1011138.heldAt.28255.group."Bank of Augusta",1008889.ownedBy.5008076.type."Sole Proprietorship"
+1012162.ownedBy.5002848.type."Country",1012162.heldAt.53744.group."Crytpo"
+1005575.creditCardEUR.1012591
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1005738.heldAt.1601.group."Acme Cooperative"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+148016.holds.1002815.ownedBy.5002731.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1002220.achCHF.1003144.achAUD.1000576
+1001894.achUSD.1000950.achEUR.1002221
+1002166.achUSD.1002896.achEUR.1001600
+1004528.heldAt.119.group."Israel"
+1000630.achSAR.1000568.heldAt.121.group."Saudi Arabia"
+1008030.wireEUR.1005671
+1003277.creditCardCNY.1015210
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1010277.creditCardJPY.1014999
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+13858.holds.1008245.ownedBy.5008106.type."Corporation"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1013889.chequeILS.1003870
+1001115.achCHF.1002795.achGBP.1002686
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+13858.holds.1008245.ownedBy.5008106.type."Corporation"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1009186.heldAt.17708.group."Mountain Savings"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+18067.holds.1009287.ownedBy.5009418.type."Corporation"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1006436.chequeUSD.1009441
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1011511.ownedBy.5009071.type."Corporation",1011511.heldAt.32297.group."First"
+220.holds.1004824.ownedBy.5003031.type."Corporation"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1002243.achJPY.1000299.achUSD.1001483
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+1001994.achEUR.1001072.heldAt.2915.group."France"
+223.holds.1000635.ownedBy.5002714.type."Partnership"
+1000669.achEUR.1002015.achAUD.1000294
+238190.holds.1015373.ownedBy.5012772.type."Corporation"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1003792.wireINR.1012475
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+1008971.heldAt.16792.group."Russia",1008971.cashRUB.1012722
+1009207.wireUSD.1003253
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+1004203.chequeMXN.1013441
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1007606.heldAt.11474.group."First"
+1001189.achUSD.1001307.achUSD.1001063
+1010592.achEUR.1007060
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1001279.achUSD.1000805.achUSD.1001648
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1013986.creditCardSAR.1015758
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1005702.cashJPY.1005898
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1002533.achUSD.1002433.heldAt.33780.group."First"
+214322.holds.1014374.ownedBy.5001409.type."Corporation"
+20.holds.1000353.ownedBy.5000638.type."Partnership"
+1001678.achJPY.1001387.heldAt.11128.group."Japan"
+6129.holds.1006914.ownedBy.5004703.type."Corporation"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1012454.heldAt.113060.group."Italy"
+116425.holds.1012655.ownedBy.5010805.type."Corporation"
+22.holds.1000409.ownedBy.5000670.type."Corporation"
+225263.holds.1014979.ownedBy.5005972.type."Partnership"
+1002892.achUSD.1002773.achUSD.1001344
+1004775.cashILS.1011962
+1001738.achUSD.1001292.achEUR.1001707
+1001332.achJPY.1000299.achRUB.1002615
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+1002683.achUSD.1000818.achUSD.1001728
+1003465.cashINR.1014284
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+19477.holds.1009545.ownedBy.5009558.type."Corporation"
+28.holds.1004247.ownedBy.5012203.type."Corporation"
+1011749.chequeEUR.1010665,1011749.ownedBy.5008579.type."Corporation",1009950.heldAt.21749.group."Spain"
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+1007369.heldAt.10581.group."Japan"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1001957.ownedBy.5000156.type."Corporation",1005550.ownedBy.5003126.type."Partnership"
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1008562.heldAt.15180.group."Austria"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1014811.ownedBy.5005827.type."Partnership",1006304.heldAt.2947.group."Savings",1014811.chequeUSD.1015315
+1002488.achSAR.1000641.achSAR.1000564
+214.holds.1000589.ownedBy.5002129.type."Sole Proprietorship"
+1000128.achMXN.1000493.achCNY.1000068
+1007825.heldAt.12513.group."Germany"
+1000195.achUSD.1000268.heldAt.12.group."National"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1000558.achSAR.1000630.achSAR.1000568
+1007523.creditCardUSD.1007860,1007631.creditCardEUR.1011061
+1015727.ownedBy.5006460.type."Sole Proprietorship",1015727.heldAt.247415.group."National",1014794.ownedBy.5005795.type."Corporation"
+1001518.achCAD.1002202.heldAt.24941.group."Canada"
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1008971.heldAt.16792.group."Russia",1008971.cashRUB.1012722
+1004351.achCHF.1015581,1004351.ownedBy.5012737.type."Sole Proprietorship",1015409.ownedBy.5012788.type."Sole Proprietorship"
+1008341.chequeSAR.1008341
+14663.holds.1008479.ownedBy.5007693.type."Partnership"
+1003104.achEUR.1003096.heldAt.234222.group."Germany"
+1014895.achUSD.1008617
+1011268.chequeAUD.1013277
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1000257.achEUR.1002015.achAUD.1000294
+1014812.chequeUSD.1006042,1006042.ownedBy.5003916.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1009288.chequeCNY.1011433
+1003731.chequeEUR.1000359
+1011950.heldAt.43818.group."Israel"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1000630.achSAR.1000548,1000634.heldAt.223.group."Saudi Arabia"
+1004419.creditCardCHF.1004472
+1005451.wireCNY.1014811
+12.holds.1000221.ownedBy.5000732.type."Corporation"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+1011878.heldAt.42373.group."Hearthstone Credit Union"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+119.holds.1000564.ownedBy.5002725.type."Sole Proprietorship"
+125906.holds.1002713.ownedBy.5002232.type."Partnership"
+1003724.creditCardEUR.1010949
+1010106.heldAt.22345.group."Savings"
+1003031.achINR.1002909.heldAt.215186.group."India"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1003245.chequeUSD.1005307
+43460.holds.1011911.ownedBy.5013426.type."Corporation"
+119.holds.1000564.ownedBy.5002725.type."Sole Proprietorship"
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+1009154.chequeRUB.1014619
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+1006329.cashUSD.1013542
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1292.holds.1000763.ownedBy.5002816.type."Partnership"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+1003163.achILS.1002803.achUSD.1000624
+701.holds.1005016.ownedBy.5003312.type."Sole Proprietorship"
+12.holds.1000218.ownedBy.5000013.type."Sole Proprietorship"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1001769.achUSD.1002773.achUSD.1001553
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1001862.achUSD.1001968.heldAt.21258.group."Brownstone Trust"
+1014782.achUSD.1007920,1014782.ownedBy.5005785.type."Corporation",1014782.creditCardUSD.1007920
+1000171.achEUR.1006380
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+1005100.heldAt.908.group."Plandor Savings",1002204.achEUR.1003013
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1000367.achUSD.1000124.heldAt.10.group."National"
+1008671.heldAt.15916.group."Bank of Augusta"
+13432.holds.1008194.ownedBy.5005369.type."Sole Proprietorship"
+1003968.creditCardINR.1014296
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1004863.heldAt.220.group."National"
+152416.holds.1014044.ownedBy.5002848.type."Country"
+1008392.wireEUR.1008547
+1003844.heldAt.14.group."China"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1010018.heldAt.21940.group."First"
+21884.holds.1002035.ownedBy.5002053.type."Partnership"
+1001917.achUSD.1001305.heldAt.9129.group."National"
+1011133.heldAt.28255.group."Bank of Augusta",1006201.wireUSD.1007551
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+12.holds.1000238.ownedBy.5000739.type."Corporation"
+1001854.achINR.1000315.heldAt.16.group."India"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1001493.ownedBy.5001569.type."Partnership",1002782.heldAt.137218.group."Switzerland"
+38486.holds.1011750.ownedBy.5006386.type."Corporation"
+10.holds.1003620.ownedBy.5002969.type."Sole Proprietorship"
+1000651.achUSD.1000109.heldAt.10.group."National"
+1002015.achUSD.1001565.heldAt.13264.group."First"
+1001900.ownedBy.5001652.type."Sole Proprietorship",1002364.achAUD.1002296
+1010768.creditCardUSD.1006913
+26.holds.1000484.ownedBy.5002051.type."Sole Proprietorship"
+1015925.achUSD.1011056,1015925.ownedBy.5008216.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1003136.achUSD.1002370.achCHF.1002790
+1001428.achEUR.1002015.achEUR.1002100
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1014278.creditCardINR.1003320
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+1000592.achUSD.1002147.heldAt.23842.group."First"
+1014625.heldAt.219184.group."National"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+223.holds.1000636.ownedBy.5002715.type."Partnership"
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+22.holds.1000409.ownedBy.5000670.type."Corporation"
+1000257.achEUR.1002015.achEUR.1001977
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1005492.chequeUSD.1010447
+1011098.creditCardAUD.1003929
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+44565.holds.1011984.ownedBy.5002604.type."Partnership"
+43735.holds.1011943.ownedBy.5013547.type."Corporation"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+1010593.achEUR.1010601,1010601.heldAt.24850.group."Italy",1010593.chequeEUR.1009032
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+1001738.achUSD.1001292.achEUR.1002013
+1005575.creditCardEUR.1012591
+1002243.achJPY.1000299.achCAD.1000102
+1008479.achEUR.1008829,1012675.ownedBy.5010765.type."Sole Proprietorship"
+21611.holds.1009897.ownedBy.5003763.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1009608.chequeCNY.1003333
+1003733.chequeUSD.1012914
+1001937.achUSD.1000621.achINR.1002565
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+1244.holds.1005316.ownedBy.5003607.type."Sole Proprietorship"
+1002434.achUSD.1000268.achUSD.1001230
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+1003743.chequeUSD.1003203
+1004494.ownedBy.5013824.type."Corporation",1004494.heldAt.118.group."Switzerland"
+1009301.cashCNY.1006843
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+1002702.achEUR.1002890.achAUD.1002351
+1008945.creditCardRUB.1012741
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+1008614.heldAt.15723.group."Baltech Community"
+32595.holds.1011549.ownedBy.5007244.type."Sole Proprietorship"
+70.holds.1004284.ownedBy.5010811.type."Sole Proprietorship"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1005125.chequeEUR.1006538
+12.holds.1000221.ownedBy.5000732.type."Corporation"
+148348.holds.1002820.ownedBy.5002751.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+214.holds.1000589.ownedBy.5002129.type."Sole Proprietorship"
+1007403.chequeJPY.1014131,1004078.chequeJPY.1007403,1004078.ownedBy.5009808.type."Partnership"
+1006874.ownedBy.5008544.type."Sole Proprietorship",1008712.ownedBy.5007958.type."Sole Proprietorship"
+1011704.achSAR.1004322
+1003228.chequeUSD.1011324
+3242.holds.1006456.ownedBy.5013512.type."Partnership"
+238190.holds.1015373.ownedBy.5012772.type."Corporation"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1013502.creditCardBRL.1013472,1005591.heldAt.1490.group."Italy"
+1012809.heldAt.118190.group."Russia",1007781.creditCardUSD.1007107
+2947.holds.1006294.ownedBy.5005908.type."Sole Proprietorship"
+1000273.achUSD.1000268.achEUR.1002264
+1002625.heldAt.116843.group."Russia",1008639.chequeUSD.1010045
+48309.holds.1002491.ownedBy.5002742.type."Partnership"
+1000602.achUSD.1001197.achEUR.1001675
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1000818.heldAt.1420.group."Golden Bancorp",1002683.ownedBy.5002136.type."Corporation"
+24856.holds.1010617.ownedBy.5011557.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1014535.chequeEUR.1009511
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1011066.achEUR.1014606,1011066.ownedBy.5008236.type."Partnership"
+1005675.heldAt.1522.group."Spain",1013820.heldAt.143242.group."Israel"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1001436.achEUR.1001512.achEUR.1001083
+1003020.achUSD.1001292.achINR.1002856
+1001109.achUSD.1000805.achEUR.1002274
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1003535.chequeCAD.1004727
+1000360.achEUR.1000462.heldAt.23.group."Germany"
+1002513.achJPY.1000299.achJPY.1001318
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1002917.achUSD.1001930.heldAt.19888.group."Savings"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+14663.holds.1008479.ownedBy.5007693.type."Partnership"
+1004342.creditCardCHF.1011855
+217496.holds.1014500.ownedBy.5010537.type."Partnership"
+1003714.creditCardEUR.1014180,1014180.heldAt.210431.group."Spain"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+148348.holds.1002820.ownedBy.5002751.type."Corporation"
+1002318.achCNY.1001901.achUSD.1001457
+1686.holds.1005888.ownedBy.5003784.type."Partnership"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1007149.creditCardILS.1014939
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+43735.holds.1011943.ownedBy.5013547.type."Corporation"
+14663.holds.1008479.ownedBy.5007693.type."Partnership"
+238190.holds.1015373.ownedBy.5012772.type."Corporation"
+1007758.creditCardCNY.1013348
+1001326.achUSD.1001583.heldAt.13432.group."Hearthstone Savings"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+3.holds.1003267.ownedBy.5001668.type."Partnership"
+1000216.achAUD.1000318.achEUR.1001036
+10060.holds.1007315.ownedBy.5009925.type."Sole Proprietorship"
+1002262.achUSD.1000268.heldAt.12.group."National"
+1007002.creditCardUSD.1013303
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+16792.holds.1008970.ownedBy.5010720.type."Corporation"
+1006540.cashEUR.1006774
+1006217.achUSD.1007726
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1005575.creditCardEUR.1012591
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1007204.creditCardCNY.1003341,1008152.heldAt.13327.group."Hilltop Community"
+1002453.achUSD.1002370.achCHF.1002790
+216645.holds.1014464.ownedBy.5005579.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1000629.achSAR.1002827.achSAR.1000629
+16927.holds.1009008.ownedBy.5010742.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1015324.achUSD.1012154
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1011172.creditCardEUR.1004162
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1015083.cashAUD.1011092
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1007207.reinvestmentCNY.1007207,1009334.heldAt.18107.group."China"
+1004352.cashILS.1013789
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1009765.creditCardCNY.1009295
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+1002919.achEUR.1000205.achGBP.1002665
+12.holds.1000218.ownedBy.5000013.type."Sole Proprietorship"
+1011555.creditCardAUD.1009559
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+1010434.reinvestmentUSD.1010434,1010434.chequeUSD.1009734
+22.holds.1004130.ownedBy.5006556.type."Sole Proprietorship"
+17649.holds.1001813.ownedBy.5001223.type."Sole Proprietorship"
+908.holds.1005091.ownedBy.5003389.type."Corporation"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1010125.ownedBy.5011234.type."Corporation",1009671.chequeGBP.1010125
+1008762.creditCardUSD.1007988
+1012928.chequeUSD.1009452,1009452.ownedBy.5004995.type."Sole Proprietorship"
+1010950.chequeEUR.1007359,1010950.heldAt.27217.group."Germany"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1010766.chequeGBP.1005158
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1010616.ownedBy.5007743.type."Partnership",1008140.heldAt.13265.group."Germany"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1004996.creditCardUSD.1007783
+25536.holds.1010745.ownedBy.5007862.type."Partnership"
+1000509.achUSD.1002960.heldAt.219860.group."Hilltop Credit Union"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+6129.holds.1006914.ownedBy.5004703.type."Corporation"
+1002831.achUSD.1000917.heldAt.1588.group."National"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1014237.chequeUSD.1014778
+1005125.chequeEUR.1006538
+1015798.reinvestmentINR.1014103
+1004316.chequeBRL.1015298
+1005124.achEUR.1004028,1009506.creditCardEUR.1015204
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1007227.heldAt.9482.group."Future Bancorp"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+214322.holds.1014374.ownedBy.5001409.type."Corporation"
+1003269.ownedBy.5009355.type."Corporation",1007252.heldAt.9608.group."China"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1012454.heldAt.113060.group."Italy"
+1000745.achUSD.1001265.achCHF.1000541
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1009823.cashRUB.1010820
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+18067.holds.1009287.ownedBy.5009418.type."Corporation"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1011268.chequeAUD.1013277
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+10060.holds.1007315.ownedBy.5009925.type."Sole Proprietorship"
+1005368.creditCardEUR.1006749
+1000551.achSAR.1000630.heldAt.222.group."Saudi Arabia"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+142836.holds.1013799.ownedBy.5013419.type."Corporation"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1004175.heldAt.24.group."Japan",1010613.ownedBy.5007741.type."Sole Proprietorship"
+1000192.achEUR.1000455.achEUR.1000348
+1015393.heldAt.238744.group."Savings"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1001996.achUSD.1002896.achUSD.1000930
+1011511.ownedBy.5009071.type."Corporation",1011511.heldAt.32297.group."First"
+1005249.heldAt.1198.group."Israel"
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+1011897.achILS.1015702
+12.holds.1000221.ownedBy.5000732.type."Corporation"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1005933.heldAt.1688.group."Arbor Thrift",1009271.wireUSD.1005933,1009271.chequeUSD.1005933
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1008615.ownedBy.5004596.type."Sole Proprietorship",1008615.chequeUSD.1013641
+1004547.wireSAR.1014008
+111631.holds.1012308.ownedBy.5005300.type."Sole Proprietorship"
+217496.holds.1014500.ownedBy.5010537.type."Partnership"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1000841.achMXN.1000493.achUSD.1000616
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1002859.achUSD.1000818.achUSD.1000758
+908.holds.1005091.ownedBy.5003389.type."Corporation"
+1005803.creditCardEUR.1013963
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1001414.achEUR.1002015.achUSD.1000801
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+148348.holds.1013987.ownedBy.5013927.type."Corporation"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+1009900.creditCardUSD.1012749
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+25536.holds.1010745.ownedBy.5007862.type."Partnership"
+112497.holds.1012383.ownedBy.5010261.type."Sole Proprietorship"
+11.holds.1000171.ownedBy.5000699.type."Partnership"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1009186.heldAt.17708.group."Mountain Savings"
+70.holds.1004284.ownedBy.5010811.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1001428.achEUR.1002015.achUSD.1000115
+1007923.heldAt.12893.group."Savings"
+1000701.achMXN.1000493.achUSD.1000017
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+1008428.achUSD.1010821
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1008235.heldAt.13667.group."India"
+1000660.achEUR.1002598.heldAt.115415.group."France"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+1008889.heldAt.16643.group."Italy",1011138.heldAt.28255.group."Bank of Augusta",1008889.ownedBy.5008076.type."Sole Proprietorship"
+21381.holds.1009772.ownedBy.5009373.type."Sole Proprietorship"
+1001529.achUSD.1000805.achEUR.1000782
+213.holds.1004689.ownedBy.5011450.type."Sole Proprietorship"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1006663.chequeUSD.1013408
+154653.holds.1014115.ownedBy.5002848.type."Country"
+223.holds.1000640.ownedBy.5002715.type."Partnership"
+1001976.achEUR.1002015.achUSD.1001565
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1000744.achJPY.1000299.achJPY.1000394
+1005408.heldAt.1362.group."Golden Bancorp"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1015484.wireRUB.1011768
+1005985.creditCardUSD.1011000,1011000.ownedBy.5004852.type."Sole Proprietorship"
+12.holds.1000221.ownedBy.5000732.type."Corporation"
+1007923.heldAt.12893.group."Savings"
+1001102.achCHF.1002795.achJPY.1001362
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+15.holds.1003926.ownedBy.5002321.type."Partnership"
+12.holds.1000218.ownedBy.5000013.type."Sole Proprietorship"
+1010816.ownedBy.5007912.type."Corporation",1015521.ownedBy.5002562.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1000417.achEUR.1002015.achUSD.1000115
+1001445.achUSD.1002370.achEUR.1002979
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1006968.heldAt.6625.group."Portugal"
+225263.holds.1014979.ownedBy.5005972.type."Partnership"
+40404.holds.1002464.ownedBy.5002560.type."Partnership"
+1008769.heldAt.16163.group."First"
+1006878.creditCardEUR.1003700,1014155.ownedBy.5009975.type."Partnership"
+1001097.achJPY.1000299.achEUR.1000862
+1012017.heldAt.45000.group."Israel"
+1015742.chequeSAR.1015757,1012066.ownedBy.5013868.type."Sole Proprietorship",1015742.heldAt.248857.group."Saudi Arabia"
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+40404.holds.1002464.ownedBy.5002560.type."Partnership"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1010574.creditCardCAD.1010734
+1000558.achSAR.1000630.achSAR.1000568
+1010583.chequeEUR.1007351
+1004660.chequeBRL.1013475
+1000270.achUSD.1002896.achJPY.1002846
+1013394.cashUSD.1015394
+1001715.achEUR.1001372.heldAt.11056.group."Germany"
+1009046.achRUB.1014562
+1006381.heldAt.3123.group."Spain"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+2053.holds.1001015.ownedBy.5000224.type."Sole Proprietorship"
+1015332.heldAt.236710.group."Savings"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1001057.achEUR.1001545.achGBP.1002972
+1001109.creditCardEUR.1014176
+1007391.achUSD.1008644
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1005416.cashUSD.1008555,1008555.ownedBy.5005479.type."Sole Proprietorship"
+1005952.cashUSD.1008743
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+2439.holds.1006078.ownedBy.5003972.type."Corporation"
+908.holds.1005091.ownedBy.5003389.type."Corporation"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1014222.heldAt.211050.group."Bank of Laramie"
+1002104.achUSD.1001251.achCHF.1003129
+1000056.achJPY.1002159
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1006348.heldAt.3045.group."Austria",1009808.chequeEUR.1006288
+1007633.chequeEUR.1009936
+1001560.achCHF.1003147.achEUR.1001271
+1001040.achEUR.1000204.achEUR.1000399
+1000198.achEUR.1002005.achEUR.1002003
+1003202.achUSD.1006920,1006920.heldAt.6129.group."National",1003202.ownedBy.5002892.type."Corporation"
+1005527.cashUSD.1013282,1010534.ownedBy.5004445.type."Corporation"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1011562.heldAt.32814.group."Sunrise Federal"
+1.holds.1003262.ownedBy.5003006.type."Sole Proprietorship"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1011657.heldAt.34828.group."Savings"
+1007957.cashINR.1014408,1012440.heldAt.112989.group."India"
+1005842.ownedBy.5007061.type."Corporation",1010047.heldAt.22062.group."Germany"
+1003136.achUSD.1002370.achCNY.1001278
+48526.holds.1002493.ownedBy.5002747.type."Corporation"
+1008251.reinvestmentCNY.1006144
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+15964.holds.1008681.ownedBy.5007927.type."Corporation"
+1000409.heldAt.22.group."Germany",1000228.ownedBy.5000037.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1002896.achUSD.1002750.heldAt.132445.group."Acme"
+12.holds.1000218.ownedBy.5000013.type."Sole Proprietorship"
+1009313.creditCardCNY.1008013
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1008286.creditCardEUR.1012258
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+1011257.heldAt.28771.group."Savings",1013284.chequeUSD.1011087
+1011088.ownedBy.5006053.type."Corporation",1009034.ownedBy.5008145.type."Partnership"
+1013809.ownedBy.5013365.type."Partnership",1013906.ownedBy.5013625.type."Partnership"
+1000699.achCNY.1001848.heldAt.18067.group."China"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+148016.holds.1002815.ownedBy.5002731.type."Sole Proprietorship"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1015430.heldAt.239453.group."Switzerland"
+1001276.achUSD.1000268.achEUR.1001585
+1005612.creditCardEUR.1012798
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+115359.holds.1012577.ownedBy.5005512.type."Corporation"
+1001286.achUSD.1001905.achUSD.1001094
+1001111.achUSD.1002425.heldAt.33355.group."Bank of Indianapolis"
+1005883.creditCardUSD.1007674
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+16792.holds.1008970.ownedBy.5010720.type."Corporation"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+1002929.achUSD.1001198.heldAt.4726.group."Savings"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1006306.chequeUSD.1009110,1008237.creditCardEUR.1006675
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+125906.holds.1002713.ownedBy.5002232.type."Partnership"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1000630.achSAR.1000548.achSAR.1000630
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1001435.achUSD.1001307.achUSD.1001726
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1008902.achRUB.1012688
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1012221.creditCardUSD.1008789,1014463.heldAt.216645.group."Golden Thrift"
+1007139.heldAt.8823.group."France"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1010715.creditCardEUR.1008290
+1008762.creditCardUSD.1007988
+1000146.achUSD.1001197.achEUR.1001533
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+6156.holds.1006932.ownedBy.5004731.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1002730.achUSD.1001307.achGBP.1002033
+48526.holds.1002493.ownedBy.5002747.type."Corporation"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+43460.holds.1011911.ownedBy.5013426.type."Corporation"
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+1009061.creditCardUSD.1012881,1009061.heldAt.17222.group."First"
+1007181.heldAt.9209.group."China"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1004285.cashILS.1014191
+1007923.heldAt.12893.group."Savings"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1008731.chequeUSD.1005432,1004197.wireMXN.1011563
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1008971.heldAt.16792.group."Russia",1008971.cashRUB.1012722
+6129.holds.1006914.ownedBy.5004703.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1002736.achEUR.1002307.achEUR.1001450
+1001435.achUSD.1001307.achGBP.1002033
+1005825.heldAt.1665.group."Savings"
+1012292.wireCAD.1003252
+142836.holds.1013799.ownedBy.5013419.type."Corporation"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1013101.heldAt.124331.group."First"
+1006229.creditCardUSD.1009500
+1003506.ownedBy.5001915.type."Partnership",1003656.cashRUB.1012663
+223.holds.1000636.ownedBy.5002715.type."Partnership"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+15964.holds.1008681.ownedBy.5007927.type."Corporation"
+1013870.ownedBy.5013530.type."Sole Proprietorship",1013870.creditCardILS.1015640,1015640.ownedBy.5013409.type."Partnership"
+18428.holds.1009413.ownedBy.5007041.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1011104.achEUR.1010386
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1004417.achCHF.1013760
+70.holds.1004284.ownedBy.5010811.type."Sole Proprietorship"
+1010979.cashEUR.1005651,1005651.ownedBy.5006739.type."Partnership"
+1001046.achUSD.1000621.heldAt.220.group."National"
+70.holds.1004284.ownedBy.5010811.type."Sole Proprietorship"
+1005968.chequeUSD.1012524
+1004097.creditCardEUR.1004102,1004029.cashEUR.1010377
+1000138.achCNY.1001901.achEUR.1003019
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1008424.chequeUSD.1006208
+1010950.creditCardEUR.1006356
+21884.holds.1002035.ownedBy.5002053.type."Partnership"
+1003857.reinvestmentILS.1003857
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1005610.creditCardUSD.1014886
+1001031.achUSD.1002773.achEUR.1002098
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1001010.achUSD.1003005.heldAt.222664.group."First"
+1467.holds.1000827.ownedBy.5002156.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+126783.holds.1013195.ownedBy.5006030.type."Corporation"
+213.holds.1004689.ownedBy.5011450.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1000171.cashEUR.1005667,1008475.ownedBy.5008583.type."Partnership"
+1004001.heldAt.19.group."Australia",1013138.heldAt.125575.group."Canada"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1009992.heldAt.21884.group."UK",1009992.ownedBy.5011174.type."Sole Proprietorship"
+1000319.achUSD.1002384.achINR.1002588
+125906.holds.1002713.ownedBy.5002232.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1000532.achUSD.1002539.heldAt.111764.group."Golden Credit Union"
+1004598.creditCardBRL.1004597
+1012455.heldAt.113060.group."Italy"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1000636.achSAR.1003165.heldAt.249118.group."Saudi Arabia"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+1000908.achEUR.1001219.heldAt.5464.group."Italy"
+1005341.ownedBy.5013443.type."Corporation",1008198.heldAt.13432.group."Hearthstone Savings"
+1004364.heldAt.113.group."Israel",1015607.creditCardILS.1013832,1015607.ownedBy.5013380.type."Corporation"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1006309.chequeUSD.1003755
+1000378.achUSD.1000023.achEUR.1000850
+24941.holds.1010656.ownedBy.5011596.type."Partnership"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1001120.achEUR.1001512.achEUR.1001876
+27920.holds.1011083.ownedBy.5008273.type."Sole Proprietorship"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1000719.achUSD.1002370.achCAD.1002214
+1014996.heldAt.225454.group."Canada"
+1004637.creditCardGBP.1010290,1010290.heldAt.23370.group."UK",1004637.ownedBy.5011007.type."Corporation"
+1000392.achCHF.1003130.achILS.1000605
+1000052.achMXN.1000493.achCNY.1000068
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+16011.holds.1008713.ownedBy.5007959.type."Sole Proprietorship"
+126783.holds.1013195.ownedBy.5006030.type."Corporation"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1000716.achUSD.1002370.achCHF.1002790
+20.holds.1000367.ownedBy.5000647.type."Partnership"
+1010777.heldAt.25637.group."Arbor Bancorp"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1008888.chequeEUR.1014204,1014204.heldAt.210829.group."Slovakia"
+38486.holds.1011750.ownedBy.5006386.type."Corporation"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+1011545.ownedBy.5012280.type."Partnership",1015188.creditCardMXN.1011545,1015188.heldAt.231744.group."Mexico"
+1007738.achUSD.1009214
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+1001779.achEUR.1001474.heldAt.12004.group."Italy"
+1007499.achUSD.1009741
+1000410.achEUR.1000178.heldAt.11.group."Finland"
+1006346.achEUR.1009350,1003167.ownedBy.5002601.type."Corporation"
+1008942.chequeRUB.1009404
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1007691.heldAt.11852.group."Netherlands"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1002970.achCNY.1000747.heldAt.1267.group."China"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+1014210.chequeJPY.1003934
+28.holds.1004247.ownedBy.5012203.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+12.holds.1000221.ownedBy.5000732.type."Corporation"
+1000360.achUSD.1000612.heldAt.220.group."National"
+1001275.achUSD.1001167.achJPY.1002830
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+1003403.creditCardGBP.1014693
+225263.holds.1014979.ownedBy.5005972.type."Partnership"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+27637.holds.1011046.ownedBy.5004888.type."Partnership"
+12.holds.1003760.ownedBy.5008403.type."Partnership"
+1005578.chequeEUR.1006536
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1000726.achEUR.1002269.heldAt.27103.group."Germany"
+1009196.creditCardUSD.1009523
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+1047.holds.1000709.ownedBy.5002836.type."Corporation"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+132554.holds.1013393.ownedBy.5006211.type."Partnership"
+1001021.achEUR.1001613.achCHF.1002465
+1005066.creditCardUSD.1005562
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+1001578.chequeUSD.1005564
+113744.holds.1002575.ownedBy.5002358.type."Partnership"
+1012701.chequeRUB.1003660
+1004775.cashILS.1011962
+1003057.achGBP.1002680.heldAt.122047.group."UK"
+1000236.achUSD.1000118.heldAt.10.group."National"
+15.holds.1003926.ownedBy.5002321.type."Partnership"
+1001040.achEUR.1000466.achEUR.1000399
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+228101.holds.1003063.ownedBy.5002253.type."Partnership"
+1008687.achUSD.1013353
+1004021.cashEUR.1005762
+112497.holds.1012383.ownedBy.5010261.type."Sole Proprietorship"
+139216.holds.1013702.ownedBy.5009155.type."Sole Proprietorship"
+1002145.achEUR.1001543.heldAt.13083.group."Italy"
+1000490.achCNY.1002800.heldAt.140257.group."China"
+1000052.achMXN.1000493.achEUR.1000881
+44565.holds.1011984.ownedBy.5002604.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+1007403.chequeJPY.1014131
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+1004851.heldAt.220.group."National"
+1002029.achGBP.1000574.heldAt.211.group."UK"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1015333.ownedBy.5006305.type."Sole Proprietorship",1000093.heldAt.7.group."India"
+1001641.achUSD.1003035.heldAt.225263.group."Bank of Miami"
+1014820.cashGBP.1013019,1014743.heldAt.220967.group."France"
+1012844.achGBP.1010129
+1006161.chequeEUR.1011495,1006161.ownedBy.5006799.type."Sole Proprietorship"
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+1000744.achJPY.1000299.achEUR.1002125
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+1013333.chequeMXN.1004766
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+2053.holds.1001015.ownedBy.5000224.type."Sole Proprietorship"
+1002300.achEUR.1000428.heldAt.22.group."Germany"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1000031.achGBP.1000574.achCAD.1002719
+223.holds.1000636.ownedBy.5002715.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1009740.reinvestmentCAD.1007583
+43849.holds.1011951.ownedBy.5013584.type."Corporation"
+1002104.achUSD.1001251.heldAt.6179.group."Acme Trust"
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+1005702.achUSD.1005900
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1004431.creditCardCHF.1013741,1010844.heldAt.26024.group."Hilltop Trust"
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+1001011.achCNY.1001901.achEUR.1001626
+249118.holds.1003165.ownedBy.5000044.type."Partnership"
+1011104.achEUR.1010386
+1001162.achCNY.1001901.achILS.1000522
+1001744.achEUR.1001347.heldAt.10404.group."Italy"
+1003100.achUSD.1001667.achCNY.1001853
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1008889.heldAt.16643.group."Italy",1011138.heldAt.28255.group."Bank of Augusta",1008889.ownedBy.5008076.type."Sole Proprietorship"
+1001511.achUSD.1001905.heldAt.19329.group."First"
+14663.holds.1008479.ownedBy.5007693.type."Partnership"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+10.holds.1003620.ownedBy.5002969.type."Sole Proprietorship"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1006748.creditCardEUR.1010979
+1008865.heldAt.16535.group."The Pine Trust",1008865.achUSD.1009453
+1004147.chequeEUR.1010188
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1009873.heldAt.21575.group."First"
+1002491.ownedBy.5002742.type."Partnership",1012225.heldAt.110836.group."National"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+1010470.creditCardSAR.1011352
+1006002.ownedBy.5008647.type."Partnership",1007439.chequeEUR.1010974
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1000313.ownedBy.5001829.type."Sole Proprietorship",1000589.heldAt.214.group."Canada"
+43735.holds.1011943.ownedBy.5013547.type."Corporation"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1010241.heldAt.23003.group."Spain"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+119.holds.1000564.ownedBy.5002725.type."Sole Proprietorship"
+1011494.heldAt.31596.group."Dawn Community",1005872.ownedBy.5003245.type."Partnership"
+1002167.achUSD.1000974.heldAt.1674.group."Savings"
+148348.holds.1013987.ownedBy.5013927.type."Corporation"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1001478.achGBP.1002081.achINR.1002565
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1007685.cashEUR.1014039
+1008958.wireCNY.1009658
+22.holds.1000409.ownedBy.5000670.type."Corporation"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1004273.wireBRL.1011698
+1014261.heldAt.212789.group."India"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1001540.achEUR.1001716.heldAt.16011.group."Austria"
+1006744.reinvestmentCHF.1006616
+1010270.cashCAD.1004155
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1006687.heldAt.4726.group."Savings",1006687.achUSD.1008150
+1005908.chequeUSD.1005268
+1010186.ownedBy.5008842.type."Partnership",1005598.chequeEUR.1008175
+148016.holds.1002818.ownedBy.5002734.type."Partnership"
+1005141.cashCHF.1010714
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1005952.cashUSD.1008743
+21381.holds.1009772.ownedBy.5009373.type."Sole Proprietorship"
+1007843.heldAt.12561.group."Spain"
+1005125.chequeEUR.1006538
+15231.holds.1008574.ownedBy.5007807.type."Partnership"
+1013887.heldAt.143496.group."Israel"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+1001557.achCHF.1003124.heldAt.239604.group."Switzerland"
+1010106.heldAt.22345.group."Savings"
+147042.holds.1013963.ownedBy.5009191.type."Sole Proprietorship"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+1003033.achUSD.1002773.achUSD.1003110
+1011893.creditCardILS.1015609
+1009445.heldAt.18549.group."National",1007836.heldAt.12513.group."Germany"
+1010018.heldAt.21940.group."First"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+1010707.heldAt.25202.group."Canada"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+115359.holds.1012577.ownedBy.5005512.type."Corporation"
+1014278.chequeINR.1008491,1005317.heldAt.1244.group."Bank of Arkadelphia"
+1000744.achJPY.1000299.achRUB.1002615
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+50202.holds.1002498.ownedBy.5002780.type."Sole Proprietorship"
+1009545.chequeCNY.1015209
+1.holds.1000003.ownedBy.5000018.type."Partnership"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1001031.achUSD.1002773.achEUR.1002098
+1010274.heldAt.23344.group."Germany"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+223.holds.1000639.ownedBy.5002601.type."Corporation"
+1001608.achCHF.1002467.heldAt.41407.group."Switzerland"
+119.holds.1000564.ownedBy.5002725.type."Sole Proprietorship"
+1011511.ownedBy.5009071.type."Corporation",1011511.heldAt.32297.group."First"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1008816.heldAt.16333.group."Plateau Credit Union"
+1009873.heldAt.21575.group."First"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+13858.holds.1008245.ownedBy.5008106.type."Corporation"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1001115.achCHF.1002795.achUSD.1002642
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1003382.achRUB.1008922,1003382.ownedBy.5010563.type."Partnership",1008922.ownedBy.5010765.type."Sole Proprietorship"
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+20.holds.1000367.ownedBy.5000647.type."Partnership"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+3242.holds.1006456.ownedBy.5013512.type."Partnership"
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+118.holds.1000549.ownedBy.5002707.type."Sole Proprietorship"
+1000212.heldAt.12.group."National",1000337.achEUR.1000653,1000653.heldAt.410.group."Germany"
+241775.holds.1015557.ownedBy.5009163.type."Sole Proprietorship"
+1005238.chequeILS.1013908
+70.holds.1004284.ownedBy.5010811.type."Sole Proprietorship"
+38486.holds.1011750.ownedBy.5006386.type."Corporation"
+1013858.heldAt.143430.group."Israel"
+1011253.achUSD.1010420,1011253.chequeUSD.1006977
+1015118.heldAt.228587.group."Australia"
+1001076.achEUR.1002020.achUSD.1000121
+1005291.chequeUSD.1015308,1005291.cashUSD.1006665
+1000566.ownedBy.5002727.type."Sole Proprietorship",1002496.heldAt.49365.group."Saudi Arabia"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1010041.chequeUSD.1010785
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+48308.holds.1002487.ownedBy.5002738.type."Partnership"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+223.holds.1000636.ownedBy.5002715.type."Partnership"
+1000669.achEUR.1002015.achUSD.1000801
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+115359.holds.1012577.ownedBy.5005512.type."Corporation"
+1000028.achMXN.1000493.achUSD.1000977
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+1012930.creditCardUSD.1015735,1007350.ownedBy.5011836.type."Corporation",1012930.chequeUSD.1007350
+25536.holds.1010745.ownedBy.5007862.type."Partnership"
+1013606.heldAt.137218.group."Switzerland"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+12803.holds.1001509.ownedBy.5001843.type."Partnership"
+1008713.ownedBy.5007959.type."Sole Proprietorship",1008834.chequeEUR.1008713,1008834.heldAt.16418.group."Germany"
+223.holds.1000635.ownedBy.5002714.type."Partnership"
+1004629.chequeGBP.1003404
+1006636.chequeUSD.1005317
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+43849.holds.1011961.ownedBy.5013596.type."Sole Proprietorship"
+1005390.chequeUSD.1011687
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+1003599.creditCardJPY.1012915
+1008158.achBRL.1008777
+220.holds.1004824.ownedBy.5003031.type."Corporation"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1002636.achUSD.1002370.achEUR.1002979
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1002969.achEUR.1001807.achUSD.1002023
+11.holds.1000171.ownedBy.5000699.type."Partnership"
+48309.holds.1002490.ownedBy.5002740.type."Sole Proprietorship"
+249176.holds.1003167.ownedBy.5002601.type."Corporation"
+1013661.heldAt.138335.group."Switzerland"
+1009081.heldAt.17321.group."Austria",1008569.chequeEUR.1008684
+16792.holds.1008970.ownedBy.5010720.type."Corporation"
+12.holds.1000238.ownedBy.5000739.type."Corporation"
+1010654.reinvestmentSAR.1010656
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1669.holds.1005847.ownedBy.5007064.type."Partnership"
+1004259.achMXN.1011612,1004259.ownedBy.5012209.type."Partnership",1004259.wireMXN.1011612
+15.holds.1003926.ownedBy.5002321.type."Partnership"
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1001738.achUSD.1001292.achEUR.1001146
+1001168.achEUR.1000205.achUSD.1000916
+1001985.achUSD.1001197.achUSD.1001825
+1008679.ownedBy.5007925.type."Partnership",1012832.ownedBy.5008760.type."Partnership"
+1006859.creditCardUSD.1014448
+118.holds.1000548.ownedBy.5002705.type."Partnership"
+1000947.achINR.1002545.achEUR.1001743
+1015727.ownedBy.5006460.type."Sole Proprietorship",1015727.heldAt.247415.group."National",1014794.ownedBy.5005795.type."Corporation"
+119.holds.1000560.ownedBy.5002721.type."Sole Proprietorship"
+1009731.chequeUSD.1008699
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1015895.creditCardUSD.1013220
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1001854.achINR.1000315.heldAt.16.group."India"
+1006026.heldAt.1916.group."Slovakia",1015382.ownedBy.5009126.type."Partnership"
+1004869.achSAR.1012063,1005725.achUSD.1006570
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+223.holds.1000641.ownedBy.5002719.type."Corporation"
+70.holds.1004285.ownedBy.5002236.type."Partnership"
+1000158.achEUR.1000335.heldAt.20.group."China"
+1004065.chequeEUR.1010288
+118.holds.1000551.ownedBy.5002710.type."Partnership"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1003109.achUSD.1001056.achUSD.1001302
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1006874.ownedBy.5008544.type."Sole Proprietorship",1008712.ownedBy.5007958.type."Sole Proprietorship"
+15964.holds.1008681.ownedBy.5007927.type."Corporation"
+1004545.heldAt.121.group."Saudi Arabia",1004873.ownedBy.5002601.type."Corporation",1004541.heldAt.121.group."Saudi Arabia"
+1003900.chequeJPY.1009652
+1015896.creditCardEUR.1003909
+3.holds.1003319.ownedBy.5010178.type."Corporation"
+1001572.achEUR.1001285.heldAt.8539.group."Netherlands"
+148016.holds.1002816.ownedBy.5002733.type."Partnership"
+1004900.reinvestmentCHF.1012081
+222.holds.1000631.ownedBy.5002703.type."Sole Proprietorship"
+251264.holds.1003169.ownedBy.5002785.type."Sole Proprietorship"
+1009608.chequeCNY.1003333
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+1002032.achUSD.1002370.achUSD.1002084
+119.holds.1000563.ownedBy.5002724.type."Sole Proprietorship"
+1011795.heldAt.39721.group."Switzerland",1002568.achAUD.1000575
+1002257.achUSD.1000805.achEUR.1001659
+119.holds.1000566.ownedBy.5002727.type."Sole Proprietorship"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1014716.achUSD.1003523
+1010492.wireGBP.1012871
+1011041.heldAt.27621.group."Australia"
+21387.holds.1009810.ownedBy.5006897.type."Corporation"
+1547.holds.1000904.ownedBy.5000847.type."Sole Proprietorship"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+22155.holds.1002061.ownedBy.5002108.type."Corporation"
+148016.holds.1002815.ownedBy.5002731.type."Sole Proprietorship"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1002418.achUSD.1001197.achCAD.1002231
+1011980.heldAt.44458.group."Germany"
+1008179.heldAt.13345.group."Netherlands",1005581.creditCardEUR.1005674
+119.holds.1000553.ownedBy.5002696.type."Sole Proprietorship"
+1007129.heldAt.8805.group."National"
+1001929.achUSD.1001503.heldAt.12735.group."Bank of Hartford"
+1000184.achEUR.1000345.achEUR.1000471
+116425.holds.1012655.ownedBy.5010805.type."Corporation"
+1001000.achEUR.1002015.achEUR.1002100
+1008194.achUSD.1009117
+1013248.chequeUSD.1005120,1013248.ownedBy.5006093.type."Sole Proprietorship",1013248.creditCardUSD.1005120
+1000638.achUSD.1001720.heldAt.16109.group."Acme Federal"
+1009854.creditCardUSD.1005367
+23691.holds.1002137.ownedBy.5001067.type."Sole Proprietorship"
+1015435.heldAt.239453.group."Switzerland"
+6156.holds.1006932.ownedBy.5004731.type."Corporation"
+21381.holds.1001974.ownedBy.5001633.type."Partnership"
+43849.holds.1011961.ownedBy.5013596.type."Sole Proprietorship"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1000588.achUSD.1001819.heldAt.17708.group."Mountain Savings"
+1002066.creditCardUSD.1007718
+1002614.achUSD.1002879.achUSD.1003030
+1003758.chequeEUR.1005634
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"
+222.holds.1000628.ownedBy.5000043.type."Partnership"
+223.holds.1000637.ownedBy.5002716.type."Sole Proprietorship"
+1015077.heldAt.228009.group."Australia"
+1009432.ownedBy.5004941.type."Corporation",1009432.chequeUSD.1012582
+1013331.creditCardMXN.1004760
+22.holds.1000409.ownedBy.5000670.type."Corporation"
+1008030.achEUR.1008003
+1005896.achBRL.1005012
+21381.holds.1009772.ownedBy.5009373.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1007811.creditCardUSD.1006081
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1002111.achUSD.1002571.heldAt.113685.group."Spruce Federal"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1001769.achUSD.1002773.achUSD.1002959
+1004832.chequeILS.1011919
+1010629.heldAt.24856.group."Canada",1004543.cashSAR.1013994
+1002672.achUSD.1002773.achUSD.1003110
+125906.holds.1002713.ownedBy.5002232.type."Partnership"
+119.holds.1000562.ownedBy.5002723.type."Partnership"
+1014836.creditCardEUR.1010174
+50528.holds.1002499.ownedBy.5002782.type."Partnership"
+23.holds.1000475.ownedBy.5000789.type."Sole Proprietorship"
+1547.holds.1000904.ownedBy.5000847.type."Sole Proprietorship"
+222.holds.1000630.ownedBy.5002701.type."Corporation"
+1003727.creditCardUSD.1008633
+1004863.heldAt.220.group."National"
+126426.holds.1013188.ownedBy.5005777.type."Partnership"
+223.holds.1000635.ownedBy.5002714.type."Partnership"
+222.holds.1000629.ownedBy.5002699.type."Corporation"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+1003463.chequeRUB.1008921
+1001020.achEUR.1002020.achUSD.1000121
+223.holds.1000634.ownedBy.5002717.type."Sole Proprietorship"
+1000332.achEUR.1000248.achEUR.1000339
+118.holds.1000546.ownedBy.5002715.type."Partnership"
+211.holds.1000572.ownedBy.5002043.type."Partnership"
+49365.holds.1002496.ownedBy.5002601.type."Corporation"
+1002363.achUSD.1000268.achEUR.1002340
+11471.holds.1007585.ownedBy.5003673.type."Sole Proprietorship"
+148350.holds.1002821.ownedBy.5002755.type."Partnership"
+121.holds.1000568.ownedBy.5002694.type."Corporation"
+1014261.heldAt.212789.group."India"
+1008030.wireEUR.1005671
+150240.holds.1002827.ownedBy.5002781.type."Corporation"
+1003937.ownedBy.5002848.type."Country",1012163.heldAt.53744.group."Crytpo"
+1001857.achEUR.1001629.achEUR.1002514
+148348.holds.1013987.ownedBy.5013927.type."Corporation"
+148350.holds.1002822.ownedBy.5002756.type."Corporation"
+49508.holds.1002497.ownedBy.5002777.type."Partnership"
+1002048.achUSD.1002879.achJPY.1002376
+1009587.heldAt.19723.group."China"
+1000634.achSAR.1000630.achSAR.1002816
+15231.holds.1001686.ownedBy.5001145.type."Sole Proprietorship"

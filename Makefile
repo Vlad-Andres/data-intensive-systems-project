@@ -65,7 +65,7 @@ datasets:
 
 toy-example:
 	uv run python main.py \
-	--graph_file data/toy_restaurants_database.txt \
-	--query_log_file data/toy_restaurants_qlog.txt \
+	--graph data/toy_restaurants_database.txt \
+	--qlog data/toy_restaurants_qlog.txt \
 	--output_file data/toy_restaurants_reduced.txt \
 	--importance_threshold 0.5

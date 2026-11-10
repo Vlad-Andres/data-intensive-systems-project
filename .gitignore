@@ -5,3 +5,11 @@ __pycache__/
 uv.lock
 .python-version
 data/imdb_raw/
+
+# Run outputs of main.py (regenerated on every run)
+data/reductions/
+**/QLog*_first_half.txt
+**/QLog*_second_half.txt
+
+# Plots made by main.py (regenerated on every run)
+plots/

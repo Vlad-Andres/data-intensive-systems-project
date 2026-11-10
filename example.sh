@@ -1,0 +1,1 @@
+python3 main.py --graph data/DatabaseX_1.txt --qlog  data/QLog1_2.txt  --similarity_budget 0.5 --query_coverage distributed --graph_selection rounds --importance_threshold 0.8 --tests True --performance True
